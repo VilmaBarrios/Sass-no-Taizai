@@ -1,0 +1,29 @@
+// --- Paleta de Colores de los Siete Pecados ---
+// Cada color representa la esencia y el tesoro sagrado de cada pecado
+$ira-meliodas:    #E6CC00; // Amarillo intenso (Lostvayne)
+$codicia-ban:     #C62828; // Rojo carmesí (Sanshuu)
+$pereza-king:     #4FC3F7; // Azul Chastiefol
+$envidia-diane:   #81C784; // Verde Gideon
+$soberbia-escanor: #FF8F00; // Oro Rhitta (El brillo del sol)
+$gula-merlin:     #9575CD; // Violeta Aldan
+$lujuria-gowther: #F06292; // Rosa Herritt
+
+// Colores de Interfaz (Neutros y Soporte)
+$white:      #FFFFFF;
+$dark-night: #1A1A1A;
+$gray-100:   #F8F9FA;
+$gray-400:   #ADB5BD;
+$gray-800:   #343A40;
+
+// Mapa de colores (Para generar las clases utilitarias como .bg-ira, .text-codicia)
+$colors: (
+  "ira":      $ira-meliodas,
+  "codicia":  $codicia-ban,
+  "pereza":   $pereza-king,
+  "envidia":  $envidia-diane,
+  "soberbia": $soberbia-escanor,
+  "gula":     $gula-merlin,
+  "lujuria":  $lujuria-gowther,
+  "dark":     $dark-night,
+  "light":    $gray-100
+);
