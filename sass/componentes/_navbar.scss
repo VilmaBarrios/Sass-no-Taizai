@@ -1,0 +1,124 @@
+@use "sass:color";
+@use "../clases_utilitarias/paleta" as *;
+@use "../clases_utilitarias/bordes" as *;
+@use "../clases_utilitarias/breackpoints" as *;
+@use "../clases_utilitarias/sombras" as *;
+@use "../clases_utilitarias/tipografia" as *;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 70px;
+  background: rgba($dark-night, 0.9);
+  border-bottom: 2px solid #343a40;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+
+  // Marca / Logo
+  &-brand {
+    font-family: $font-base;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $ira-meliodas;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: color.adjust($ira-meliodas, $lightness: 10%);
+    }
+
+    span {
+      color: #ffffff;
+      font-weight: 400;
+    }
+  }
+
+  // Lista de enlaces
+  &-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+
+    a {
+      color: #94a3b8;
+      font-family: $font-base;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover,
+      &.active {
+        color: $ira-meliodas;
+      }
+    }
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &-toggler {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+
+    span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background: $ira-meliodas;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    &:hover span {
+      background: #ffffff;
+    }
+  }
+
+  //Responsivo
+  @media (min-width: 768px) {
+    &-toggler {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    height: auto;
+    padding: 1rem 1rem;
+    flex-wrap: wrap;
+
+    &-toggler {
+      display: flex;
+    }
+
+    &-nav {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 0;
+      gap: 1.25rem;
+      border-top: 1px solid #343a40;
+      margin-top: 1rem;
+
+      &.is-open {
+        display: flex;
+      }
+    }
+  }
+}
