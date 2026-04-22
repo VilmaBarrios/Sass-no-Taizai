@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .btn {
   display: inline-flex;
   align-items: center;
@@ -100,7 +99,8 @@
 .btn-block {
   display: flex;
   width: 100%;
-=======
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -184,9 +184,6 @@
     padding: 1rem 1rem;
     flex-wrap: wrap;
   }
-  .navbar-toggler {
-    display: flex;
-  }
   .navbar-nav {
     display: none;
     width: 100%;
@@ -197,10 +194,6 @@
     border-top: 1px solid #343a40;
     margin-top: 1rem;
   }
-  .navbar-nav.is-open {
-    display: flex;
-  }
->>>>>>> 5f86cd999d02ed2bb3c7539ef5f440d9c57ee67c
 }
 
 /*# sourceMappingURL=main.css.map */
