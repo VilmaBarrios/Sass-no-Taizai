@@ -102,10 +102,6 @@
     padding: 1rem 1rem;
     flex-wrap: wrap;
 
-    &-toggler {
-      display: flex;
-    }
-
     &-nav {
       display: none;
       width: 100%;
@@ -115,10 +111,6 @@
       gap: 1.25rem;
       border-top: 1px solid #343a40;
       margin-top: 1rem;
-
-      &.is-open {
-        display: flex;
-      }
     }
   }
 }

@@ -1,40 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <a href="#" class="navbar-brand"> Sins <span> CSS</span></a>
-        <ul class="navbar-nav d-md-flex d-none">
-            <li><a href="#grid"> Britania Grid</a></li>
-            <li><a href="#botones"> Tesoros Sagrados</a></li>
-            <li><a href="#sass"> Arquitectura SASS</a></li>
-        </ul>
-        <div class="navbar-acciones">
-            <span class="badge badge-ira badge.pill"> Version 1.0.0 - Meliodas</span>
-        </div>
+      <a href="#" class="navbar-brand">Sins <span>CSS</span></a>
+
+      <ul class="navbar-nav">
+        <li><a href="#grid">Britania Grid</a></li>
+        <li><a href="#botones">Tesoros Sagrados</a></li>
+        <li><a href="#sass">Arquitectura SASS</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <span class="badge badge-ira">Version 1.0.0</span>
+
+        <button class="navbar-toggler">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
-    <div class="documentos-layout">
-        <aside class="documentos-sidebar d-md-block d-none">
-            <p class="sidebar-group">Inicio</p>
-            <a href="#inicio" class="sidebar-link active">Introduccion</a>
-            <a href="#instalacion" class="sidebar-link">Instalacion</a>
+    <div class="docs-layout">
+      <aside class="documentos-sidebar d-md-block d-none">
+        <p class="sidebar-group">Inicio</p>
+        <a href="#inicio" class="sidebar-link active">Introduccion</a>
+        <a href="#instalacion" class="sidebar-link">Instalacion</a>
 
-            <p class="sidebar-group">Layout</p>
-            <a href="#grid" class="sidebar-link">Sistema de las 12 columnas</a>
+        <p class="sidebar-group">Layout</p>
+        <a href="#grid" class="sidebar-link">Sistema de las 12 columnas</a>
 
-            <p class="sidebar-group">Componentes</p>
-            <a href="#botones" class="sidebar-link">Botones(Variantes)</a>
-            <a href="#cards" class="sidebar-link">Card (Posters)</a>
-            <a href="#alertas" class="sidebar-link">Alerta</a>
+        <p class="sidebar-group">Componentes</p>
+        <a href="#botones" class="sidebar-link">Botones(Variantes)</a>
+        <a href="#cards" class="sidebar-link">Card (Posters)</a>
+        <a href="#alertas" class="sidebar-link">Alerta</a>
 
-            <p class="sidebar-group">Arquitectura</p>
-            <a href="#sass" class="sidebar-link">Lógica @each y @for</a>
-        </aside>
+        <p class="sidebar-group">Arquitectura</p>
+        <a href="#sass" class="sidebar-link">Lógica @each y @for</a>
+      </aside>
+
+      <main class="docs-main">
+        <section class="section mt-5" id="botones">
+          <h2 class="text-ira fs-2 fw-bold">Tesoros Sagrados (Buttons)</h2>
+          <p class="text-muted">
+            Variantes generadas automaticamente por cada pecado capital
+          </p>
+
+          <div class="demo-block">
+            <div class="demo-preview">
+              <button class="btn btn-md btn-ira">Meliodas</button>
+              <button class="btn btn-md btn-envidia">Diane</button>
+              <button class="btn btn-md btn-codicia">Ban</button>
+              <button class="btn btn-md btn-pereza">King</button>
+              <button class="btn btn-md btn-lujuria">Gowther</button>
+              <button class="btn btn-md btn-gula">Merlin</button>
+              <button class="btn btn-md btn-soberbia">Escanor</button>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
-</body>
+  </body>
 </html>
