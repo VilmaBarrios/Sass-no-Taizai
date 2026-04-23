@@ -1,0 +1,93 @@
+@use "../clases_utilitarias/paleta" as p;
+@use "../clases_utilitarias/tipografia" as t;
+
+.card {
+  background: #161618;
+  border: 1px solid #222;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  &-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #222;
+    display: block;
+  }
+
+  &-header {
+    padding: 0.85rem 1.2rem;
+    border-bottom: 1px solid #222;
+    font-family: t.$font-base;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  &-body {
+    padding: 1.2rem;
+    flex-grow: 1;
+    color: #94a3b8;
+    font-size: 0.875rem;
+    line-height: 1.6;
+
+    h5 {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-family: t.$font-base;
+    }
+  }
+
+  &-footer {
+    padding: 1rem 1.2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #222;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  $pecados-map: (
+    "ira": p.$ira-meliodas,
+    "codicia": p.$codicia-ban,
+    "pereza": p.$pereza-king,
+    "envidia": p.$envidia-diane,
+    "soberbia": p.$soberbia-escanor,
+    "gula": p.$gula-merlin,
+    "lujuria": p.$lujuria-gowther,
+  );
+
+  @each $name, $color in $pecados-map {
+    &.card-#{$name} {
+      border-top: 3px solid $color;
+
+      .card-header {
+        background: rgba($color, 0.08);
+        color: $color;
+      }
+
+      &:hover {
+        border-color: $color;
+        box-shadow: 0 0 20px rgba($color, 0.15);
+      }
+    }
+  }
+}
+
+.card-sm {
+  flex: 0 0 180px;
+}
+.card-md {
+  flex: 0 0 260px;
+}
+.card-lg {
+  flex: 0 0 300px;
+}
