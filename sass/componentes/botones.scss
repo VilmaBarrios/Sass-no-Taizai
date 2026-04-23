@@ -1,8 +1,7 @@
 @use '../clases_utilitarias/paleta' as *;
 @use '../clases_utilitarias/tipografia' as *;
 @use '../clases_utilitarias/bordes' as *;
-
-
+@use '../clases_utilitarias/sombras' as *;
 
 .btn {
   display: inline-flex;
@@ -20,8 +19,22 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
+  
+  // 1. Sombra base para todos los botones
+  box-shadow: $shadow-sm;
 
-  // Tamaños
+  // Efecto al pasar el mouse (general)
+  &:hover {
+    transform: translateY(-2px); // Se eleva un poquito
+    box-shadow: $shadow;        // La sombra se vuelve más profunda
+  }
+
+  // Efecto al hacer clic
+  &:active {
+    transform: translateY(0);
+  }
+
+  // Tamaños de los botones
   &-sm { padding: 0.4rem 0.9rem; font-size: 12px; }
   &-md { padding: 0.6rem 1.4rem; font-size: 14px; }
   &-lg { padding: 0.8rem 2rem;   font-size: 16px; }
@@ -32,92 +45,114 @@
     cursor: not-allowed;
     transform: none;
     filter: grayscale(1);
+    box-shadow: none;
   }
-
-  // ===== Variantes usando tus variables =====
 
   &-ira {
     background-color: $ira-meliodas;
     color: $dark-night;
+    &:hover { box-shadow: $shadow-ira; } // Usa la variable de sombra roja
   }
 
   &-codicia {
     background-color: $codicia-ban;
     color: $white;
+    &:hover { box-shadow: 0 0 15px rgba($codicia-ban, 0.4); }
   }
 
   &-pereza {
     background-color: $pereza-king;
     color: $dark-night;
+    &:hover { box-shadow: 0 0 15px rgba($pereza-king, 0.4); }
   }
 
   &-envidia {
     background-color: $envidia-diane;
     color: $dark-night;
+    &:hover { box-shadow: 0 0 15px rgba($envidia-diane, 0.4); }
   }
 
   &-soberbia {
     background-color: $soberbia-escanor;
     color: $dark-night;
+    &:hover { box-shadow: 0 0 15px rgba($soberbia-escanor, 0.4); }
   }
 
   &-gula {
     background-color: $gula-merlin;
     color: $white;
+    &:hover { box-shadow: 0 0 15px rgba($gula-merlin, 0.4); }
   }
 
   &-lujuria {
     background-color: $lujuria-gowther;
     color: $white;
+    &:hover { box-shadow: 0 0 15px rgba($lujuria-gowther, 0.4); }
   }
 
-  // ===== Outline =====
+  //outline
 
-  &-outline-ira {
+  /*&-outline-ira {
     background: transparent;
     border: 2px solid $ira-meliodas;
     color: $ira-meliodas;
-  }
+    &:hover { 
+      background: $ira-meliodas;
+      color: $dark-night;
+      box-shadow: $shadow-ira;
+    }
+  }*/
 
-  &-outline-codicia {
-    background: transparent;
-    border: 2px solid $codicia-ban;
-    color: $codicia-ban;
-  }
-
-  &-outline-pereza {
-    background: transparent;
-    border: 2px solid $pereza-king;
-    color: $pereza-king;
-  }
-
-  &-outline-envidia {
-    background: transparent;
-    border: 2px solid $envidia-diane;
-    color: $envidia-diane;
-  }
-
-  &-outline-soberbia {
-    background: transparent;
-    border: 2px solid $soberbia-escanor;
-    color: $soberbia-escanor;
-  }
-
-  &-outline-gula {
-    background: transparent;
-    border: 2px solid $gula-merlin;
-    color: $gula-merlin;
-  }
-
-  &-outline-lujuria {
-    background: transparent;
-    border: 2px solid $lujuria-gowther;
-    color: $lujuria-gowther;
-  }
-
-  // Full width
   &-block {
     display: flex;
     width: 100%;
+  }
+}
+
+// 1. Escondemos el checkbox real
+.demo-checkbox {
+  display: none;
+}
+
+// 2. Estilo del Label (el falso botón)
+.demo-toggle {
+  display: block;
+  background: #1a1a1c;
+  color: #94a3b8;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-top: 1px solid #222;
+  user-select: none;
+
+  &:hover {
+    color: $ira-meliodas;
+  }
+}
+
+// 3. Escondemos el código por defecto
+.demo-code {
+  display: none; 
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+// 4. LA MAGIA: Cuando el checkbox esté marcado...
+.demo-checkbox:checked {
+  
+  // Mostramos el bloque de código hermano
+  & ~ .demo-code {
+    display: block;
+    max-height: 500px;
+  }
+
+  // Opcional: Cambiamos el texto o la flecha del label hermano
+  & ~ .demo-toggle {
+    color: $ira-meliodas;
+    .icon-play {
+      display: inline-block;
+      transform: rotate(90deg); // La flechita gira hacia abajo
+    }
   }
 }
