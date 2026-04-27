@@ -1,13 +1,24 @@
-$font-base:    'Cinzel', serif; 
-$font-body:    'Quicksand', sans-serif; 
-$font-size-base: 1rem;
-$line-height-base: 1.6;
+// Fuentes
+$font-base: 'Cinzel', serif;      // Títulos (Estilo épico)
+$font-body: 'Quicksand', sans-serif; // Cuerpo y navegación (Legible)
 
-$font-sizes: (
-  1: 2.5rem, 
-  2: 2rem,
-  3: 1.75rem,
-  4: 1.5rem,
-  5: 1.25rem,
-  6: 1rem,
-);
+// Pesos tipográficos
+$fw-light: 300;
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+// Tamaños de fuente manuales
+$fs-1: 2.5rem;
+$fs-2: 2rem;
+$fs-3: 1.75rem;
+$fs-4: 1.5rem;
+$fs-5: 1.25rem;
+$fs-6: 1rem;
+$fs-7: 0.875rem;
+
+// Variable específica para el Sidebar (más grande como pediste)
+$fs-sidebar: 1.15rem;
+
+// Altura de línea
+$lh-base: 1.6;

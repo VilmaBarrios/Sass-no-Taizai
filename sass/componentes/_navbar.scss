@@ -67,6 +67,10 @@
     gap: 1rem;
   }
 
+  .navbar {
+  // ... (Tu código base de la navbar se mantiene igual) ...
+
+  // 1. EL BOTÓN TOGGLER (Debe ser capaz de recibir foco)
   &-toggler {
     display: none;
     flex-direction: column;
@@ -74,29 +78,63 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px; // Aumentamos un poco para facilitar el clic
+    outline: none; // Quitamos el borde azul por defecto del navegador
 
     span {
       display: block;
       width: 25px;
       height: 2px;
       background: $ira-meliodas;
-      border-radius: 2px;
       transition: all 0.3s ease;
+      pointer-events: none; // Evita que el clic sea en el span y no en el botón
     }
 
-    &:hover span {
-      background: #ffffff;
+    @media (max-width: 767px) {
+      display: flex;
+    }
+
+    // 2. LA MAGIA: CUANDO EL BOTÓN TIENE EL FOCO (CLIC)
+    &:focus {
+      span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
     }
   }
 
-  //Responsivo
-  @media (min-width: 768px) {
-    &-toggler {
+  // 3. MOSTRAR EL MENÚ CUANDO EL NAV TENGA UN FOCO DENTRO
+  // Esto detecta si el toggler está siendo enfocado
+  &:focus-within {
+    .navbar-nav {
+      @media (max-width: 767px) {
+        display: flex !important;
+        // Agregamos una pequeña animación de entrada
+        animation: slideIn 0.3s ease forwards;
+      }
+    }
+  }
+
+  &-nav {
+    // ... (Tu estilo base se mantiene) ...
+    @media (max-width: 767px) {
       display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: rgba($dark-night, 0.95);
+      flex-direction: column;
+      padding: 2rem;
+      border-bottom: 2px solid #343a40;
     }
   }
-
+}
   @media (max-width: 767px) {
     height: auto;
     padding: 1rem 1rem;
