@@ -15,7 +15,8 @@
 }
 
 @mixin estilo-texto($tipo) {
-    font-size: t.$font-size-base;
+    font-size: t.$fs-6;
+    line-height: t.$lh-base;
     @if $tipo == "titulo" {
         font-family: t.$font-base;
         text-transform: uppercase;
