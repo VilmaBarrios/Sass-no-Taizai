@@ -1,0 +1,25 @@
+@use '../clases_utilitarias/tipografia' as t;
+@use '../clases_utilitarias/sombras' as s;
+
+@mixin sombras-pecados ($color, $pecado) {
+    border: 1px solid $color;
+    
+    // if para utilizar segun nombre clave
+    @if $pecado == "ira" { box-shadow: s.$shadow-ira; }
+    @else if $pecado == "codicia"  { box-shadow: s.$shadow-codicia; }
+    @else if $pecado == "pereza"   { box-shadow: s.$shadow-pereza;  }
+    @else if $pecado == "envidia"  { box-shadow: s.$shadow-envidia; }
+    @else if $pecado == "soberbia" { box-shadow: s.$shadow-soberbia;}
+    @else if $pecado == "gula"     { box-shadow: s.$shadow-gula;    }
+    @else if $pecado == "lujuria"  { box-shadow: s.$shadow-lujuria; }
+}
+
+@mixin estilo-texto($tipo) {
+    font-size: t.$font-size-base;
+    @if $tipo == "titulo" {
+        font-family: t.$font-base;
+        text-transform: uppercase;
+    } @else {
+        font-family: t.$font-body;
+    }
+}

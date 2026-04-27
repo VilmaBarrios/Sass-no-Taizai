@@ -3,6 +3,8 @@
 @use '../sass/clases_utilitarias/paleta';
 @use '../sass/clases_utilitarias/sombras';
 @use '../sass/clases_utilitarias/tipografia';
+@use '../sass/clases_utilitarias/mixins';
+
 
 @use '../sass/layout/docs';
 @use '../sass/layout/reset';
@@ -12,4 +14,5 @@
 @use '../sass/componentes/cards';
 @use '../sass/componentes/forms';
 @use '../sass/componentes/tables';
+@use '../sass/componentes/alertas.scss';
 @use '../sass/componentes/navbar2';
