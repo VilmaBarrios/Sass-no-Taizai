@@ -18,7 +18,17 @@
   z-index: 3000;
   backdrop-filter: blur(12px);
 
-  // Marca / Logo
+  &:focus-within {
+    .navbar-nav {
+      @media (max-width: 767px) {
+        display: flex !important;
+        opacity: 1;
+        transform: translateY(0);
+        animation: slideIn 0.3s ease forwards;
+      }
+    }
+  }
+
   &-brand {
     font-family: $font-base;
     font-size: 1.6rem;
@@ -38,7 +48,6 @@
     }
   }
 
-  // Lista de enlaces
   &-nav {
     display: flex;
     align-items: center;
@@ -59,6 +68,21 @@
         color: $ira-meliodas;
       }
     }
+
+  
+    @media (max-width: 767px) {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: rgba($dark-night, 0.98);
+      flex-direction: column;
+      padding: 2rem;
+      gap: 1.25rem;
+      border-bottom: 2px solid $ira-meliodas;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
   }
 
   &-actions {
@@ -67,10 +91,6 @@
     gap: 1rem;
   }
 
-  .navbar {
-  // ... (Tu código base de la navbar se mantiene igual) ...
-
-  // 1. EL BOTÓN TOGGLER (Debe ser capaz de recibir foco)
   &-toggler {
     display: none;
     flex-direction: column;
@@ -78,8 +98,8 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px; // Aumentamos un poco para facilitar el clic
-    outline: none; // Quitamos el borde azul por defecto del navegador
+    padding: 10px;
+    outline: none;
 
     span {
       display: block;
@@ -87,68 +107,24 @@
       height: 2px;
       background: $ira-meliodas;
       transition: all 0.3s ease;
-      pointer-events: none; // Evita que el clic sea en el span y no en el botón
+      pointer-events: none;
     }
 
     @media (max-width: 767px) {
       display: flex;
     }
 
-    // 2. LA MAGIA: CUANDO EL BOTÓN TIENE EL FOCO (CLIC)
+    // Animación de las rayitas a X cuando el botón tiene el foco
     &:focus {
-      span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-      }
-      span:nth-child(2) {
-        opacity: 0;
-      }
-      span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-      }
+      span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
+      span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     }
   }
 
-  // 3. MOSTRAR EL MENÚ CUANDO EL NAV TENGA UN FOCO DENTRO
-  // Esto detecta si el toggler está siendo enfocado
-  &:focus-within {
-    .navbar-nav {
-      @media (max-width: 767px) {
-        display: flex !important;
-        // Agregamos una pequeña animación de entrada
-        animation: slideIn 0.3s ease forwards;
-      }
-    }
-  }
-
-  &-nav {
-    // ... (Tu estilo base se mantiene) ...
-    @media (max-width: 767px) {
-      display: none;
-      position: absolute;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      background: rgba($dark-night, 0.95);
-      flex-direction: column;
-      padding: 2rem;
-      border-bottom: 2px solid #343a40;
-    }
-  }
-}
+  // Ajustes generales de responsive
   @media (max-width: 767px) {
     height: auto;
-    padding: 1rem 1rem;
-    flex-wrap: wrap;
-
-    &-nav {
-      display: none;
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
-      padding: 1.5rem 0;
-      gap: 1.25rem;
-      border-top: 1px solid #343a40;
-      margin-top: 1rem;
-    }
+    padding: 1rem 1.5rem;
   }
 }
