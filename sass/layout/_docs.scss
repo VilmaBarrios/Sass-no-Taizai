@@ -17,7 +17,7 @@
   flex-shrink: 0;
   background: #0a0a0b;
   border-right: 1px solid #222;
-  padding: 2rem 1.5rem;
+  padding: 2rem 0;
 
   position: sticky;
 
@@ -158,20 +158,26 @@
 
 .sidebar-group {
   font-family: t.$font-base;
-  font-size: 0.75rem;
+  font-size: t.$fs-6;
+  font-weight: t.$fw-bold;
   color: p.$ira-meliodas;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 1.5rem 0 0.5rem;
+  padding: 0 1.5rem;
 }
 
 .sidebar-link {
   display: block;
+  width: 100%;
   color: #94a3b8;
   text-decoration: none;
-  padding: 0.4rem 0;
-  font-size: 0.9rem;
+  padding: 0.8rem 1.5rem;
+  font-family: t.$font-body;
+  font-size: t.$fs-sidebar;
+  font-weight: t.$fw-medium;
   transition: 0.3s;
+  border-left: 3px solid transparent;
 
   &:hover,
   &.active {
