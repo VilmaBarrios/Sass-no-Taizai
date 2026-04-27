@@ -1,0 +1,114 @@
+@use '../clases_utilitarias/paleta' as p;
+@use '../clases_utilitarias/tipografia' as t;
+
+// --- ESTRUCTURA DE LA DEMO (Solo para formularios) ---
+.demo-preview-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 550px;
+  width: 100%;
+  align-items: stretch;
+  
+  // Si quieres que herede el fondo de la demo general
+  padding: 2.5rem;
+  background-image: radial-gradient(#222 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.form-check-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+// --- COMPONENTES ---
+
+.form-group {
+  margin-bottom: 1.5rem;
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #e2e8f0;
+    font-family: t.$font-base;
+    font-size: 0.9rem;
+  }
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #161618;
+  border: 1px solid #2d2d30;
+  border-radius: 6px;
+  color: #fff;
+  transition: all 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: p.$ira-meliodas;
+    box-shadow: 0 0 0 3px rgba(p.$ira-meliodas, 0.15);
+  }
+
+  &.is-valid { border-color: #10b981 !important; }
+  &.is-invalid { border-color: #ef4444 !important; }
+}
+
+.invalid-feedback {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  display: block;
+}
+
+// Estilos de Radio, Checkbox y Switch
+.form-radio, .form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  color: #94a3b8;
+  
+  input {
+    cursor: pointer;
+  }
+}
+
+.form-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+
+  input {
+    appearance: none;
+    width: 2.4rem;
+    height: 1.2rem;
+    background: #2d2d30;
+    border-radius: 1rem;
+    position: relative;
+    transition: 0.3s;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0.9rem;
+      height: 0.9rem;
+      background: #94a3b8;
+      border-radius: 50%;
+      top: 0.15rem;
+      left: 0.15rem;
+      transition: 0.3s;
+    }
+
+    &:checked {
+      background: rgba(p.$ira-meliodas, 0.4);
+      &::before {
+        left: 1.35rem;
+        background: p.$ira-meliodas;
+      }
+    }
+  }
+}
