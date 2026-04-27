@@ -1,0 +1,47 @@
+@use '../clases_utilitarias/paleta' as p;
+
+// Reset Universal
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; // Vital para que el padding no rompa los anchos
+}
+
+// Configuración de la base
+html {
+  scroll-behavior: smooth; // Desplazamiento suave al hacer clic en el sidebar
+  font-size: 16px; 
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0f0f10; // El color oscuro de tu fondo
+  color: #fff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; // Hace que las letras se vean más finas
+  overflow-x: hidden; // Evita el scroll horizontal molesto
+}
+
+// Reset de elementos comunes
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font: inherit; // Heredan la fuente del body
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

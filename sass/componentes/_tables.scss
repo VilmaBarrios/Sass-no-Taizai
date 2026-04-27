@@ -1,0 +1,50 @@
+@use '../clases_utilitarias/paleta' as p;
+@use '../clases_utilitarias/tipografia' as t;
+
+// Contenedor para permitir scroll horizontal en móvil
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse; // Elimina espacios entre bordes
+  background-color: #161618;
+  color: #e2e8f0;
+  font-family: t.$font-base;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  overflow: hidden; // Para que el hover no se salga de las esquinas redondeadas
+
+  thead {
+    background-color: #1a1a1c;
+    color: p.$ira-meliodas; // Color de cabecera temático
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #2d2d30;
+  }
+
+  th, td {
+    padding: 1rem;
+    border-bottom: 1px solid #2d2d30;
+  }
+
+  // Efecto Hover (El Aura)
+  tbody tr {
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: rgba(p.$ira-meliodas, 0.05); // Un brillo sutil
+      color: #fff;
+    }
+  }
+
+  // Variante con bordes laterales
+  &.table-bordered {
+    th, td {
+      border: 1px solid #2d2d30;
+    }
+  }
+}
