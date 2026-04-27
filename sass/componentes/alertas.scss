@@ -1,0 +1,61 @@
+@use '../clases_utilitarias/paleta' as p;
+@use '../clases_utilitarias/mixins' as m;
+
+.alert {
+    position: relative; // para poner imagen
+    overflow: hidden;   //par img no sobrepase los bordes
+    display: flex;
+    align-items: center;
+    padding: 1rem 4rem 1rem 1.5rem; //se aumenta el padding para la imagen 
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    background-color: rgba(p.$dark-night, 0.95);
+    color: p.$white;
+    @include m.estilo-texto("cuerpo");
+
+    strong {
+        @include m.estilo-texto("titulo");
+        margin-right: 12px;
+    }
+
+    // Estilo para la imagen 
+    &__icon-img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 100%;    // para ajusutarla a la altura de la alerta
+        opacity: 0.3;    // transparencia par aque no tape el texto
+        pointer-events: none; // Para que no importa si alguien intenta hacer click
+        filter: grayscale(0.5); // Para hacer un mejor conttraste con el mood oscuro
+    }
+
+    // Variantes
+    &--ira { 
+        @include m.sombras-pecados(p.$ira-meliodas, "ira"); 
+        strong { color: p.$ira-meliodas; }
+    }
+    &--codicia { 
+        @include m.sombras-pecados(p.$codicia-ban, "codicia"); 
+        strong { color: p.$codicia-ban; }
+    }
+    &--pereza { 
+        @include m.sombras-pecados(p.$pereza-king, "pereza"); 
+        strong { color: p.$pereza-king; }
+    }
+    &--envidia { 
+        @include m.sombras-pecados(p.$envidia-diane, "envidia"); 
+        strong { color: p.$envidia-diane; }
+    }
+    &--soberbia { 
+        @include m.sombras-pecados(p.$soberbia-escanor, "soberbia"); 
+        strong { color: p.$soberbia-escanor; }
+    }
+    &--gula { 
+        @include m.sombras-pecados(p.$gula-merlin, "gula"); 
+        strong { color: p.$gula-merlin; }
+    }
+    &--lujuria { 
+        @include m.sombras-pecados(p.$lujuria-gowther, "lujuria"); 
+        strong { color: p.$lujuria-gowther; }
+    }
+}

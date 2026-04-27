@@ -1,5 +1,14 @@
-@use '../clases_utilitarias/paleta' as *;
-$shadow-sm:  0 2px 10px rgba(0, 0, 0, 0.1);
-$shadow:     0 5px 20px rgba(0, 0, 0, 0.2);
-$shadow-ira: 0 0 15px rgba($ira-meliodas, 0.4); 
+@use '../clases_utilitarias/paleta' as p;
 
+// Sombras Base
+$shadow-sm:  0 2px 10px rgba(0, 0, 0, 0.1);
+$shadow:     0 5px 20px rgba(74, 65, 65, 0.2);
+
+// Sombras de Resplandor (Glow) heredando de paleta
+$shadow-ira:       0 0 15px rgba(p.$ira-meliodas, 0.4);
+$shadow-codicia:   0 0 15px rgba(p.$codicia-ban, 0.4);
+$shadow-pereza:    0 0 15px rgba(p.$pereza-king, 0.4);
+$shadow-envidia:   0 0 15px rgba(p.$envidia-diane, 0.4);
+$shadow-soberbia:  0 0 15px rgba(p.$soberbia-escanor, 0.4);
+$shadow-gula:      0 0 15px rgba(p.$gula-merlin, 0.4);
+$shadow-lujuria:   0 0 15px rgba(p.$lujuria-gowther, 0.4);
