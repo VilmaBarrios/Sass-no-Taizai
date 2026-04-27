@@ -38,6 +38,7 @@
         <a href="#alertas" class="sidebar-link">Alerta</a>
         <a href="#formularios" class="sidebar-link">Formularios</a>
         <a href="#tablas" class=" sidebar-link">Tablas</a>
+        <a href="#navbar"></a>
 
         <p class="sidebar-group">Arquitectura</p>
         <a href="#sass" class="sidebar-link">Lógica @each y @for</a>
@@ -63,15 +64,13 @@
             </div>
 
             <input type="checkbox" id="toggle-botones" class="demo-checkbox" />
-            <label for="toggle-botones" class="demo-toggle">
-              Ver código HTML
-            </label>
+            <label for="toggle-botones" class="demo-toggle"> Ver código HTML </label>
 
             <div class="demo-code">
               <pre>
-              <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-md btn-ira"</span><span class="tag">&gt;</span>Meliodas<span class="tag">&lt;/button&gt;</span>
-              <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-md btn-envidia"</span><span class="tag">&gt;</span>Diane<span class="tag">&lt;/button&gt;</span>
-              <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-md btn-codicia"</span><span class="tag">&gt;</span>Ban<span class="tag">&lt;/button&gt;</span>
+                <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-md btn-ira"</span><span class="tag">&gt;</span>Meliodas<span class="tag">&lt;/button&gt;</span>
+                <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-md btn-envidia"</span><span class="tag">&gt;</span>Diane<span class="tag">&lt;/button&gt;</span>
+                <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-md btn-codicia"</span><span class="tag">&gt;</span>Ban<span class="tag">&lt;/button&gt;</span>
             </pre>
             </div>
           </div>
@@ -117,7 +116,6 @@
               <!-- PEQUEÑA -->
               <div class="card card-envidia card-sm">
                 <div class="card-body text-center">
-                  <div class="icon">☘️</div>
                   <h5>Solo body</h5>
                   <p>Tarjeta minimalista.</p>
                 </div>
@@ -125,147 +123,224 @@
             </div>
             <!-- TOGGLE -->
             <input type="checkbox" id="check-cards" class="demo-checkbox" />
-            <label for="check-cards" class="demo-toggle">
-              Ver código HTML
-            </label>
+            <label for="check-cards" class="demo-toggle"> Ver código HTML </label>
             <div class="demo-code">
               <pre>
-                  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-lujuria"</span><span class="tag">&gt;</span>
-                  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"zorro.jpg"</span> <span class="attr">class</span>=<span class="val">"card-img"</span><span class="tag">&gt;</span>
-                  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-header"</span><span class="tag">&gt;</span>Lust Card<span class="tag">&lt;/div&gt;</span>
-                  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;</span>
-                  <span class="tag">&lt;h5&gt;</span>Título<span class="tag">&lt;/h5&gt;</span>
-                   Contenido...
+                <span class="comment">&lt;!-- Ejemplo 1: card de la codicia (Ban) --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-codicia"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"Zorro.jpg"</span> <span class="attr">class</span>=<span class="val">"card-img"</span> <span class="attr">alt</span>=<span class="val">"zorro"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-header"</span><span class="tag">&gt;</span>Green Card<span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;h5&gt;</span>Ban<span class="tag">&lt;/h5&gt;</span>
+                <span class="tag">&lt;p&gt;</span>Ban es un miembro de los Siete Pecados Capitales y es el pecado de la codicia.<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-footer"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-lujuria"</span><span class="tag">&gt;</span>Acción<span class="tag">&lt;/button&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+
+                <span class="comment">&lt;!-- Ejemplo 2: Wrath CARD de la Ira (Meliodas) --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-ira"</span><span class="tag">&gt;</span>
+                <span class="comment">&lt;!-- Misma estructura, solo cambia la clase 'card-ira' y 'btn-ira' --&gt;</span><span class="tag">&lt;/div&gt;</span>
+
+                <span class="comment">&lt;!-- Ejemplo 3:Card Minimalista Envidia (Diane) --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-codicia"</span><span class="tag">&gt;</span>
+                <span class="comment">&lt;!-- Usa 'card-codicia' para tonos azulados/plateados --&gt;</span>
+                <span class="tag">&lt;/div&gt;</span></pre>
+              </div>
+            </div>
+          </section>
+
+        <!--Formularios-->
+        <section id="formularios" class="section mt-5">
+          <h2 class="text-ira fs-2 fw-bold">Mandamientos del Input (Formularios)</h2>
+          <p class="text-muted"> Estilos centralizados en _forms.scss para mayor orden.</p>
+           <div class="demo-block">
+            <div class="demo-preview-column">
+                <div class="form-group">
+                    <label>Nombre del Caballero</label>
+                    <input type="text" class="form-control" placeholder="Ej: Meliodas" />
+                </div>
+                <div class="form-group"> 
+                    <label>Pecado Capital</label>
+                    <select class="form-control">
+                    <option>Ira</option>
+                    <option>Codicia</option>
+                    <option>Envidia</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Historia del Pecado</label>
+                <textarea class="form-control" placeholder="Escribe la leyenda..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Contraseña (Estado Inválido)</label>
+                <input type="password" class="form-control is-invalid" value="123" />
+                <small class="invalid-feedback">La contraseña es demasiado débil.</small>
+              </div>
+              <div class="form-check-group">
+                <label class="form-check">
+                  <input type="checkbox" checked />
+                  <span>Acepto los términos de Britania</span>
+                   <label class="form-switch">
+                    <input type="checkbox" />
+                    <span>Activar modo Asalto</span>
+                  </label>
+                </div>
+              </div>
+              <input type="checkbox" id="toggle-forms" class="demo-checkbox" />
+              <label for="toggle-forms" class="demo-toggle"> Ver código HTML </label>
+              
+              <div class="demo-code">
+                <pre>
+                  <span class="comment">&lt;!-- Estructura básica de un campo --&gt;</span>
+                  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"form-group"</span><span class="tag">&gt;</span>
+                  <span class="tag">&lt;label&gt;</span>Nombre del Caballero<span class="tag">&lt;/label&gt;</span>
+                  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"text"</span> <span class="attr">class</span>=<span class="val">"form-control"</span> <span class="attr">placeholder</span>=<span class="val">"Ej: Meliodas"</span><span class="tag">&gt;</span>
                   <span class="tag">&lt;/div&gt;</span>
-                  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-footer"</span><span class="tag">&gt;</span>
-                  <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-lujuria"</span><span class="tag">&gt;</span>OK<span class="tag">&lt;/button&gt;</span>
+
+                  <span class="comment">&lt;!-- Campo con validación de error --&gt;</span>
+                  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"form-group"</span><span class="tag">&gt;</span>
+                  <span class="tag">&lt;label&gt;</span>Contraseña<span class="tag">&lt;/label&gt;</span>
+                  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"password"</span> <span class="attr">class</span>=<span class="val">"form-control is-invalid"</span><span class="tag">&gt;</span>
+                  <span class="tag">&lt;small</span> <span class="attr">class</span>=<span class="val">"invalid-feedback"</span><span class="tag">&gt;</span>La contraseña es demasiado debil.<span class="tag">&lt;/small&gt;</span>
                   <span class="tag">&lt;/div&gt;</span>
-                  <span class="tag">&lt;/div&gt;</span>
-            </pre>
+
+                  <span class="comment">&lt;!-- Checkbox Personalizado --&gt;</span>
+                  <span class="tag">&lt;label</span> <span class="attr">class</span>=<span class="val">"form-check"</span><span class="tag">&gt;</span>
+                  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"checkbox"</span> <span class="attr">checked</span><span class="tag">&gt;</span>
+                  <span class="tag">&lt;span&gt;</span>Acepto los terminos de Britania<span class="tag">&lt;/span&gt;</span>
+                  <span class="tag">&lt;/label&gt;</span>
+                </pre>
+              </div>
+            </div>
+          </section>
+          
+          <!--Tablas-->
+          <section id="tablas" class="section mt-5">
+            <h2 class="text-ira fs-2 fw-bold">Registros de Britania (Tablas)</h2>
+            <p class="text-muted"> Estilos para tablas básicas, con bordes y efecto de selección por fila. </p>
+            
+            <div class="demo-block">
+              <div class="demo-preview" style="display: block;"> <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Pecado</th>
+                      <th>Caballero</th>
+                      <th>Tesoro Sagrado</th>
+                    </tr>          
+                  </thead>          
+                  <tbody>            
+                    <tr>             
+                      <td>1</td>             
+                      <td>Ira</td>            
+                      <td>Meliodas</td>            
+                      <td>Lostvayne</td>          
+                    </tr>          
+                    <tr>            
+                      <td>2</td>           
+                      <td>Codicia</td>           
+                      <td>Ban</td>           
+                      <td>Courechouse</td>          
+                    </tr>          
+                    <tr>            
+                      <td>3</td>            
+                      <td>Envidia</td>            
+                      <td>Diane</td>            
+                      <td>Gideon</td>          
+                    </tr>       
+                  </tbody>     
+                </table>   
+              </div>
+            </div>
+
+    
+            <input type="checkbox" id="toggle-tables" class="demo-checkbox" />   
+            <label for="toggle-tables" class="demo-toggle">
+              <span class="icon-play">▶</span> Ver código HTML
+            </label>
+
+            <div class="demo-code">
+              <pre>
+                <span class="comment">&lt;!-- Estructura de Tabla Estándar --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"table-responsive"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;table</span> <span class="attr">class</span>=<span class="val">"table"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;thead&gt;</span>
+                <span class="tag">&lt;tr&gt;</span>
+                <span class="tag">&lt;th&gt;</span>#<span class="tag">&lt;/th&gt;</span>
+                <span class="tag">&lt;th&gt;</span>Pecado<span class="tag">&lt;/th&gt;</span>
+                <span class="tag">&lt;th&gt;</span>Caballero<span class="tag">&lt;/th&gt;</span>
+                <span class="tag">&lt;th&gt;</span>Poder<span class="tag">&lt;/th&gt;</span>
+                <span class="tag">&lt;/tr&gt;</span>
+                <span class="tag">&lt;/thead&gt;</span>
+                <span class="tag">&lt;tbody&gt;</span>
+                <span class="tag">&lt;tr&gt;</span>
+                <span class="tag">&lt;td&gt;</span>1<span class="tag">&lt;/td&gt;</span>
+                <span class="tag">&lt;td&gt;</span>Ira<span class="tag">&lt;/td&gt;</span>
+                <span class="tag">&lt;td&gt;</span>Meliodas<span class="tag">&lt;/td&gt;</span>
+                <span class="tag">&lt;td&gt;</span>Lostvayne<span class="tag">&lt;/td&gt;</span>
+                <span class="tag">&lt;/tr&gt;</span>
+                <span class="tag">&lt;/tbody&gt;</span>
+                <span class="tag">&lt;/table&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+              </pre>
             </div>
           </div>
         </section>
 
-        <!--Formularios-->
-       <section id="formularios" class="section mt-5">
-  <h2 class="text-ira fs-2 fw-bold">Mandamientos del Input (Formularios)</h2>
-  <p class="text-muted">
-    Estilos centralizados en _forms.scss para mayor orden.
-  </p>
+        <!--Navbar-->
+        <section id="navbar-section" class="section mt-5">
+          <h2 class="text-ira fs-2 fw-bold">Estandarte Real (Navbar)</h2>
+          <p class="text-muted">Barra de navegación responsiva con soporte para marca y enlaces.</p>
+          <div class="demo-block">
+            <div class="demo-preview">
+              <nav class="navbar-custom">
+                <a href="#" class="navbar-custom-brand"> Liones UI </a>
+                <ul class="navbar-custom-nav">
+                  <li><a href="#">Inicio</a></li>
+                  <li><a href="#">Personajes</a></li>
+                  <li><a href="#">Misiones</a></li>
+                </ul>
+                <div class="navbar-custom-toggler">   
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </nav>
+            </div>
+            <input type="checkbox" id="toggle-navbar2" class="demo-checkbox" />
+            <label for="toggle-navbar2" class="demo-toggle"> Ver código HTML</label>
+            <div class="demo-code">
+              <pre>
+                <span class="comment">&lt;!-- Barra de Navegación Principal --&gt;</span>
+                <span class="tag">&lt;nav</span> <span class="attr">class</span>=<span class="val">"navbar-custom"</span><span class="tag">&gt;</span>
+                <span class="comment">&lt;!-- Branding / Logo --&gt;</span>
+                <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span> <span class="attr">class</span>=<span class="val">"navbar-custom-brand"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;span&gt;</span><span class="tag">&lt;/span&gt;</span> Liones UI
+                <span class="tag">&lt;/a&gt;</span>
+                <span class="comment">&lt;!-- Menú de Enlaces --&gt;</span>
+                <span class="tag">&lt;ul</span> <span class="attr">class</span>=<span class="val">"navbar-custom-nav"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span><span class="tag">&gt;</span>Inicio<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span><span class="tag">&gt;</span>Personajes<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span><span class="tag">&gt;</span>Misiones<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="tag">&lt;/ul&gt;</span>
 
-  <div class="demo-block">
-    <div class="demo-preview-column">
-      
-      <div class="form-group">
-        <label>Nombre del Caballero</label>
-        <input type="text" class="form-control" placeholder="Ej: Meliodas" />
-      </div>
-      <div class="form-group">
-        <label>Pecado Capital</label>
-        <select class="form-control">
-          <option>Ira</option>
-          <option>Codicia</option>
-          <option>Envidia</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Historia del Pecado</label>
-        <textarea class="form-control" placeholder="Escribe la leyenda..."></textarea>
-      </div>
-
-      <div class="form-group">
-        <label>Contraseña (Estado Inválido)</label>
-        <input type="password" class="form-control is-invalid" value="123" />
-        <small class="invalid-feedback">La contraseña es demasiado débil.</small>
-      </div>
-
-      <div class="form-check-group">
-        <label class="form-check">
-          <input type="checkbox" checked />
-          <span>Acepto los términos de Britania</span>
-        </label>
-
-        <label class="form-switch">
-          <input type="checkbox" />
-          <span>Activar modo Asalto</span>
-        </label>
-      </div>
-
-    </div>
-
-    <input type="checkbox" id="toggle-forms" class="demo-checkbox" />
-    <label for="toggle-forms" class="demo-toggle">
-      <span class="icon-play">▶</span> Ver código HTML
-    </label>
-
-    <div class="demo-code">
-      <pre>
-<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"form-group"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;input</span> <span class="attr">class</span>=<span class="val">"form-control is-invalid"</span><span class="tag">&gt;</span></pre>
-    </div>
-  </div>
-</section>
-
-<!--Tablas-->
-<section id="tablas" class="section mt-5">
-  <h2 class="text-ira fs-2 fw-bold">Registros de Britania (Tablas)</h2>
-  <p class="text-muted">
-    Estilos para tablas básicas, con bordes y efecto de selección por fila.
-  </p>
-
-  <div class="demo-block">
-    <div class="demo-preview" style="display: block;"> <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Pecado</th>
-              <th>Caballero</th>
-              <th>Tesoro Sagrado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Ira</td>
-              <td>Meliodas</td>
-              <td>Lostvayne</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Codicia</td>
-              <td>Ban</td>
-              <td>Courechouse</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Envidia</td>
-              <td>Diane</td>
-              <td>Gideon</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-
-    <input type="checkbox" id="toggle-tables" class="demo-checkbox" />
-    <label for="toggle-tables" class="demo-toggle">
-      <span class="icon-play">▶</span> Ver código HTML
-    </label>
-
-    <div class="demo-code">
-      <pre>
-<span class="tag">&lt;table</span> <span class="attr">class</span>=<span class="val">"table"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;thead&gt;</span>...<span class="tag">&lt;/thead&gt;</span>
-  <span class="tag">&lt;tbody&gt;</span>
-    <span class="tag">&lt;tr&gt;</span>
-      <span class="tag">&lt;td&gt;</span>Datos...<span class="tag">&lt;/td&gt;</span>
-    <span class="tag">&lt;/tr&gt;</span>
-  <span class="tag">&lt;/tbody&gt;</span>
-<span class="tag">&lt;/table&gt;</span></pre>
-    </div>
+                <span class="comment">&lt;!-- Toggler para Móvil (Hamburguesa) --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"navbar-custom-toggler"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;span&gt;&lt;/span&gt;</span>
+                <span class="tag">&lt;span&gt;&lt;/span&gt;</span>
+                <span class="tag">&lt;span&gt;&lt;/span&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;/nav&gt;</span>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
 </section>
 
@@ -333,4 +408,5 @@
       </main>
     </div>
   </body>
+</body>
 </html>
