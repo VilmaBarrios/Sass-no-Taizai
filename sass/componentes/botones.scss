@@ -1,7 +1,19 @@
+@use 'sass:color';
 @use '../clases_utilitarias/paleta' as *;
 @use '../clases_utilitarias/tipografia' as *;
 @use '../clases_utilitarias/bordes' as *;
 @use '../clases_utilitarias/sombras' as *;
+
+// Mapa de Pecados para automatizar la creación
+$pecados-map: (
+  "ira": $ira-meliodas,
+  "envidia": $envidia-diane,
+  "codicia": $codicia-ban,
+  "pereza": $pereza-king,
+  "lujuria": $lujuria-gowther,
+  "gula": $gula-merlin,
+  "soberbia": $soberbia-escanor
+);
 
 .btn {
   display: inline-flex;
@@ -18,28 +30,29 @@
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: none;
-  
-  // 1. Sombra base para todos los botones
+  border: 2px solid transparent; // Cambiado a 2px para que el outline no salte
   box-shadow: $shadow-sm;
 
-  // Efecto al pasar el mouse (general)
   &:hover {
-    transform: translateY(-2px); // Se eleva un poquito
-    box-shadow: $shadow;        // La sombra se vuelve más profunda
+    transform: translateY(-2px);
+    box-shadow: $shadow;
   }
 
-  // Efecto al hacer clic
   &:active {
     transform: translateY(0);
   }
 
-  // Tamaños de los botones
+  // Tamaños
   &-sm { padding: 0.4rem 0.9rem; font-size: 12px; }
   &-md { padding: 0.6rem 1.4rem; font-size: 14px; }
   &-lg { padding: 0.8rem 2rem;   font-size: 16px; }
+  &-xl { padding: 1.2rem 2.5rem; font-size: 20px; } // Tamaño épico añadido
 
-  // Disabled
+  &-block {
+    display: flex;
+    width: 100%;
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -48,73 +61,52 @@
     box-shadow: none;
   }
 
-  &-ira {
-    background-color: $ira-meliodas;
-    color: $dark-night;
-    &:hover { box-shadow: $shadow-ira; } // Usa la variable de sombra roja
-  }
-
-  &-codicia {
-    background-color: $codicia-ban;
-    color: $white;
-    &:hover { box-shadow: 0 0 15px rgba($codicia-ban, 0.4); }
-  }
-
-  &-pereza {
-    background-color: $pereza-king;
-    color: $dark-night;
-    &:hover { box-shadow: 0 0 15px rgba($pereza-king, 0.4); }
-  }
-
-  &-envidia {
-    background-color: $envidia-diane;
-    color: $dark-night;
-    &:hover { box-shadow: 0 0 15px rgba($envidia-diane, 0.4); }
-  }
-
-  &-soberbia {
-    background-color: $soberbia-escanor;
-    color: $dark-night;
-    &:hover { box-shadow: 0 0 15px rgba($soberbia-escanor, 0.4); }
-  }
-
-  &-gula {
-    background-color: $gula-merlin;
-    color: $white;
-    &:hover { box-shadow: 0 0 15px rgba($gula-merlin, 0.4); }
-  }
-
-  &-lujuria {
-    background-color: $lujuria-gowther;
-    color: $white;
-    &:hover { box-shadow: 0 0 15px rgba($lujuria-gowther, 0.4); }
-  }
-
-  //outline
-
-  /*&-outline-ira {
-    background: transparent;
-    border: 2px solid $ira-meliodas;
-    color: $ira-meliodas;
-    &:hover { 
-      background: $ira-meliodas;
-      color: $dark-night;
-      box-shadow: $shadow-ira;
+  // GENERADOR AUTOMÁTICO DE PECADOS (SOLID & OUTLINE)
+  // GENERADOR AUTOMÁTICO DE PECADOS (SOLID & OUTLINE)
+  @each $nombre, $color in $pecados-map {
+    
+    // Determinamos el color del texto antes para evitar el error del if()
+    $text-color: $dark-night;
+    @if $nombre == "gula" or $nombre == "lujuria" or $nombre == "codicia" {
+      $text-color: $white;
     }
-  }*/
 
-  &-block {
-    display: flex;
-    width: 100%;
+    // Botones Sólidos
+    &-#{$nombre} {
+      background-color: $color;
+      color: $text-color;
+      
+      &:hover {
+        background-color: color.adjust($color, $lightness: -5%);
+        box-shadow: 0 0 15px rgba($color, 0.5);
+        
+        @if $nombre == "ira" { box-shadow: $shadow-ira; }
+      }
+    }
+
+    // Botones Outline
+    &-outline-#{$nombre} {
+      background: transparent;
+      border-color: $color;
+      color: $color;
+
+      &:hover {
+        background: $color;
+        color: $text-color;
+        box-shadow: 0 0 15px rgba($color, 0.4);
+      }
+    }
   }
 }
 
-// 1. Escondemos el checkbox real
+/* ==========================================================================
+   LÓGICA DE LA DOCUMENTACIÓN (DEMO BLOCKS)
+   ========================================================================== */
+
 .demo-checkbox {
-  display: none;
+  display: none !important;
 }
 
-// 2. Estilo del Label (el falso botón)
 .demo-toggle {
   display: block;
   background: #1a1a1c;
@@ -124,35 +116,40 @@
   cursor: pointer;
   border-top: 1px solid #222;
   user-select: none;
+  transition: 0.3s;
 
   &:hover {
     color: $ira-meliodas;
+    background: #1e1e20;
   }
 }
 
-// 3. Escondemos el código por defecto
 .demo-code {
   display: none; 
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.5s ease;
+  background: #000;
+  padding: 1.5rem;
+  border-top: 1px solid #222;
+  font-family: "Fira Code", monospace;
+  font-size: 0.85rem;
+  color: #d1d5db;
+  overflow-x: auto;
 }
 
-
+// Mostrar código cuando el checkbox esté activo
 .demo-checkbox:checked {
-  
-  // Mostramos el bloque de código hermano
   & ~ .demo-code {
     display: block;
-    max-height: 500px;
+    // Animación de entrada opcional
+    animation: fadeIn 0.3s ease;
   }
 
-  // Cambiamos el texto o la flecha del label hermano
   & ~ .demo-toggle {
     color: $ira-meliodas;
-    .icon-play {
-      display: inline-block;
-      transform: rotate(90deg); // La flechita gira hacia abajo
-    }
+    background: #1e1e20;
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

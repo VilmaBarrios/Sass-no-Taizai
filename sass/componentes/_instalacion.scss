@@ -1,0 +1,121 @@
+
+@use '../clases_utilitarias/paleta' as p;
+.section-instalacion {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+
+    .ritual-container {
+        background: linear-gradient(180deg, rgba(15, 15, 15, 0.9) 0%, rgba(5, 5, 5, 0.95) 100%);
+        border: 2px solid rgba(p.$ira-meliodas, 0.3);
+        border-radius: 30px;
+        padding: 50px;
+        max-width: 900px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(p.$ira-meliodas, 0.1);
+        position: relative;
+        overflow: hidden;
+
+        // Efecto de luz roja en la esquina
+        &::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(p.$ira-meliodas, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+    }
+
+    .ritual-header {
+        text-align: center;
+        margin-bottom: 50px;
+
+        .title-epic {
+            font-family: 'Cinzel', serif !important;
+            font-size: 3.5rem !important;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(p.$ira-meliodas, 0.5);
+
+            span { color: p.$ira-meliodas; }
+        }
+
+        .divider-ira {
+            height: 3px;
+            width: 100px;
+            background: p.$ira-meliodas;
+            margin: 20px auto;
+            border-radius: 2px;
+            box-shadow: 0 0 10px p.$ira-meliodas;
+        }
+    }
+
+    .steps-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .ritual-step-card {
+        position: relative;
+        padding-top: 15px;
+
+        .ritual-badge {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            background: p.$ira-meliodas;
+            color: white;
+            padding: 5px 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            z-index: 2;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+        }
+
+        .ritual-card-inner {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s;
+
+            h3 {
+                font-family: 'Cinzel', serif;
+                color: #fff;
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-family: 'Dancing Script', cursive !important;
+                font-size: 1.5rem !important;
+                color: #aaa !important;
+                margin-bottom: 15px;
+            }
+        }
+
+        &:hover .ritual-card-inner {
+            background: rgba(p.$ira-meliodas, 0.05);
+            border-color: rgba(p.$ira-meliodas, 0.4);
+            transform: translateY(-5px);
+        }
+    }
+
+    .ritual-terminal {
+        background: #000;
+        padding: 15px 20px;
+        border-radius: 10px;
+        border: 1px solid #222;
+        overflow-x: auto;
+
+        code {
+            font-family: 'Courier New', monospace;
+            color: #00ffaa; // Color neón mágico
+            font-size: 1.1rem;
+        }
+    }
+}

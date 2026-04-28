@@ -1,10 +1,55 @@
+@use "sass:color";
 @use "../clases_utilitarias/paleta" as p;
 @use "../clases_utilitarias/tipografia" as t;
 @use "../clases_utilitarias/mixins" as m;
 
+/* ==========================================================================
+   CONFIGURACIÓN DEL SIDEBAR MÓVIL (Checkbox Hack)
+   ========================================================================== */
+
+.sidebar-checkbox {
+  display: none !important;
+}
+
+.sidebar-mobile-toggle {
+  display: none; // Oculto en PC
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 18px;
+    position: absolute; // Para que no empuje el contenido
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: p.$ira-meliodas;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+/* ==========================================================================
+   LAYOUT Y SIDEBAR
+   ========================================================================== */
+
 .docs-layout {
   @include m.docs-container-layout;
   background: #0f0f10;
+  position: relative;
+  display: flex; // PC
+  min-height: calc(100vh - 70px);
+
+  @media (max-width: 767px) {
+    display: block; // En móvil block para que main ocupe el espacio del sidebar
+  }
 }
 
 .docs-sidebar {
@@ -12,24 +57,70 @@
   background: #0a0a0b;
   border-bottom: 1px solid #222;
   padding: 1.5rem 0;
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+
+  @media (max-width: 767px) {
+    position: absolute; // FIX: No deja espacio vacío arriba
+    top: 0;
+    left: 0;
+    height: 100%;
+    min-height: 100vh;
+    width: 280px;
+    z-index: 50;
+    transform: translateX(-100%); // Escondido
+    border-right: 1px solid p.$ira-meliodas;
+    border-bottom: none;
+  }
 
   @media (min-width: 768px) {
     border-bottom: none;
     border-right: 1px solid #222;
+    transform: translateX(0) !important;
   }
 }
 
+/* Lógica de apertura del Sidebar */
+.sidebar-checkbox:checked {
+  & ~ .docs-sidebar {
+    transform: translateX(0);
+  }
+
+  & ~ .sidebar-mobile-toggle {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+/* ==========================================================================
+   CONTENIDO PRINCIPAL (MAIN)
+   ========================================================================== */
+
 .docs-main {
-  flex: 1;           // Esto obliga al contenido a ocupar el resto del espacio
-  width: 100%;       // En móvil asegura que use todo el ancho
+  flex: 1;
+  width: 100%;
   padding: 2rem;
   background: #0f0f10;
-  color: p.$ira-meliodas;       
+  color: p.$ira-meliodas;
 
   @media (min-width: 768px) {
     padding: 3rem;
   }
+
+  @media (max-width: 767px) {
+    padding-top: 60px; // Espacio para el botón del sidebar
+  }
 }
+
+/* ==========================================================================
+   TUS COMPONENTES (Hero, Demo-blocks, etc.) - SIN TOCAR
+   ========================================================================== */
 
 .demo-block {
   background: #161618;
@@ -71,7 +162,6 @@
   border-top: 1px solid #222;
   user-select: none;
   transition: 0.3s;
-
   &:hover {
     color: p.$ira-meliodas;
     background: #1e1e20;
@@ -88,11 +178,11 @@
   color: #d1d5db;
   overflow-x: auto;
 }
+
 .demo-checkbox:checked {
   & ~ .demo-code {
     display: block;
   }
-
   & ~ .demo-toggle {
     color: p.$ira-meliodas;
     .icon-play {
@@ -105,17 +195,14 @@
   text-align: center;
   padding: 4rem 0;
   border-bottom: 1px solid #222;
-
   h1 {
     font-family: t.$font-base;
     font-size: 4rem;
     color: p.$ira-meliodas;
     margin-bottom: 1rem;
-
     @media (max-width: 768px) {
       font-size: 2.5rem;
     }
-
     span {
       color: #fff;
     }
@@ -144,13 +231,13 @@
   font-weight: t.$fw-medium;
   transition: 0.3s;
   border-left: 3px solid transparent;
-
   &:hover,
   &.active {
     color: p.$ira-meliodas;
     padding-left: 5px;
   }
 }
+
 pre {
   margin: 0;
 }
@@ -163,12 +250,12 @@ pre {
 .val {
   color: #f1fa8c;
 }
+
 .hero-image-container {
   margin: 3rem auto;
   max-width: 850px;
   position: relative;
   z-index: 1;
-
   &::before {
     content: "";
     position: absolute;
@@ -187,12 +274,12 @@ pre {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  border: p.$ira-meliodas;
+  border: 1px solid p.$ira-meliodas;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   display: block;
 }
+
 .hero-description {
-  
   font-family: "Dancing Script", cursive !important;
   color: p.$ira-meliodas !important;
   font-size: 1rem !important;
@@ -200,7 +287,6 @@ pre {
   text-align: center;
   max-width: 750px;
   margin: 1.5rem auto 2.5rem auto;
-
   @media (max-width: 768px) {
     font-size: 1.4rem !important;
   }
