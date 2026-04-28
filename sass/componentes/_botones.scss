@@ -1,8 +1,11 @@
+@use 'sass:map';
 @use 'sass:color';
 @use '../clases_utilitarias/paleta' as *;
 @use '../clases_utilitarias/tipografia' as *;
 @use '../clases_utilitarias/bordes' as *;
 @use '../clases_utilitarias/sombras' as *;
+@use '../clases_utilitarias/redondeo' as *; 
+@use '../clases_utilitarias/movimientos' as *; 
 
 // Mapa de Pecados para automatizar la creación
 $pecados-map: (
@@ -16,13 +19,12 @@ $pecados-map: (
 );
 
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  @extend .move-center; // Hereda display: flex, justify e items center de movimientos
+  display: inline-flex; // Sobrescribe para que no sea block por defecto
   gap: 0.5rem;
-  font-family: $font-base;
+  font-family: $font-titulo-epico;
   font-weight: 700;
-  border-radius: $border-radius;
+  @extend .rde-s; // Hereda el border-radius de redondeo
   cursor: pointer;
   transition: 0.3s ease;
   text-decoration: none;
@@ -31,11 +33,11 @@ $pecados-map: (
   text-transform: uppercase;
   letter-spacing: 1px;
   border: 2px solid transparent; // Cambiado a 2px para que el outline no salte
-  box-shadow: $shadow-sm;
+  @extend .shadow-ira-sm;//hreda sombra
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: $shadow;
+    @extend .move-up; // Hereda movimientos
+    @extend .shadow-codicia-sm ;
   }
 
   &:active {
@@ -62,7 +64,6 @@ $pecados-map: (
   }
 
   // GENERADOR AUTOMÁTICO DE PECADOS (SOLID & OUTLINE)
-  // GENERADOR AUTOMÁTICO DE PECADOS (SOLID & OUTLINE)
   @each $nombre, $color in $pecados-map {
     
     // Determinamos el color del texto antes para evitar el error del if()
@@ -75,12 +76,19 @@ $pecados-map: (
     &-#{$nombre} {
       background-color: $color;
       color: $text-color;
+      font-family: map.get($sin-fonts, $nombre); // Hereda la fuente específica del pecado
       
       &:hover {
         background-color: color.adjust($color, $lightness: -5%);
-        box-shadow: 0 0 15px rgba($color, 0.5);
         
-        @if $nombre == "ira" { box-shadow: $shadow-ira; }
+        // Aplicamos herencia de las sombras en base al tema  del anime
+        @if $nombre == "ira" { @extend .shadow-ira-sm; }
+        @else if $nombre == "codicia" { @extend .shadow-codicia-sm; }
+        @else if $nombre == "pereza" { @extend .shadow-pereza-sm; }
+        @else if $nombre == "envidia" { @extend .shadow-envidia-sm; }
+        @else if $nombre == "soberbia" { @extend .shadow-soberbia-sm; }
+        @else if $nombre == "gula" { @extend .shadow-gula-sm; }
+        @else if $nombre == "lujuria" { @extend .shadow-lujuria-sm; }
       }
     }
 
@@ -89,6 +97,7 @@ $pecados-map: (
       background: transparent;
       border-color: $color;
       color: $color;
+      font-family: map.get($sin-fonts, $nombre); // Hereda la fuente específica del pecado
 
       &:hover {
         background: $color;

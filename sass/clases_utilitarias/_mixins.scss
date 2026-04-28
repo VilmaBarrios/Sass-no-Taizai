@@ -1,10 +1,19 @@
-@use '../clases_utilitarias/tipografia' as t;
-@use '../clases_utilitarias/sombras' as s;
+@use 'sass:map'; //map.get 
+@use './tipografia' as t;
+@use './sombras' as s;
+@use './breackpoints' as b;
 
+// 1. Mixins para los responsivos (Corregidos con la sintaxis moderna)
+@mixin responsive-sm  { @media (min-width: map.get(b.$breakpoints, "sm"))  { @content; }  }
+@mixin responsive-md  { @media (min-width: map.get(b.$breakpoints, "md"))  { @content; }  }
+@mixin responsive-lg  { @media (min-width: map.get(b.$breakpoints, "lg"))  { @content; }  }
+@mixin responsive-xl  { @media (min-width: map.get(b.$breakpoints, "xl"))  { @content; }  }
+@mixin responsive-xxl { @media (min-width: map.get(b.$breakpoints, "xxl")) { @content; }  }
+
+// 2. Mixin para sombras segun pecados
 @mixin sombras-pecados ($color, $pecado) {
     border: 1px solid $color;
     
-    // if para utilizar segun nombre clave
     @if $pecado == "ira" { box-shadow: s.$shadow-ira; }
     @else if $pecado == "codicia"  { box-shadow: s.$shadow-codicia; }
     @else if $pecado == "pereza"   { box-shadow: s.$shadow-pereza;  }
@@ -14,6 +23,7 @@
     @else if $pecado == "lujuria"  { box-shadow: s.$shadow-lujuria; }
 }
 
+// 3. Estilo de texto
 @mixin estilo-texto($tipo) {
     font-size: t.$fs-6;
     line-height: t.$lh-base;
@@ -24,30 +34,29 @@
         font-family: t.$font-body;
     }
 }
-// Mixin para el contenedor padre
+
+// 4. Mixin para el contenedor padre 
 @mixin docs-container-layout {
   display: flex;
-  flex-direction: column; // Móvil: Sidebar arriba, Contenido abajo
+  flex-direction: column;   // Cell: Sidebar arriba
   min-height: 100vh;
 
-  @media (min-width: 768px) {
-    flex-direction: row; // Escritorio: Sidebar izquierda, Contenido derecha
+  @include responsive-md { 
+    flex-direction: row;    // Escritorio: Sidebar izquierda
     align-items: flex-start;
   }
 }
 
-// Mixin para que el sidebar sea fijo pero respete el espacio
+// 5. Mixin para el sidebar 
 @mixin sidebar-responsive-behavior($header-height: 70px) {
   width: 100%;
   position: sticky;
   top: 0; 
   z-index: 1000;
-  
-  // En móvil, limitamos su altura para que no ocupe toda la pantalla
-  max-height: 40vh; 
+  max-height: 40vh; // // En móvil, limitamos su altura para que no ocupe toda la pantalla
   overflow-y: auto;
 
-  @media (min-width: 768px) {
+  @include responsive-md { 
     width: 260px;
     height: calc(100vh - #{$header-height});
     top: $header-height;
