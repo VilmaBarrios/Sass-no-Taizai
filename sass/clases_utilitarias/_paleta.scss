@@ -1,20 +1,48 @@
-//Paleta de Colores de los Siete Pecados
-// Cada color representa la esencia y el tesoro sagrado de cada pecado
-$ira-meliodas:    #E6CC00; // Amarillo intenso (Lostvayne)
-$codicia-ban:     #C62828; // Rojo carmesí (Sanshuu)
-$pereza-king:     #4FC3F7; // Azul Chastiefol
-$envidia-diane:   #81C784; // Verde Gideon
-$soberbia-escanor: #FF8F00; // Oro Rhitta (El brillo del sol)
-$gula-merlin:     #9575CD; // Violeta Aldan
-$lujuria-gowther: #F06292; // Rosa Herritt
+//colores bases
+$ira-meliodas:     #E6CC00; 
+$codicia-ban:      #C62828; 
+$pereza-king:      #4FC3F7; 
+$envidia-diane:    #81C784; 
+$soberbia-escanor: #FF8F00; 
+$gula-merlin:      #9575CD; 
+$lujuria-gowther:  #F06292; 
 
-// Colores de Interfaz 
+
+//colores solidos
 $white:      #FFFFFF;
 $dark-night: #1A1A1A;
-$gray-100:   #F8F9FA;
+$gray-100:   #e0e8ef;
 $gray-400:   #ADB5BD;
 $gray-800:   #343A40;
 
+//colores segun los pecados
+// Ira
+$ira-claro:    #FFF9C4;
+$ira-oscuro:    #9E8C00;
+
+// Codicia
+$codicia-claro: #EF9A9A;
+$codicia-oscuro: #8E0000;
+
+// Pereza
+$pereza-claro: #B3E5FC;
+$pereza-oscuro: #0288D1;
+
+// Envidia
+$envidia-claro: #C8E6C9;
+$envidia-oscuro: #388E3C;
+
+// Soberbia
+$soberbia-claro: #FFE0B2;
+$soberbia-oscuro: #E65100;
+
+// Gula
+$gula-claro: #D1C4E9;
+$gula-oscuro: #512DA8;
+
+// Lujuria
+$lujuria-claro: #F8BBD0;
+$lujuria-oscuro: #C2185B;
 
 $colors: (
   "ira":      $ira-meliodas,
@@ -27,3 +55,23 @@ $colors: (
   "dark":     $dark-night,
   "light":    $gray-100
 );
+
+//each para generar colores segun utilidades y important para no dificuktar el html
+
+@each $pecado, $color in $colors {
+  
+  // Color de texto
+  .text-#{$pecado} {
+    color: $color !important;
+  }
+
+  // Color de fondo
+  .bg-#{$pecado} {
+    background-color: $color !important;
+  }
+
+  // Bordes
+  .border-#{$pecado} {
+    border: 2px solid $color !important;
+  }
+}

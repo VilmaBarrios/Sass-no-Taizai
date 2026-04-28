@@ -1,0 +1,68 @@
+@use '../clases_utilitarias/paleta' as p;
+@use '../clases_utilitarias/mixins' as m;
+@use '../clases_utilitarias/tipografia' as t;
+@use '../clases_utilitarias/bordes' as b; 
+@use '../clases_utilitarias/padding_margenes';
+
+.alert {
+    position: relative; // para poner imagen
+    overflow: hidden;   //par img no sobrepase los bordes
+    display: flex;
+    align-items: center;
+   //heredado de padding
+    @extend .pl-6;      // Hereda padding-left: 24px producto del for
+    @extend .py-4;      // Hereda padding arriba y abajo: 16px
+    @extend .pr-8;      // Espacio extra a la derecha para la imagen
+    
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    background-color: rgba(p.$dark-night, 0.95);
+    color: p.$white;
+    @include m.estilo-texto("cuerpo");
+
+    strong {
+        @include m.estilo-texto("titulo");
+        margin-right: 12px;
+    }
+
+    // Estilo para la imagen 
+    &__icon-img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 100%;    // para ajusutarla a la altura de la alerta
+        opacity: 0.3;    // transparencia par aque no tape el texto
+        pointer-events: none; // Para que no importa si alguien intenta hacer click
+        filter: grayscale(0.5); // Para hacer un mejor conttraste con el mood oscuro
+    }
+
+    // Variantes
+    &--ira { 
+        @extend .borde-ira; 
+        strong { color: p.$ira-meliodas; }
+    }
+    &--codicia { 
+        @extend .borde-codicia; 
+        strong { color: p.$codicia-ban; }
+    }
+    &--pereza { 
+        @extend .borde-pereza; 
+        strong { color: p.$pereza-king; }
+    }
+    &--envidia { 
+        @extend .borde-envidia; 
+        strong { color: p.$envidia-diane; }
+    }
+    &--soberbia { 
+        @extend .borde-soberbia; 
+        strong { color: p.$soberbia-escanor; }
+    }
+    &--gula { 
+        @extend .borde-gula; 
+        strong { color: p.$gula-merlin; }
+    }
+    &--lujuria { 
+        @extend .borde-lujuria; 
+        strong { color: p.$lujuria-gowther; }
+    }
+}
