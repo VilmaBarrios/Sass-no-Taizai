@@ -3,7 +3,7 @@
 @use './sombras' as s;
 @use './breackpoints' as b;
 
-// 1. Mixins para los responsivos (Corregidos con la sintaxis moderna)
+// 1. Mixins para los responsivos
 @mixin responsive-sm  { @media (min-width: map.get(b.$breakpoints, "sm"))  { @content; }  }
 @mixin responsive-md  { @media (min-width: map.get(b.$breakpoints, "md"))  { @content; }  }
 @mixin responsive-lg  { @media (min-width: map.get(b.$breakpoints, "lg"))  { @content; }  }
