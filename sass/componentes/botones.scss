@@ -138,7 +138,7 @@
   transition: all 0.5s ease;
 }
 
-// 4. LA MAGIA: Cuando el checkbox esté marcado...
+
 .demo-checkbox:checked {
   
   // Mostramos el bloque de código hermano
@@ -147,7 +147,7 @@
     max-height: 500px;
   }
 
-  // Opcional: Cambiamos el texto o la flecha del label hermano
+  // Cambiamos el texto o la flecha del label hermano
   & ~ .demo-toggle {
     color: $ira-meliodas;
     .icon-play {

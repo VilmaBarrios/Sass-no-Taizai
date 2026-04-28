@@ -24,3 +24,34 @@
         font-family: t.$font-body;
     }
 }
+// Mixin para el contenedor padre
+@mixin docs-container-layout {
+  display: flex;
+  flex-direction: column; // Móvil: Sidebar arriba, Contenido abajo
+  min-height: 100vh;
+
+  @media (min-width: 768px) {
+    flex-direction: row; // Escritorio: Sidebar izquierda, Contenido derecha
+    align-items: flex-start;
+  }
+}
+
+// Mixin para que el sidebar sea fijo pero respete el espacio
+@mixin sidebar-responsive-behavior($header-height: 70px) {
+  width: 100%;
+  position: sticky;
+  top: 0; 
+  z-index: 1000;
+  
+  // En móvil, limitamos su altura para que no ocupe toda la pantalla
+  max-height: 40vh; 
+  overflow-y: auto;
+
+  @media (min-width: 768px) {
+    width: 260px;
+    height: calc(100vh - #{$header-height});
+    top: $header-height;
+    max-height: none;
+    flex-shrink: 0;
+  }
+}
