@@ -31,20 +31,55 @@
   }
 
   tbody tr {
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
     
     &:nth-child(even) {
-        background-color: rgba(255, 255, 255, 0.03); 
-      }
+      background-color: rgba(255, 255, 255, 0.03); 
+    }
 
-      &:hover {
-        background-color: rgba(p.$codicia-ban, 0.08);
-      }
+    // Hover general (por defecto color Ban)
     &:hover {
-      background-color: rgba(p.$codicia-ban, 0.05); 
+      background-color: rgba(p.$codicia-ban, 0.08);
       color: #fff;
     }
+
+    // VARIANTES MANUALES
+    &.table-ira {
+      color: p.$ira-meliodas;
+      &:hover { background-color: rgba(p.$ira-meliodas, 0.1); color: #fff; }
+    }
+
+    &.table-envidia {
+      color: p.$envidia-diane;
+      &:hover { background-color: rgba(p.$envidia-diane, 0.1); color: #fff; }
+    }
+
+    &.table-codicia {
+      color: p.$codicia-ban;
+      &:hover { background-color: rgba(p.$codicia-ban, 0.1); color: #fff; }
+    }
+
+    &.table-pereza {
+      color: p.$pereza-king;
+      &:hover { background-color: rgba(p.$pereza-king, 0.1); color: #fff; }
+    }
+
+    &.table-lujuria {
+      color: p.$lujuria-gowther;
+      &:hover { background-color: rgba(p.$lujuria-gowther, 0.1); color: #fff; }
+    }
+
+    &.table-gula {
+      color: p.$gula-merlin;
+      &:hover { background-color: rgba(p.$gula-merlin, 0.1); color: #fff; }
+    }
+
+    &.table-soberbia {
+      color: p.$soberbia-escanor;
+      &:hover { background-color: rgba(p.$soberbia-escanor, 0.1); color: #fff; }
+    }
   }
+
   &.table-bordered {
     th, td {
       border: 1px solid #2d2d30;

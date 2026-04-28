@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+ <nav class="navbar">
+  <a href="#" class="navbar-brand">Sass No Taizai</a>
+  <input type="checkbox" id="menu-toggler" class="navbar-check">
+  <ul class="navbar-nav">
+     <li><a href="index.html">Inicio</a></li>
+    <li><a href="#grid">Britania Grid</a></li>
+    <li><a href="botones.html">Tesoros Sagrados</a></li>
+    <li><a href="#sass">Arquitectura SASS</a></li>
+    </ul>
+  <div class="navbar-actions">
+    <label for="menu-toggler" class="navbar-toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+</nav>
+   <div class="docs-layout">
+      <div class="docs-layout">
+        <input type="checkbox" id="sidebar-master" class="sidebar-checkbox">
+        <label for="sidebar-master" class="sidebar-mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <aside class="docs-sidebar">
+            <p class="sidebar-group">Inicio</p>
+            <a href="introduccion.html" class="sidebar-link">Introducción</a>
+            <a href="instalacion.html" class="sidebar-link active">Instalación</a>
+
+            <p class="sidebar-group">Layout</p>
+            <a href="../index.html#grid" class="sidebar-link">Sistema de las 12 columnas</a>
+
+            <p class="sidebar-group">Componentes</p>
+            <a href="cards.html" class="sidebar-link">Card (Posters)</a>
+            <a href="botones.html" class="sidebar-link">Botones (Variantes)</a>
+            <a href="tablas.html" class="sidebar-link">Tablas</a>
+            <a href="formularios.html" class="sidebar-link">Formularios</a>
+            <a href="navbar.html" class="sidebar-link">Navbar</a>
+            <a href="alertas.html" class="sidebar-link">Alertas</a>
+
+            <p class="sidebar-group">Arquitectura</p>
+            <a href="../index.html#sass" class="sidebar-link">Lógica @each y @for</a>
+        </aside>
+        
+        <!--Tablas-->
+ <main class="docs-main">
+  <section id="tablas" class="section mt-5">
+    <h2 class="text-ira fs-2 fw-bold">Registros de Britania (Tablas)</h2>
+    <p class="text-muted">Estilos para tablas con bordes, efectos de cebra y variantes de pecados.</p>
+
+    <h3 class="fs-5 mt-4 mb-3 text-white">Tabla Estándar</h3>
+    <div class="demo-block">
+      <div class="demo-preview" style="display: block;">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Pecado</th>
+                <th>Caballero</th>
+                <th>Tesoro Sagrado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Ira</td>
+                <td>Meliodas</td>
+                <td>Lostvayne</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Codicia</td>
+                <td>Ban</td>
+                <td>Courechouse</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <input type="checkbox" id="toggle-tables" class="demo-checkbox" />
+      <label for="toggle-tables" class="demo-toggle">Ver código Tabla Básica</label>
+      <div class="demo-code">
+        <pre>
+<span class="comment">&lt;!-- Estructura esencial de una tabla --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"table-responsive"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;table</span> <span class="attr">class</span>=<span class="val">"table"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;thead&gt;</span>
+      <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;th&gt;</span>#<span class="tag">&lt;/th&gt;</span>
+        <span class="tag">&lt;th&gt;</span>Pecado<span class="tag">&lt;/th&gt;</span>
+      <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/thead&gt;</span>
+    <span class="tag">&lt;tbody&gt;</span>
+      <span class="tag">&lt;tr&gt;</span>
+        <span class="tag">&lt;td&gt;</span>1<span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;td&gt;</span>Ira<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/tbody&gt;</span>
+  <span class="tag">&lt;/table&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+    <h3 class="fs-5 mt-5 mb-3 text-white">Tabla de Combate (Efectos y Pecados)</h3>
+    <div class="demo-block">
+      <div class="demo-preview" style="display: block;">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Caballero</th>
+                <th>Estado Especial</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-ira">
+                <td>Meliodas</td>
+                <td>Modo Asalto</td>
+              </tr>
+              <tr class="table-soberbia">
+                <td>Escanor</td>
+                <td>The One</td>
+              </tr>
+              <tr class="table-codicia">
+                <td>Ban</td>
+                <td>Hunter Fest</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <input type="checkbox" id="toggle-tables-pro" class="demo-checkbox" />
+      <label for="toggle-tables-pro" class="demo-toggle">Ver código Tabla de Combate</label>
+      <div class="demo-code">
+        <pre>
+<span class="comment">&lt;!-- 1. Fila de la Ira (Meliodas) --&gt;</span>
+<span class="tag">&lt;tr</span> <span class="attr">class</span>=<span class="val">"table-ira"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;td&gt;</span>Meliodas<span class="tag">&lt;/td&gt;</span>
+  <span class="tag">&lt;td&gt;</span>Modo Asalto<span class="tag">&lt;/td&gt;</span>
+<span class="tag">&lt;/tr&gt;</span>
+
+<span class="comment">&lt;!-- 2. Fila de la Soberbia (Escanor) --&gt;</span>
+<span class="tag">&lt;tr</span> <span class="attr">class</span>=<span class="val">"table-soberbia"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;td&gt;</span>Escanor<span class="tag">&lt;/td&gt;</span>
+  <span class="tag">&lt;td&gt;</span>The One<span class="tag">&lt;/td&gt;</span>
+<span class="tag">&lt;/tr&gt;</span>
+
+<span class="comment">&lt;!-- 3. Fila de la Codicia (Ban) --&gt;</span>
+<span class="tag">&lt;tr</span> <span class="attr">class</span>=<span class="val">"table-codicia"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;td&gt;</span>Ban<span class="tag">&lt;/td&gt;</span>
+  <span class="tag">&lt;td&gt;</span>Hunter Fest<span class="tag">&lt;/td&gt;</span>
+<span class="tag">&lt;/tr&gt;</span>
+
+<span class="comment">&lt;!-- Nota: Usa 'table-bordered' en la etiqueta table para bordes completos --&gt;</span></pre>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

@@ -18,15 +18,9 @@
   z-index: 3000;
   backdrop-filter: blur(12px);
 
-  &:focus-within {
-    .navbar-nav {
-      @media (max-width: 767px) {
-        display: flex !important;
-        opacity: 1;
-        transform: translateY(0);
-        animation: slideIn 0.3s ease forwards;
-      }
-    }
+  // 1. EL CHECKBOX (Siempre oculto)
+  .navbar-check {
+    display: none !important;
   }
 
   &-brand {
@@ -41,13 +35,9 @@
     &:hover {
       color: color.adjust($ira-meliodas, $lightness: 10%);
     }
-
-    span {
-      color: #ffffff;
-      font-weight: 400;
-    }
   }
 
+  // 2. EL MENÚ (Navbar-nav)
   &-nav {
     display: flex;
     align-items: center;
@@ -63,15 +53,13 @@
       text-decoration: none;
       transition: all 0.3s ease;
 
-      &:hover,
-      &.active {
+      &:hover, &.active {
         color: $ira-meliodas;
       }
     }
 
-  
     @media (max-width: 767px) {
-      display: none;
+      display: none; // Se oculta en móvil por defecto
       position: absolute;
       top: 70px;
       left: 0;
@@ -91,40 +79,58 @@
     gap: 1rem;
   }
 
+  // 3. EL BOTÓN (Navbar-toggler)
   &-toggler {
-    display: none;
+    display: none; // Oculto en PC
     flex-direction: column;
-    gap: 6px;
+    justify-content: space-around;
+    width: 25px;
+    height: 18px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    outline: none;
+    padding: 0;
+
+    @media (max-width: 767px) {
+      display: flex; // Aparece en móvil
+    }
 
     span {
       display: block;
-      width: 25px;
+      width: 100%;
       height: 2px;
       background: $ira-meliodas;
       transition: all 0.3s ease;
-      pointer-events: none;
+      border-radius: 5px;
+    }
+  }
+
+  // ==========================================
+  // LÓGICA MÁGICA DE ACTIVACIÓN (CHECKED)
+  // ==========================================
+  
+  // Cuando el checkbox está marcado...
+  .navbar-check:checked {
+    
+    // Mostramos el menú (Hermano adyacente)
+    ~ .navbar-nav {
+      @media (max-width: 767px) {
+        display: flex !important;
+        animation: slideIn 0.3s ease forwards;
+      }
     }
 
-    @media (max-width: 767px) {
-      display: flex;
-    }
-
-    // Animación de las rayitas a X cuando el botón tiene el foco
-    &:focus {
-      span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    // Transformamos las rayitas en X (Buscamos dentro de actions)
+    ~ .navbar-actions .navbar-toggler {
+      span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
       span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
-      span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+      span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
     }
   }
+}
 
-  // Ajustes generales de responsive
-  @media (max-width: 767px) {
-    height: auto;
-    padding: 1rem 1.5rem;
-  }
+// Animación simple para el menú móvil
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
