@@ -1,61 +1,33 @@
 @use "../clases_utilitarias/paleta" as p;
 @use "../clases_utilitarias/tipografia" as t;
+@use "../clases_utilitarias/mixins" as m;
 
 .docs-layout {
-  display: flex;
-  min-height: 100vh;
-  overflow-x: hidden;
+  @include m.docs-container-layout;
   background: #0f0f10;
-  align-items: stretch;
-
-  @media (max-width: 768px) {
-    display: block;
-  }
 }
+
 .docs-sidebar {
-  width: 260px;
-  flex-shrink: 0;
+  @include m.sidebar-responsive-behavior(70px);
   background: #0a0a0b;
-  border-right: 1px solid #222;
-  padding: 2rem 0;
+  border-bottom: 1px solid #222;
+  padding: 1.5rem 0;
 
-  position: sticky;
-
-  top: 70px;
-  min-height: calc(100vh - 70px);
-
-  overflow-y: auto;
-  transition: transform 0.3s ease;
-  z-index: 1000;
-
-  @media (max-width: 768px) {
-    position: fixed;
-    left: 0;
-    top: 70px;
-    height: calc(100vh - 70px);
-
-    transform: translateX(-100%);
-    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
-    z-index: 1200;
+  @media (min-width: 768px) {
+    border-bottom: none;
+    border-right: 1px solid #222;
   }
 }
+
 .docs-main {
-  flex: 1;
-  min-width: 0;
-  padding: 3rem;
+  flex: 1;           // Esto obliga al contenido a ocupar el resto del espacio
+  width: 100%;       // En móvil asegura que use todo el ancho
+  padding: 2rem;
   background: #0f0f10;
-  color: p.$ira-meliodas;
-  display: block;
+  color: p.$ira-meliodas;       
 
-  section {
-    width: 100%;
-    clear: both;
-    margin-bottom: 4rem;
-  }
-
-  @media (max-width: 768px) {
-    padding: 1.5rem;
-    width: 100%;
+  @media (min-width: 768px) {
+    padding: 3rem;
   }
 }
 
