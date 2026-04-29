@@ -53,7 +53,8 @@
       text-decoration: none;
       transition: all 0.3s ease;
 
-      &:hover, &.active {
+      &:hover,
+      &.active {
         color: $ira-meliodas;
       }
     }
@@ -69,7 +70,7 @@
       padding: 2rem;
       gap: 1.25rem;
       border-bottom: 2px solid $ira-meliodas;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -108,10 +109,9 @@
   // ==========================================
   // LÓGICA MÁGICA DE ACTIVACIÓN (CHECKED)
   // ==========================================
-  
+
   // Cuando el checkbox está marcado...
   .navbar-check:checked {
-    
     // Mostramos el menú (Hermano adyacente)
     ~ .navbar-nav {
       @media (max-width: 767px) {
@@ -122,15 +122,28 @@
 
     // Transformamos las rayitas en X (Buscamos dentro de actions)
     ~ .navbar-actions .navbar-toggler {
-      span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-      span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
-      span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+      span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+      span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
     }
   }
 }
 
 // Animación simple para el menú móvil
 @keyframes slideIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

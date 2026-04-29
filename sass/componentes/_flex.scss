@@ -1,0 +1,55 @@
+@use "../clases_utilitarias/paleta" as p;
+@use "../clases_utilitarias/mixins" as m;
+@use "../clases_utilitarias/tipografia" as t;
+@use "../clases_utilitarias/bordes" as b;
+@use "../clases_utilitarias/padding_margenes";
+
+.d-flex {
+  display: flex !important;
+}
+
+// Direcciones
+.flex-column {
+  flex-direction: column !important;
+}
+.flex-row {
+  flex-direction: row !important;
+}
+
+// Alineación Horizontal (Justify Content)
+.justify-center {
+  justify-content: center !important;
+}
+.justify-between {
+  justify-content: space-between !important;
+}
+.justify-end {
+  justify-content: flex-end !important;
+}
+
+// Alineación Vertical (Align Items)
+.align-center {
+  align-items: center !important;
+}
+.align-start {
+  align-items: flex-start !important;
+}
+
+// Gap usando tus variables (si tienes variables de espaciado en padding_margin)
+.gap-1 {
+  gap: 0.5rem !important;
+}
+.gap-2 {
+  gap: 1rem !important;
+}
+.gap-3 {
+  gap: 1.5rem !important;
+}
+
+// EJEMPLO DE HERENCIA: Flex Responsivo usando tus Breakpoints
+@media (max-width: 768px) {
+  // Aquí podrías usar tus variables de _breackpoints.scss
+  .flex-md-column {
+    flex-direction: column !important;
+  }
+}

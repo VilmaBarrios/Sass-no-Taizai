@@ -1,11 +1,11 @@
-@use 'sass:map';
-@use 'sass:color';
-@use '../clases_utilitarias/paleta' as *;
-@use '../clases_utilitarias/tipografia' as *;
-@use '../clases_utilitarias/bordes' as *;
-@use '../clases_utilitarias/sombras' as *;
-@use '../clases_utilitarias/redondeo' as *; 
-@use '../clases_utilitarias/movimientos' as *; 
+@use "sass:map";
+@use "sass:color";
+@use "../clases_utilitarias/paleta" as *;
+@use "../clases_utilitarias/tipografia" as *;
+@use "../clases_utilitarias/bordes" as *;
+@use "../clases_utilitarias/sombras" as *;
+@use "../clases_utilitarias/redondeo" as *;
+@use "../clases_utilitarias/movimientos" as *;
 
 // Mapa de Pecados para automatizar la creación
 $pecados-map: (
@@ -15,7 +15,7 @@ $pecados-map: (
   "pereza": $pereza-king,
   "lujuria": $lujuria-gowther,
   "gula": $gula-merlin,
-  "soberbia": $soberbia-escanor
+  "soberbia": $soberbia-escanor,
 );
 
 .btn {
@@ -33,11 +33,11 @@ $pecados-map: (
   text-transform: uppercase;
   letter-spacing: 1px;
   border: 2px solid transparent; // Cambiado a 2px para que el outline no salte
-  @extend .shadow-ira-sm;//hreda sombra
+  @extend .shadow-ira-sm; //hreda sombra
 
   &:hover {
     @extend .move-up; // Hereda movimientos
-    @extend .shadow-codicia-sm ;
+    @extend .shadow-codicia-sm;
   }
 
   &:active {
@@ -45,10 +45,22 @@ $pecados-map: (
   }
 
   // Tamaños
-  &-sm { padding: 0.4rem 0.9rem; font-size: 12px; }
-  &-md { padding: 0.6rem 1.4rem; font-size: 14px; }
-  &-lg { padding: 0.8rem 2rem;   font-size: 16px; }
-  &-xl { padding: 1.2rem 2.5rem; font-size: 20px; } // Tamaño épico añadido
+  &-sm {
+    padding: 0.4rem 0.9rem;
+    font-size: 12px;
+  }
+  &-md {
+    padding: 0.6rem 1.4rem;
+    font-size: 14px;
+  }
+  &-lg {
+    padding: 0.8rem 2rem;
+    font-size: 16px;
+  }
+  &-xl {
+    padding: 1.2rem 2.5rem;
+    font-size: 20px;
+  } // Tamaño épico añadido
 
   &-block {
     display: flex;
@@ -65,7 +77,6 @@ $pecados-map: (
 
   // GENERADOR AUTOMÁTICO DE PECADOS (SOLID & OUTLINE)
   @each $nombre, $color in $pecados-map {
-    
     // Determinamos el color del texto antes para evitar el error del if()
     $text-color: $dark-night;
     @if $nombre == "gula" or $nombre == "lujuria" or $nombre == "codicia" {
@@ -76,19 +87,30 @@ $pecados-map: (
     &-#{$nombre} {
       background-color: $color;
       color: $text-color;
-      font-family: map.get($sin-fonts, $nombre); // Hereda la fuente específica del pecado
-      
+      font-family: map.get(
+        $sin-fonts,
+        $nombre
+      ); // Hereda la fuente específica del pecado
+
       &:hover {
         background-color: color.adjust($color, $lightness: -5%);
-        
+
         // Aplicamos herencia de las sombras en base al tema  del anime
-        @if $nombre == "ira" { @extend .shadow-ira-sm; }
-        @else if $nombre == "codicia" { @extend .shadow-codicia-sm; }
-        @else if $nombre == "pereza" { @extend .shadow-pereza-sm; }
-        @else if $nombre == "envidia" { @extend .shadow-envidia-sm; }
-        @else if $nombre == "soberbia" { @extend .shadow-soberbia-sm; }
-        @else if $nombre == "gula" { @extend .shadow-gula-sm; }
-        @else if $nombre == "lujuria" { @extend .shadow-lujuria-sm; }
+        @if $nombre == "ira" {
+          @extend .shadow-ira-sm;
+        } @else if $nombre == "codicia" {
+          @extend .shadow-codicia-sm;
+        } @else if $nombre == "pereza" {
+          @extend .shadow-pereza-sm;
+        } @else if $nombre == "envidia" {
+          @extend .shadow-envidia-sm;
+        } @else if $nombre == "soberbia" {
+          @extend .shadow-soberbia-sm;
+        } @else if $nombre == "gula" {
+          @extend .shadow-gula-sm;
+        } @else if $nombre == "lujuria" {
+          @extend .shadow-lujuria-sm;
+        }
       }
     }
 
@@ -97,7 +119,10 @@ $pecados-map: (
       background: transparent;
       border-color: $color;
       color: $color;
-      font-family: map.get($sin-fonts, $nombre); // Hereda la fuente específica del pecado
+      font-family: map.get(
+        $sin-fonts,
+        $nombre
+      ); // Hereda la fuente específica del pecado
 
       &:hover {
         background: $color;
@@ -134,7 +159,7 @@ $pecados-map: (
 }
 
 .demo-code {
-  display: none; 
+  display: none;
   background: #000;
   padding: 1.5rem;
   border-top: 1px solid #222;
@@ -159,6 +184,12 @@ $pecados-map: (
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

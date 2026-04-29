@@ -1,62 +1,90 @@
-@use 'sass:map'; //map.get 
-@use './tipografia' as t;
-@use './sombras' as s;
-@use './breackpoints' as b;
+@use "sass:map"; //map.get
+@use "./tipografia" as t;
+@use "./sombras" as s;
+@use "./breackpoints" as b;
 
 // 1. Mixins para los responsivos
-@mixin responsive-sm  { @media (min-width: map.get(b.$breakpoints, "sm"))  { @content; }  }
-@mixin responsive-md  { @media (min-width: map.get(b.$breakpoints, "md"))  { @content; }  }
-@mixin responsive-lg  { @media (min-width: map.get(b.$breakpoints, "lg"))  { @content; }  }
-@mixin responsive-xl  { @media (min-width: map.get(b.$breakpoints, "xl"))  { @content; }  }
-@mixin responsive-xxl { @media (min-width: map.get(b.$breakpoints, "xxl")) { @content; }  }
+@mixin responsive-sm {
+  @media (min-width: map.get(b.$breakpoints, "sm")) {
+    @content;
+  }
+}
+@mixin responsive-md {
+  @media (min-width: map.get(b.$breakpoints, "md")) {
+    @content;
+  }
+}
+@mixin responsive-lg {
+  @media (min-width: map.get(b.$breakpoints, "lg")) {
+    @content;
+  }
+}
+@mixin responsive-xl {
+  @media (min-width: map.get(b.$breakpoints, "xl")) {
+    @content;
+  }
+}
+@mixin responsive-xxl {
+  @media (min-width: map.get(b.$breakpoints, "xxl")) {
+    @content;
+  }
+}
 
 // 2. Mixin para sombras segun pecados
-@mixin sombras-pecados ($color, $pecado) {
-    border: 1px solid $color;
-    
-    @if $pecado == "ira" { box-shadow: s.$shadow-ira; }
-    @else if $pecado == "codicia"  { box-shadow: s.$shadow-codicia; }
-    @else if $pecado == "pereza"   { box-shadow: s.$shadow-pereza;  }
-    @else if $pecado == "envidia"  { box-shadow: s.$shadow-envidia; }
-    @else if $pecado == "soberbia" { box-shadow: s.$shadow-soberbia;}
-    @else if $pecado == "gula"     { box-shadow: s.$shadow-gula;    }
-    @else if $pecado == "lujuria"  { box-shadow: s.$shadow-lujuria; }
+@mixin sombras-pecados($color, $pecado) {
+  border: 1px solid $color;
+
+  @if $pecado == "ira" {
+    box-shadow: s.$shadow-ira;
+  } @else if $pecado == "codicia" {
+    box-shadow: s.$shadow-codicia;
+  } @else if $pecado == "pereza" {
+    box-shadow: s.$shadow-pereza;
+  } @else if $pecado == "envidia" {
+    box-shadow: s.$shadow-envidia;
+  } @else if $pecado == "soberbia" {
+    box-shadow: s.$shadow-soberbia;
+  } @else if $pecado == "gula" {
+    box-shadow: s.$shadow-gula;
+  } @else if $pecado == "lujuria" {
+    box-shadow: s.$shadow-lujuria;
+  }
 }
 
 // 3. Estilo de texto
 @mixin estilo-texto($tipo) {
-    font-size: t.$fs-6;
-    line-height: t.$lh-base;
-    @if $tipo == "titulo" {
-        font-family: t.$font-base;
-        text-transform: uppercase;
-    } @else {
-        font-family: t.$font-body;
-    }
+  font-size: t.$fs-6;
+  line-height: t.$lh-base;
+  @if $tipo == "titulo" {
+    font-family: t.$font-base;
+    text-transform: uppercase;
+  } @else {
+    font-family: t.$font-body;
+  }
 }
 
-// 4. Mixin para el contenedor padre 
+// 4. Mixin para el contenedor padre
 @mixin docs-container-layout {
   display: flex;
-  flex-direction: column;   // Cell: Sidebar arriba
+  flex-direction: column; // Cell: Sidebar arriba
   min-height: 100vh;
 
-  @include responsive-md { 
-    flex-direction: row;    // Escritorio: Sidebar izquierda
+  @include responsive-md {
+    flex-direction: row; // Escritorio: Sidebar izquierda
     align-items: flex-start;
   }
 }
 
-// 5. Mixin para el sidebar 
+// 5. Mixin para el sidebar
 @mixin sidebar-responsive-behavior($header-height: 70px) {
   width: 100%;
   position: sticky;
-  top: 0; 
+  top: 0;
   z-index: 1000;
   max-height: 40vh; // // En móvil, limitamos su altura para que no ocupe toda la pantalla
   overflow-y: auto;
 
-  @include responsive-md { 
+  @include responsive-md {
     width: 260px;
     height: calc(100vh - #{$header-height});
     top: $header-height;

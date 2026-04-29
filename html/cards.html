@@ -7,163 +7,163 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
- <nav class="navbar">
-  <a href="#" class="navbar-brand">Sass No Taizai</a>
-  <input type="checkbox" id="menu-toggler" class="navbar-check">
-  <ul class="navbar-nav">
-     <li><a href="index.html">Inicio</a></li>
-    <li><a href="#grid">Britania Grid</a></li>
-    <li><a href="html/botones.html">Tesoros Sagrados</a></li>
-    <li><a href="#sass">Arquitectura SASS</a></li>
+  <nav class="navbar">
+    <a href="#" class="navbar-brand">Sass No Taizai</a>
+    <input type="checkbox" id="menu-toggler" class="navbar-check">
+    <ul class="navbar-nav">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="#grid">Britania Grid</a></li>
+      <li><a href="botones.html">Tesoros Sagrados</a></li>
+      <li><a href="#sass">Arquitectura SASS</a></li>
     </ul>
-  <div class="navbar-actions">
-    <label for="menu-toggler" class="navbar-toggler">
+    
+    <div class="navbar-actions">
+      <label for="menu-toggler" class="navbar-toggler">
       <span></span>
       <span></span>
       <span></span>
     </label>
   </div>
 </nav>
+
     <div class="docs-layout">
-        <input type="checkbox" id="sidebar-master" class="sidebar-checkbox">
-        <label for="sidebar-master" class="sidebar-mobile-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-
-        <aside class="docs-sidebar">
-            <p class="sidebar-group">Inicio</p>
-            <a href="introduccion.html" class="sidebar-link">Introducción</a>
-            <a href="instalacion.html" class="sidebar-link active">Instalación</a>
-
-            <p class="sidebar-group">Layout</p>
-            <a href="../index.html#grid" class="sidebar-link">Sistema de las 12 columnas</a>
-
-            <p class="sidebar-group">Componentes</p>
-            <a href="cards.html" class="sidebar-link">Card (Posters)</a>
-            <a href="botones.html" class="sidebar-link">Botones (Variantes)</a>
-            <a href="tablas.html" class="sidebar-link">Tablas</a>
-            <a href="formularios.html" class="sidebar-link">Formularios</a>
-            <a href="navbar.html" class="sidebar-link">Navbar</a>
-            <a href="alertas.html" class="sidebar-link">Alertas</a>
-
-            <p class="sidebar-group">Arquitectura</p>
-            <a href="../index.html#sass" class="sidebar-link">Lógica @each y @for</a>
-        </aside>
-
-    <main class="docs-main">
-  <section class="section mt-5" id="cards">
-    <h2 class="text-ira fs-2 fw-bold">Cards Sagradas (Cards)</h2>
-    <p class="text-muted">Componentes visuales con estilos dinámicos por cada pecado capital.</p>
-    <div class="demo-block">
-      <div class="demo-preview">
-        
-        <div class="card card-codicia card-md">
-          <img src="../img/Zorro.jpg" class="card-img" alt="Ban">
-          <div class="card-header">Greed Card</div>
-          <div class="card-body">
-            <h5>El Zorro de la Avaricia</h5>
-            <p>Inmortal y audaz, capaz de arrebatarle el poder a sus enemigos.</p>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-codicia btn-sm">Acción</button>
-          </div>
-        </div>
-
-        <div class="card card-soberbia card-md">
-          <img src="../img/escanor.jpg" class="card-img" alt="Escanor">
-          <div class="card-header">Pride Card</div>
-          <div class="card-body">
-            <h5>El León del Orgullo</h5>
-            <p>Aquel que se alza sobre todas las razas cuando el sol brilla.</p>
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-soberbia btn-sm">Cruel Sun</button>
-          </div>
-        </div>
-
-      </div>
-
-      <input type="checkbox" id="check-cards-img" class="demo-checkbox">
-      <label for="check-cards-img" class="demo-toggle">Ver código de Cards con Imagen</label>
+      <input type="checkbox" id="sidebar-master" class="sidebar-checkbox">
+      <label for="sidebar-master" class="sidebar-mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
       
-      <div class="demo-code">
-        <pre>
-<span class="comment">&lt;!-- Card Codicia --&gt;</span>
-<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-codicia card-md"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"Zorro.jpg"</span> <span class="attr">class</span>=<span class="val">"card-img"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-header"</span><span class="tag">&gt;</span>Greed Card<span class="tag">&lt;/div&gt;</span>
-  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h5&gt;</span>Ban<span class="tag">&lt;/h5&gt;</span>
-    <span class="tag">&lt;p&gt;</span>Pecado de la codicia.<span class="tag">&lt;/p&gt;</span>
-  <span class="tag">&lt;/div&gt;</span>
-  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-footer"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-codicia btn-sm"</span><span class="tag">&gt;</span>Acción<span class="tag">&lt;/button&gt;</span>
-  <span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;/div&gt;</span>
+      <aside class="docs-sidebar">
+        <p class="sidebar-group">Inicio</p>
+        <a href="introduccion.html" class="sidebar-link">Introducción</a>
+        <a href="instalacion.html" class="sidebar-link active">Instalación</a>
 
-<span class="comment">&lt;!-- Card Soberbia --&gt;</span>
-<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-soberbia card-md"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"escanor.jpg"</span> <span class="attr">class</span>=<span class="val">"card-img"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-header"</span><span class="tag">&gt;</span>Pride Card<span class="tag">&lt;/div&gt;</span>
-  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h5&gt;</span>Escanor<span class="tag">&lt;/h5&gt;</span>
-  <span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;/div&gt;</span></pre>
-      </div>
-    </div>
+        <p class="sidebar-group">Layout</p>
+        <a href="../index.html#grid" class="sidebar-link">Sistema de las 12 columnas</a>
 
-    <h3 class="fs-5 mt-5 mb-3 text-white">Atributos Mágicos (Texto)</h3>
-    <div class="demo-block">
-      <div class="demo-preview">
-        
-        <div class="card card-lujuria card-sm">
-          <div class="card-body">
-            <h5>Gowther</h5>
-            <p>Pecado de la Lujuria. Su magia manipula los recuerdos.</p>
-          </div>
-        </div>
+        <p class="sidebar-group">Componentes</p>
+        <a href="botones.html" class="sidebar-link">Botones (Variantes)</a>
+        <a href="cards.html" class="sidebar-link">Card (Posters)</a>
+        <a href="tablas.html" class="sidebar-link">Tablas</a>
+        <a href="formularios.html" class="sidebar-link">Formularios</a>
+        <a href="navbar.html" class="sidebar-link">Navbar</a>
+        <a href="alertas.html" class="sidebar-link">Alertas</a>
+        <a href="flexbox.html" class="sidebar-link">FlexBox</a>
 
-        <div class="card card-pereza card-sm">
-          <div class="card-body">
-            <h5>King</h5>
-            <p>Rey Hada y Pecado de la Pereza. Guardián del Bosque.</p>
-          </div>
-        </div>
-
-        <div class="card card-ira card-sm">
-          <div class="card-body">
-            <h5>Meliodas</h5>
-            <p>Líder de los pecados. El pecado del Dragón.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <input type="checkbox" id="check-cards-min" class="demo-checkbox">
-      <label for="check-cards-min" class="demo-toggle">Ver código de Cards Minimalistas</label>
+        <p class="sidebar-group">Arquitectura</p>
+        <a href="../index.html#sass" class="sidebar-link">Lógica @each y @for</a>
+      </aside>
       
-      <div class="demo-code">
-        <pre>
-<span class="comment">&lt;!-- Card Minimalista: Lujuria --&gt;</span>
-<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-lujuria card-sm"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h5&gt;</span>Gowther<span class="tag">&lt;/h5&gt;</span>
-    <span class="tag">&lt;p&gt;</span>Su magia manipula los recuerdos.<span class="tag">&lt;/p&gt;</span>
-  <span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;/div&gt;</span>
+      <main class="docs-main">
+        <section class="section mt-5" id="cards">
+          <h2 class="text-ira fs-2 fw-bold">Cards Sagradas (Cards)</h2>
+          <p class="text-muted">Componentes visuales con estilos dinámicos por cada pecado capital.</p>
+          
+          <div class="demo-block">
+            <div class="demo-preview">
+              <div class="card card-codicia card-md">
+                <img src="../img/Zorro.jpg" class="card-img" alt="Ban">
+                <div class="card-header">Greed Card</div>
+                <div class="card-body">
+                  <h5>El Zorro de la Avaricia</h5>
+                  <p>Inmortal y audaz, capaz de arrebatarle el poder a sus enemigos.</p>
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-codicia btn-sm">Acción</button>
+                </div>
+              </div>
+              
+              <div class="card card-soberbia card-md">
+                <img src="../img/escanor.jpg" class="card-img" alt="Escanor">
+                <div class="card-header">Pride Card</div>
+                <div class="card-body">
+                  <h5>El León del Orgullo</h5>
+                  <p>Aquel que se alza sobre todas las razas cuando el sol brilla.</p>
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-soberbia btn-sm">Cruel Sun</button>
+                </div>
+              </div>
+            </div>
+            
+            <input type="checkbox" id="check-cards-img" class="demo-checkbox">
+            <label for="check-cards-img" class="demo-toggle">Ver código de Cards con Imagen</label>
+            
+            <div class="demo-code">
+              <pre>
+                <span class="comment">&lt;!-- Card Codicia --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-codicia card-md"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"Zorro.jpg"</span> <span class="attr">class</span>=<span class="val">"card-img"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-header"</span><span class="tag">&gt;</span>Greed Card<span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;h5&gt;</span>Ban<span class="tag">&lt;/h5&gt;</span>
+                <span class="tag">&lt;p&gt;</span>Pecado de la codicia.<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-footer"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-codicia btn-sm"</span><span class="tag">&gt;</span>Acción<span class="tag">&lt;/button&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
 
-<span class="comment">&lt;!-- Card Minimalista: Ira --&gt;</span>
-<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-ira card-sm"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;</span>
-    <span class="tag">&lt;h5&gt;</span>Meliodas<span class="tag">&lt;/h5&gt;</span>
-  <span class="tag">&lt;/div&gt;</span>
-<span class="tag">&lt;/div&gt;</span></pre>
-      </div>
-    </div>
+                <span class="comment">&lt;!-- Card Soberbia --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-soberbia card-md"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"escanor.jpg"</span> <span class="attr">class</span>=<span class="val">"card-img"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-header"</span><span class="tag">&gt;</span>Pride Card<span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;h5&gt;</span>Escanor<span class="tag">&lt;/h5&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+              </div>
+            </div>
+            
+            <h3 class="fs-5 mt-5 mb-3 text-white">Atributos Mágicos (Texto)</h3>
+            <div class="demo-block">
+              <div class="demo-preview">
+                <div class="card card-lujuria card-sm">
+                  <div class="card-body">
+                    <h5>Gowther</h5>
+                    <p>Pecado de la Lujuria. Su magia manipula los recuerdos.</p>
+                  </div>
+                </div>
+                
+                <div class="card card-pereza card-sm">
+                  <div class="card-body">
+                    <h5>King</h5>
+                    <p>Rey Hada y Pecado de la Pereza. Guardián del Bosque.</p>
+                  </div>
+                </div>
 
-  </section>
-</main>
+        
+                <div class="card card-ira card-sm">
+                  <div class="card-body">
+                    <h5>Meliodas</h5>
+                    <p>Líder de los pecados. El pecado del Dragón.</p>
+                  </div>
+                </div>
+              </div>
+
+              <input type="checkbox" id="check-cards-min" class="demo-checkbox">
+              <label for="check-cards-min" class="demo-toggle">Ver código de Cards Minimalistas</label>
+              <div class="demo-code">
+                <pre>
+                  <span class="comment">&lt;!-- Card Minimalista: Lujuria --&gt;</span>
+                  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-lujuria card-sm"</span><span class="tag">&gt;</span>
+                  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;</span>
+                  <span class="tag">&lt;h5&gt;</span>Gowther<span class="tag">&lt;/h5&gt;</span>
+                  <span class="tag">&lt;p&gt;</span>Su magia manipula los recuerdos.<span class="tag">&lt;/p&gt;</span>
+                  <span class="tag">&lt;/div&gt;</span>
+                  <span class="tag">&lt;/div&gt;</span>
+
+                  <span class="comment">&lt;!-- Card Minimalista: Ira --&gt;</span>
+                  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card card-ira card-sm"</span><span class="tag">&gt;</span>
+                  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"card-body"</span><span class="tag">&gt;</span>
+                  <span class="tag">&lt;h5&gt;</span>Meliodas<span class="tag">&lt;/h5&gt;</span>
+                  <span class="tag">&lt;/div&gt;</span>
+                  <span class="tag">&lt;/div&gt;</span>
+                </pre>
+                </div>
+              </div>
+            </section>
+          </main>
       </body>
 </html>
