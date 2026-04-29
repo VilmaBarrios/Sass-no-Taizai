@@ -1151,7 +1151,9 @@
   font-size: 0.8rem;
   cursor: pointer;
   border-top: 1px solid #222;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   transition: 0.3s;
 }
 .demo-toggle:hover {
@@ -1341,7 +1343,15 @@ img {
   align-items: center;
   padding: 0 5%;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+@media (max-width: 1024px) {
+  .hero-scatter-section {
+    flex-direction: column;
+    padding-top: 100px;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
 }
 
 .hero-info {
@@ -1349,108 +1359,117 @@ img {
   z-index: 100;
 }
 .hero-info .title-hero {
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 8vw, 5rem);
   line-height: 1;
   margin-bottom: 2rem;
 }
-.hero-info .info-card {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  margin-bottom: 30px;
-  border-radius: 8px;
-  border: 1px solid rgba(230, 204, 0, 0.3);
+@media (max-width: 1024px) {
+  .hero-info {
+    text-align: center;
+    flex: none;
+    margin-bottom: 50px;
+  }
 }
 
 .scatter-canvas {
   flex: 1;
   height: 100vh;
   position: relative;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .scatter-canvas {
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 20px;
+    position: static;
+    padding-bottom: 50px;
+  }
 }
 
 .sin-float {
   position: absolute;
   width: 165px;
   height: 165px;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s ease;
 }
 .sin-float img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 15px;
   border: 2px solid rgba(255, 255, 255, 0.1);
-  display: block;
+}
+@media (max-width: 1024px) {
+  .sin-float {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: rotate(0deg) !important;
+    width: 100% !important;
+    height: 150px !important;
+    margin: 0 auto;
+  }
 }
 .sin-float:hover {
   z-index: 1000 !important;
-  transform: scale(1.2) rotate(0deg) !important;
-  filter: brightness(1.2);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+  transform: scale(1.1) rotate(0deg) !important;
 }
 
-.meliodas {
-  top: 5%;
-  left: 5%;
-  transform: rotate(-10deg);
+@media (min-width: 1025px) {
+  .meliodas {
+    top: 5%;
+    left: 5%;
+    transform: rotate(-10deg);
+  }
+  .ban {
+    top: 2%;
+    left: 60%;
+    transform: rotate(8deg);
+  }
+  .king {
+    top: 35%;
+    left: 25%;
+    transform: rotate(-15deg);
+  }
+  .diane {
+    top: 25%;
+    left: 85%;
+    transform: rotate(5deg);
+  }
+  .escanor {
+    top: 60%;
+    left: 5%;
+    transform: rotate(12deg);
+  }
+  .merlin {
+    top: 70%;
+    left: 45%;
+    transform: rotate(-8deg);
+  }
+  .gowther {
+    top: 55%;
+    left: 75%;
+    transform: rotate(15deg);
+  }
 }
-
-.ban {
-  top: 2%;
-  left: 60%;
-  transform: rotate(8deg);
-}
-
-.king {
-  top: 35%;
-  left: 25%;
-  transform: rotate(-15deg);
-}
-
-.diane {
-  top: 25%;
-  left: 85%;
-  transform: rotate(5deg);
-}
-
-.escanor {
-  top: 60%;
-  left: 5%;
-  transform: rotate(12deg);
-}
-
-.merlin {
-  top: 70%;
-  left: 45%;
-  transform: rotate(-8deg);
-}
-
-.gowther {
-  top: 55%;
-  left: 75%;
-  transform: rotate(15deg);
-}
-
 .btn-adventure {
   display: inline-block;
   background: #E6CC00;
   color: #1A1A1A;
-  padding: 18px 45px;
+  padding: 15px 40px;
   text-decoration: none;
   font-weight: bold;
   border-radius: 8px;
-  transition: 0.3s;
 }
-.btn-adventure:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(230, 204, 0, 0.4);
-}
-
-@media (max-width: 1200px) {
-  .sin-float {
-    width: 130px;
-    height: 130px;
+@media (max-width: 1024px) {
+  .btn-adventure {
+    width: 80%;
   }
 }
+
 .btn {
   display: inline-flex;
   gap: 0.5rem;
@@ -1644,7 +1663,9 @@ img {
   font-size: 0.8rem;
   cursor: pointer;
   border-top: 1px solid #222;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   transition: 0.3s;
 }
 .demo-toggle:hover {
@@ -1814,7 +1835,8 @@ img {
 .card-img {
   width: 100%;
   height: 180px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-bottom: 1px solid #222;
   display: block;
 }
@@ -2008,7 +2030,9 @@ img {
   cursor: pointer;
 }
 .form-switch input {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 2.4rem;
   height: 1.2rem;
   background: #2d2d30;
@@ -2392,6 +2416,4 @@ img {
   .flex-md-column {
     flex-direction: column !important;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
