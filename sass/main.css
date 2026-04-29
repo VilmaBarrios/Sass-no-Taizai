@@ -1336,140 +1336,72 @@ img {
   display: block;
 }
 
-.hero-scatter-section {
-  min-height: 100vh;
-  background-color: #1A1A1A;
+.hero-full-screen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 5%;
-  position: relative;
-  overflow-x: hidden;
+  justify-content: center;
+  text-align: center;
+  background-image: url("../img/123.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
-@media (max-width: 1024px) {
-  .hero-scatter-section {
-    flex-direction: column;
-    padding-top: 100px;
-    justify-content: flex-start;
-    overflow-y: auto;
-  }
-}
-
-.hero-info {
-  flex: 0 0 35%;
-  z-index: 100;
-}
-.hero-info .title-hero {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  line-height: 1;
-  margin-bottom: 2rem;
-}
-@media (max-width: 1024px) {
-  .hero-info {
-    text-align: center;
-    flex: none;
-    margin-bottom: 50px;
-  }
-}
-
-.scatter-canvas {
-  flex: 1;
-  height: 100vh;
-  position: relative;
-  width: 100%;
-}
-@media (max-width: 1024px) {
-  .scatter-canvas {
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 20px;
-    position: static;
-    padding-bottom: 50px;
-  }
-}
-
-.sin-float {
+.hero-full-screen .hero-overlay {
   position: absolute;
-  width: 165px;
-  height: 165px;
-  transition: all 0.5s ease;
-}
-.sin-float img {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 15px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-}
-@media (max-width: 1024px) {
-  .sin-float {
-    position: relative !important;
-    top: 0 !important;
-    left: 0 !important;
-    transform: rotate(0deg) !important;
-    width: 100% !important;
-    height: 150px !important;
-    margin: 0 auto;
-  }
-}
-.sin-float:hover {
-  z-index: 1000 !important;
-  transform: scale(1.1) rotate(0deg) !important;
+  background: linear-gradient(to bottom, rgba(26, 26, 26, 0.4) 0%, rgba(26, 26, 26, 0.8) 100%);
+  z-index: 1;
 }
 
-@media (min-width: 1025px) {
-  .meliodas {
-    top: 5%;
-    left: 5%;
-    transform: rotate(-10deg);
-  }
-  .ban {
-    top: 2%;
-    left: 60%;
-    transform: rotate(8deg);
-  }
-  .king {
-    top: 35%;
-    left: 25%;
-    transform: rotate(-15deg);
-  }
-  .diane {
-    top: 25%;
-    left: 85%;
-    transform: rotate(5deg);
-  }
-  .escanor {
-    top: 60%;
-    left: 5%;
-    transform: rotate(12deg);
-  }
-  .merlin {
-    top: 70%;
-    left: 45%;
-    transform: rotate(-8deg);
-  }
-  .gowther {
-    top: 55%;
-    left: 75%;
-    transform: rotate(15deg);
-  }
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  padding: 20px;
 }
-.btn-adventure {
+.hero-content .title-giant {
+  font-size: clamp(3rem, 10vw, 7rem);
+  margin-bottom: 1.5rem;
+  letter-spacing: 5px;
+}
+
+.glass-card {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 3rem;
+}
+
+.btn-mega-adventure {
   display: inline-block;
   background: #E6CC00;
   color: #1A1A1A;
-  padding: 15px 40px;
-  text-decoration: none;
+  padding: 20px 60px;
+  font-size: 1.5rem;
   font-weight: bold;
-  border-radius: 8px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
-@media (max-width: 1024px) {
-  .btn-adventure {
-    width: 80%;
-  }
+.btn-mega-adventure:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(230, 204, 0, 0.4);
+  letter-spacing: 2px;
 }
 
+@media (max-width: 768px) {
+  .hero-full-screen {
+    background-attachment: scroll;
+  }
+}
 .btn {
   display: inline-flex;
   gap: 0.5rem;
