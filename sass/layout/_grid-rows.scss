@@ -1,0 +1,42 @@
+@use '../clases_utilitarias/breackpoints' as b;
+@use '../clases_utilitarias/mixins' as m;
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  // HERENCIA RESPONSIVA DEL MAX-WIDTH
+  // En móvil es 100%, pero en pantallas grandes hereda 
+  
+  @include m.responsive-md {
+    max-width: b.$md; // Hereda los 768px 
+  }
+
+  @include m.responsive-lg {
+    max-width: b.$lg; // Hereda los 992px
+  }
+
+  @include m.responsive-xl {
+    max-width: b.$xl; // Hereda los 1200px
+  }
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap; // Permite que las columnas salten de línea si no caben
+  margin-right: -15px; // Contrarresta el padding de las columnas
+  margin-left: -15px;
+  
+  // Reset para que las columnas hijas se comporten correctamente
+  & > * {
+    flex-shrink: 0; //No importa lo que pase mantiene el tama;o aunque el espacio sea insuficiente
+    width: 100%;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
