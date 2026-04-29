@@ -1,5 +1,5 @@
-@use '../clases_utilitarias/paleta' as p;
-@use '../clases_utilitarias/tipografia' as t;
+@use "../clases_utilitarias/paleta" as p;
+@use "../clases_utilitarias/tipografia" as t;
 
 // --- ESTRUCTURA DE LA DEMO (Solo para formularios) ---
 .demo-preview-column {
@@ -9,7 +9,7 @@
   max-width: 550px;
   width: 100%;
   align-items: stretch;
-  
+
   // Si quieres que herede el fondo de la demo general
   padding: 2.5rem;
   background-image: radial-gradient(#222 1px, transparent 1px);
@@ -27,7 +27,7 @@
 
 .form-group {
   margin-bottom: 1.5rem;
-  
+
   label {
     display: block;
     margin-bottom: 0.5rem;
@@ -52,8 +52,12 @@
     box-shadow: 0 0 0 3px rgba(p.$ira-meliodas, 0.15);
   }
 
-  &.is-valid { border-color: #10b981 !important; }
-  &.is-invalid { border-color: #ef4444 !important; }
+  &.is-valid {
+    border-color: #10b981 !important;
+  }
+  &.is-invalid {
+    border-color: #ef4444 !important;
+  }
 }
 
 .invalid-feedback {
@@ -64,13 +68,14 @@
 }
 
 // Estilos de Radio, Checkbox y Switch
-.form-radio, .form-check {
+.form-radio,
+.form-check {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   cursor: pointer;
   color: #94a3b8;
-  
+
   input {
     cursor: pointer;
   }
@@ -92,7 +97,7 @@
     transition: 0.3s;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 0.9rem;
       height: 0.9rem;

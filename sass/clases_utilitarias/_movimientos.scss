@@ -1,5 +1,17 @@
-.move-up     { transform: translateY(-10px); } // arriba
-.move-down   { transform: translateY(10px); } // down
-.move-left   { transform: translateX(-10px); } //izquierda
-.move-right  { transform: translateX(10px); } //derecha
-.move-center { display: flex; justify-content: center; align-items: center; } //centrada
+.move-up {
+  transform: translateY(-10px);
+} // arriba
+.move-down {
+  transform: translateY(10px);
+} // down
+.move-left {
+  transform: translateX(-10px);
+} //izquierda
+.move-right {
+  transform: translateX(10px);
+} //derecha
+.move-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} //centrada

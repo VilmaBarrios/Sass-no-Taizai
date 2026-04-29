@@ -1,4 +1,4 @@
-@use '../clases_utilitarias/paleta' as p;
+@use "../clases_utilitarias/paleta" as p;
 
 // Reset Universal
 *,
@@ -12,7 +12,7 @@
 // Configuración de la base
 html {
   scroll-behavior: smooth; // Desplazamiento suave al hacer clic en el sidebar
-  font-size: 16px; 
+  font-size: 16px;
 }
 
 body {
@@ -31,11 +31,15 @@ a {
   color: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font: inherit; // Heredan la fuente del body
   border: none;
   outline: none;
