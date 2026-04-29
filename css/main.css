@@ -1334,121 +1334,70 @@ img {
   display: block;
 }
 
-.hero-scatter-section {
-  min-height: 100vh;
-  background-color: #1A1A1A;
+.hero-full-screen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 5%;
-  position: relative;
-  overflow: hidden;
+  justify-content: center;
+  text-align: center;
+  background-image: url("../img/123.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
-
-.hero-info {
-  flex: 0 0 35%;
-  z-index: 100;
-}
-.hero-info .title-hero {
-  font-size: 5rem;
-  line-height: 1;
-  margin-bottom: 2rem;
-}
-.hero-info .info-card {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  margin-bottom: 30px;
-  border-radius: 8px;
-  border: 1px solid rgba(230, 204, 0, 0.3);
-}
-
-.scatter-canvas {
-  flex: 1;
-  height: 100vh;
-  position: relative;
-}
-
-.sin-float {
+.hero-full-screen .hero-overlay {
   position: absolute;
-  width: 165px;
-  height: 165px;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.sin-float img {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background: linear-gradient(to bottom, rgba(26, 26, 26, 0.4) 0%, rgba(26, 26, 26, 0.8) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  padding: 20px;
+}
+.hero-content .title-giant {
+  font-size: clamp(3rem, 10vw, 7rem);
+  margin-bottom: 1.5rem;
+  letter-spacing: 5px;
+}
+
+.glass-card {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  display: block;
-}
-.sin-float:hover {
-  z-index: 1000 !important;
-  transform: scale(1.2) rotate(0deg) !important;
-  filter: brightness(1.2);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+  margin-bottom: 3rem;
 }
 
-.meliodas {
-  top: 5%;
-  left: 5%;
-  transform: rotate(-10deg);
-}
-
-.ban {
-  top: 2%;
-  left: 60%;
-  transform: rotate(8deg);
-}
-
-.king {
-  top: 35%;
-  left: 25%;
-  transform: rotate(-15deg);
-}
-
-.diane {
-  top: 25%;
-  left: 85%;
-  transform: rotate(5deg);
-}
-
-.escanor {
-  top: 60%;
-  left: 5%;
-  transform: rotate(12deg);
-}
-
-.merlin {
-  top: 70%;
-  left: 45%;
-  transform: rotate(-8deg);
-}
-
-.gowther {
-  top: 55%;
-  left: 75%;
-  transform: rotate(15deg);
-}
-
-.btn-adventure {
+.btn-mega-adventure {
   display: inline-block;
   background: #E6CC00;
   color: #1A1A1A;
-  padding: 18px 45px;
-  text-decoration: none;
+  padding: 20px 60px;
+  font-size: 1.5rem;
   font-weight: bold;
-  border-radius: 8px;
-  transition: 0.3s;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
-.btn-adventure:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(230, 204, 0, 0.4);
+.btn-mega-adventure:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(230, 204, 0, 0.4);
+  letter-spacing: 2px;
 }
 
-@media (max-width: 1200px) {
-  .sin-float {
-    width: 130px;
-    height: 130px;
+@media (max-width: 768px) {
+  .hero-full-screen {
+    background-attachment: scroll;
   }
 }
 .btn {
