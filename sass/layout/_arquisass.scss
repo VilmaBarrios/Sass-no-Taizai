@@ -1,32 +1,36 @@
 @use '../clases_utilitarias/paleta' as *;
+@use '../clases_utilitarias/tipografia' as t;
+@use '../clases_utilitarias/redondeo' as r;
+@use '../clases_utilitarias/sombras' as s;
 
+// contenedor principal para la estructura de carpetas
 .folder-structure {
-    background: #111;
-    padding: 25px;
-    border-radius: 10px;
-    font-family: 'Consolas', monospace;
-    border-left: 5px solid $ira-meliodas;
+    background: #111; // fondo negro puro para resaltar el texto
+    padding: 25px; // espaciado interno amplio
+    border-radius: 10px; // esquinas suavizadas
+    font-family: t.$font-body; // usa la fuente monoespaciada de la clase_utilitarias
+    border-left: 5px solid $ira-meliodas; // acento lateral con el color de meliodas
+
 }
 
-.folder-item { 
-    color: $soberbia-escanor; 
-    font-weight: bold;
-    margin-top: 5px;
-}
 
+// estilo para representar archivos individuales
 .file-item { 
-    color: $pereza-king;
-    opacity: 0.9;
+    color: $pereza-king; // el verde de king identifica a los archivos
+    opacity: 0.9;// una ligera transparencia para diferenciar de las carpetas
+    padding-left: 1.5rem; // sangría para indicar que el archivo está dentro de una carpeta
 }
 
+// visualizador de muestras de color
 .color-sample {
-    width: 50px;
-    height: 25px;
-    margin: auto;
+    width: 50px; // ancho fijo de la muestra
+    height: 25px; // altura fija de la muestra
+    margin: auto; // centra la muestra dentro de las celdas de una tabla
     border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3); // borde sutil para ver colores oscuros
 }
 
+// utilidad para poner un borde superior temático de meliodas
 .border-top-ira {
-    border-top: 2px solid $ira-meliodas;
+    border-top: 2px solid $ira-meliodas; // línea de acento superior amarilla
 }

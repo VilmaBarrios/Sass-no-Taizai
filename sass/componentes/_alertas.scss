@@ -6,7 +6,7 @@
 
 .alert {
   position: relative; // para poner imagen
-  overflow: hidden; //par img no sobrepase los bordes
+  overflow: hidden; //para img no sobrepase los bordes
   display: flex;
   align-items: center;
   //heredado de padding
@@ -38,7 +38,7 @@
 
   // Variantes
   &--ira {
-    @extend .borde-ira;
+    @extend .borde-ira; //se usa @extend para heredar los bordes
     strong {
       color: p.$ira-meliodas;
     }

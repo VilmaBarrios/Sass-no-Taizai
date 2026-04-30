@@ -35,8 +35,8 @@
   align-items: flex-start !important;
 }
 
-// Gap usando tus variables (si tienes variables de espaciado en padding_margin)
-.gap-1 {
+// Gap usando las variables
+gap-1{
   gap: 0.5rem !important;
 }
 .gap-2 {
@@ -46,9 +46,9 @@
   gap: 1.5rem !important;
 }
 
-// EJEMPLO DE HERENCIA: Flex Responsivo usando tus Breakpoints
+// HERENCIA: Flex Responsivo usando los Breakpoints
 @media (max-width: 768px) {
-  // Aquí podrías usar tus variables de _breackpoints.scss
+
   .flex-md-column {
     flex-direction: column !important;
   }

@@ -73,14 +73,17 @@
     "lujuria": p.$lujuria-gowther,
   );
 
+  //bucle q reccore cada par de nombres y colo dentro del mapa '$pecados'
   @each $name, $color in $pecados-map {
-    &.card-#{$name} {
-      border-top: 3px solid $color;
+    //crea una clase unica por pecado
+    &.card-#{$name} { 
+      border-top: 3px solid $color; //aplica un borde solido de 3 pixeles
 
+      //estilo para todos los h5 q tengamos
       h5 {
-        font-family: map.get(t.$sin-fonts, $name);
+        font-family: map.get(t.$sin-fonts, $name); //busca y aplicala tipografia del personaje
       }
-
+      //estilo para la cabecera de las tarjetas
       .card-header {
         background: rgba($color, 0.08);
         color: $color;
@@ -109,7 +112,7 @@
     }
   }
 }
-
+//tamaños de las cards
 .card-sm {
   flex: 0 0 180px;
 }
