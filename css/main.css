@@ -1436,6 +1436,37 @@ img {
   transform: translateY(-3px);
 }
 
+.folder-structure {
+  background: #111;
+  padding: 25px;
+  border-radius: 10px;
+  font-family: "Consolas", monospace;
+  border-left: 5px solid #E6CC00;
+}
+
+.folder-item {
+  color: #FF8F00;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.file-item {
+  color: #4FC3F7;
+  opacity: 0.9;
+}
+
+.color-sample {
+  width: 50px;
+  height: 25px;
+  margin: auto;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.border-top-ira {
+  border-top: 2px solid #E6CC00;
+}
+
 .btn {
   display: inline-flex;
   gap: 0.5rem;
