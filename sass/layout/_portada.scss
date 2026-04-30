@@ -1,77 +1,113 @@
 @use '../clases_utilitarias/paleta' as *;
 @use '../clases_utilitarias/tipografia' as *;
 
-.hero-full-screen {
-    position: relative;
+.hero-section {
+    min-height: 100vh; // ocupa todo el alto de la pantalla
+    background-color: $dark-night; // fondo oscuro profundo
+    display: flex; // flexbox para centrado total
+    align-items: center; // centrado vertical
+    justify-content: center; // centrado horizontal
+    padding: 0 5%;; // margen interno de seguridad a los lados
+    overflow: hidden; // evita que las rotaciones de imágenes generen scroll
+}
+
+.hero-container {
+    display: flex; // alinea texto y visual en dos columnas
     width: 100%;
-    height: 100vh; 
-    display: flex;
+    max-width: 1200px; // ancho máximo de contenido
     align-items: center;
+    gap: 40px; // espacio entre el texto y el cluster de imágenes
+
+    @media (max-width: 1024px) {
+        flex-direction: column; // en tabletas y móviles se apila verticalmente
+        text-align: center; // centra el texto en dispositivos pequeños
+        padding-top: 80px; // espacio extra para el navbar
+    }
+}
+
+.hero-text {
+    flex: 1; // ocupa la mitad del espacio disponible
+    
+    h1 { 
+        font-size: clamp(3rem, 8vw, 5.5rem); // tamaño fluido: min 3rem, max 5.5rem
+        line-height: 0.9; // interlineado muy cerrado para impacto visual
+        margin-bottom: 1.5rem; 
+    }
+
+    // tarjeta de presentación o subtítulo
+    .hero-card {
+        background: rgba(255, 255, 255, 0.03); // fondo blanco casi transparente
+        padding: 2rem;
+        border-radius: 4px;
+        margin-bottom: 2.5rem;
+        max-width: 500px; // limita el ancho para que no sea difícil de leer
+
+        @media (max-width: 1024px) { 
+            margin: 0 auto 2.5rem; // centra la tarjeta en móviles
+        }
+    }
+}
+
+.hero-visual {
+    flex: 1; // ocupa la otra mitad del espacio
+    display: flex;
     justify-content: center;
-    text-align: center;
+}
 
-    background-image: url('../img/123.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
+// contenedor de las imágenes de los pecados
+.sins-cluster {
+    display: grid;
+    grid-template-columns: repeat(3, 130px); // 3 columnas de ancho fijo
+    grid-gap: 15px; // separación entre imágenes
+    transform: rotate(-5deg); // inclinación general del grupo para estilo rebelde
 
-    .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
+    @media (max-width: 480px) {
+        grid-template-columns: repeat(2, 130px); // pasa a 2 columnas en móviles pequeños
+    }
+}
+
+// cada tarjeta de personaje individual
+.sin-item {
+    width: 130px;
+    height: 170px;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden; // corta la imagen para que encaje en el borde redondeado
+    border: 2px solid rgba(255, 255, 255, 0.1); // borde muy tenue por defecto
+    transition: all 0.3s ease; // suaviza la animación del hover
+
+    img {
         width: 100%;
         height: 100%;
-        background: linear-gradient(
-            to bottom, 
-            rgba($dark-night, 0.4) 0%, 
-            rgba($dark-night, 0.8) 100%
-        );
-        z-index: 1;
+        object-fit: cover; // ajusta la imagen sin deformarla
+    }
+
+    // efecto al pasar el mouse
+    &:hover {
+        transform: scale(1.1) rotate(5deg); // la imagen crece y rota al lado opuesto
+        z-index: 10; // se posiciona encima de las otras imágenes
+        border-color: $ira-meliodas; // el borde brilla con el color de meliodas
+    }
+
+    // ajuste decorativo para el último elemento
+    &:last-child {
+        grid-column: 2; // centra el último ícono si queda impar
     }
 }
 
-.hero-content {
-    position: relative;
-    z-index: 10;
-    max-width: 800px;
-    padding: 20px;
-    
-    .title-giant {
-        font-size: clamp(3rem, 10vw, 7rem);
-        margin-bottom: 1.5rem;
-        letter-spacing: 5px;
-    }
-}
-.glass-card {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 15px;
-    margin-bottom: 3rem;
-}
-
-.btn-mega-adventure {
+// botón de llamado a la acción (cta)
+.btn-hero {
     display: inline-block;
-    background: $ira-meliodas;
-    color: $dark-night;
-    padding: 20px 60px;
-    font-size: 1.5rem;
+    background: $ira-meliodas; // fondo color ira
+    color: #000; // texto negro para contraste alto
+    padding: 18px 45px; // botón grande y táctil
     font-weight: bold;
     text-decoration: none;
-    border-radius: 50px; 
-    transition: all 0.3s ease;
-    text-transform: uppercase;
+    border-radius: 4px;
+    transition: 0.3s;
 
-    &:hover {
-        transform: scale(1.05) translateY(-5px);
-        box-shadow: 0 15px 30px rgba($ira-meliodas, 0.4);
-        letter-spacing: 2px;
-    }
-}
-
-// Responsivo
-@media (max-width: 768px) {
-    .hero-full-screen {
-        background-attachment: scroll;
+    &:hover { 
+        filter: brightness(1.2); // brilla al pasar el mouse
+        transform: translateY(-3px); // pequeño salto hacia arriba
     }
 }

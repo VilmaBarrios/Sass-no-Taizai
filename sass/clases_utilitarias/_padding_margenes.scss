@@ -1,26 +1,37 @@
+//definimos la unidad base, cada nivel aumentara en multiplos de 4 pixeles
 $pixel-size: 4px;
 
 // Márgenes
+//bucle q recoore del 0 al 8 para crear niveles de espaciado (m-0 hasta m-8)
 @for $i from 0 through 8 {
+  //clase para margen global (todos los lados)
   .m-#{$i} {
     margin: $i * $pixel-size;
   }
+
+  //clase para margen superior 
   .mt-#{$i} {
     margin-top: $i * $pixel-size;
   }
+
+  //clase para mergen inferior
   .mb-#{$i} {
     margin-bottom: $i * $pixel-size;
   }
+  //clase para margen izquierdo
   .ml-#{$i} {
     margin-left: $i * $pixel-size;
   }
+  //clase para margen derecho
   .mr-#{$i} {
     margin-right: $i * $pixel-size;
   }
+  //clase para margenes horizontales
   .mx-#{$i} {
     margin-left: $i * $pixel-size;
     margin-right: $i * $pixel-size;
   }
+  //clase para margenes verticales
   .my-#{$i} {
     margin-top: $i * $pixel-size;
     margin-bottom: $i * $pixel-size;
@@ -28,26 +39,34 @@ $pixel-size: 4px;
 }
 
 // Paddings
+//repeticion de la logica del bucle para las propiedades de padding
 @for $i from 0 through 8 {
+  //clase para el padding global
   .p-#{$i} {
     padding: $i * $pixel-size;
   }
+  //clase para el padding superior
   .pt-#{$i} {
     padding-top: $i * $pixel-size;
   }
+  //clase para el padding inferior
   .pb-#{$i} {
     padding-bottom: $i * $pixel-size;
   }
+  //clase para el padding izquierdo
   .pl-#{$i} {
     padding-left: $i * $pixel-size;
   }
+  //clase para el padding derecho
   .pr-#{$i} {
     padding-right: $i * $pixel-size;
   }
+  //clase para el padding horizontal
   .px-#{$i} {
     padding-left: $i * $pixel-size;
     padding-right: $i * $pixel-size;
   }
+  //clase para el padding vertical
   .py-#{$i} {
     padding-top: $i * $pixel-size;
     padding-bottom: $i * $pixel-size;
