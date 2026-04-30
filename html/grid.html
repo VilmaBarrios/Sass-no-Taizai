@@ -7,6 +7,52 @@
      <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
+   <nav class="navbar">
+        <a href="#" class="navbar-brand">sass no taizai</a>
+        <input type="checkbox" id="menu-toggler" class="navbar-check">
+        <ul class="navbar-nav">
+            <li><a href="../index.html">inicio</a></li>
+            <li><a href="grid.html">britania grid</a></li>
+            <li><a href="botones.html">tesoros sagrados</a></li>
+            <li><a href="arquisass.html">arquitectura sass</a></li>
+        </ul>
+        <div class="navbar-actions">
+            <label for="menu-toggler" class="navbar-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+    </nav>
+
+    <div class="docs-layout">
+        <input type="checkbox" id="sidebar-master" class="sidebar-checkbox">
+        <label for="sidebar-master" class="sidebar-mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <aside class="docs-sidebar">
+            <p class="sidebar-group">inicio</p>
+            <a href="introduccion.html" class="sidebar-link">introducción</a>
+            <a href="instalacion.html" class="sidebar-link active">instalación</a>
+
+            <p class="sidebar-group">layout</p>
+            <a href="grid.html" class="sidebar-link">sistema de las 12 columnas</a>
+
+            <p class="sidebar-group">componentes</p>
+            <a href="botones.html" class="sidebar-link">botones (variantes)</a>
+            <a href="cards.html" class="sidebar-link">card (posters)</a>
+            <a href="tablas.html" class="sidebar-link">tablas</a>
+            <a href="formularios.html" class="sidebar-link">formularios</a>
+            <a href="navbar.html" class="sidebar-link">navbar</a>
+            <a href="alertas.html" class="sidebar-link">alertas</a>
+            <a href="flexbox.html" class="sidebar-link">flexbox</a>
+            <a href="badges.html" class="sidebar-link">Badges</a>
+            <a href="container.html" class="sidebar-link">Container</a>
+        </aside>
+        
 <div class="container">
   <h1 style="color: #f1c40f; margin-bottom: 1.5rem;">Prueba de Grid: Ban vs Checkbox</h1>
 

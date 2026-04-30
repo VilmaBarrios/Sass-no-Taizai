@@ -1751,7 +1751,6 @@ img {
   color: #FFFFFF;
 }
 .container-soberbia::before {
-  content: "🦁";
   display: block;
   font-size: 2rem;
   margin-bottom: 10px;
