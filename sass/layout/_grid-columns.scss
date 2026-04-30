@@ -11,7 +11,7 @@
   position: relative;
 }
 
-// 1. Móvil (col-1 a col-12)
+//Móvil (col-1 a col-12)
 @for $i from 1 through 12 {
   .col-#{$i} {
     flex: 0 0 auto;
@@ -19,7 +19,7 @@
   }
 }
 
-// 2. Tablets (col-md-1 a col-md-12)
+// Tablets (col-md-1 a col-md-12)
 @include m.responsive-md {
   @for $i from 1 through 12 {
     .col-md-#{$i} {
@@ -29,7 +29,7 @@
   }
 }
 
-// 3. Escritorio / LG (col-lg-1 a col-lg-12)
+// Escritorio / LG (col-lg-1 a col-lg-12)
 @include m.responsive-lg {
   @for $i from 1 through 12 {
     .col-lg-#{$i} {
