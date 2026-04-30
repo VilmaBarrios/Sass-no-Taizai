@@ -3,6 +3,12 @@
 @use "./sombras" as s;
 @use "./breackpoints" as b;
 
+
+
+$grid-gap: 16px;
+$grid-gap-mobile: 8px;
+
+
 // Mixins para los responsivos
 //dispositivo pequeños (celular)
 @mixin responsive-sm {
@@ -37,7 +43,7 @@
   }
 }
 
-// 2. Mixin para sombras segun pecados
+//Mixin para sombras segun pecados
 @mixin sombras-pecados($color, $pecado) {
   border: 1px solid $color;
 
