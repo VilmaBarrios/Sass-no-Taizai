@@ -94,101 +94,137 @@
                 </div> 
             </div>
         </section>
-            <h3 class="sidebar-group">1. Dirección del Flujo (Direction)</h3>
-            <div class="demo-block">
-                <p class="text-muted p-3">Cambia la orientación de los elementos de horizontal a vertical mediante el eje principal.</p>
-                <div class="demo-preview d-flex flex-column gap-2 bg-deep-dark">
-                    <div class="p-2 border-ira">Guerrero 1 (Arriba)</div>
-                    <div class="p-2 border-ira">Guerrero 2 (Medio)</div>
-                    <div class="p-2 border-ira">Guerrero 3 (Abajo)</div>
-                </div>
 
-                <input type="checkbox" id="flex-dir" class="demo-checkbox" />
-                <label for="flex-dir" class="demo-toggle">Ver Forja de Dirección</label>
-                <div class="demo-code">
-                    <pre>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"d-flex flex-column gap-2 bg-deep-dark"</span><span class="tag">&gt;</span>
-                        <span class="comment">&lt;!-- Los hijos se apilan de arriba hacia abajo automáticamente --&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-2 border-ira"</span><span class="tag">&gt;</span> Guerrero 1 (Arriba) <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-2 border-ira"</span><span class="tag">&gt;</span> Guerrero 2 (Medio) <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-2 border-ira"</span><span class="tag">&gt;</span> Guerrero 3 (Abajo) <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;/div&gt;</span>
-                    </pre>
-                </div>
-            </div>
-            <h3 class="sidebar-group">2. Alineación en el Eje Cruzado (Align)</h3>
-            <div class="demo-block">
-                <p class="text-muted p-3">Ideal para alinear elementos de diferentes alturas en una misma fila (eje transversal).</p>
-                <div class="demo-preview d-flex align-center h-200 bg-deep-dark">
-                    <div class="p-4 bg-ira">Grande</div>
-                    <div class="p-2 border-ira">Pequeño</div>      
-                    <div class="p-3 border-ira">Medio</div>   
-                </div>
+        <div class="container container-nether mb-5">
+            <section>
+                <h2 class="text-ira">Containers Flex Básicos</h2>
+                <h3 class="sidebar-group px-0 mb-4">Flex Container con Borde</h3>
+                
+                <div class="demo-block">
+                    <div class="demo-preview d-flex p-3 bg-deep-dark gap-2">
+                        <div class="demo-box p-2 border-ira">Elemento 1</div>
+                        <div class="demo-box p-2 border-ira">Elemento 2</div>
+                        <div class="demo-box p-2 border-ira">Elemento 3</div>
+                    </div>
 
-                <input type="checkbox" id="flex-align" class="demo-checkbox" />
-                <label for="flex-align" class="demo-toggle">Ver Forja de Alineación</label>
-                <div class="demo-code">
-                    <pre>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"d-flex align-center h-200 bg-deep-dark"</span><span class="tag">&gt;</span>
-                        <span class="comment">&lt;!-- Los hijos tienen diferentes paddings para simular alturas distintas --&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-4 bg-ira"</span><span class="tag">&gt;</span> Grande <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-2 border-ira"</span><span class="tag">&gt;</span> Pequeño <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-3 border-ira"</span><span class="tag">&gt;</span> Medio <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;/div&gt;</span>
-                    </pre>
+                    <input type="checkbox" id="flex-base" class="demo-checkbox" />
+                    <label for="flex-base" class="demo-toggle">Ver Forja Maestra</label>       
+                    <div class="demo-code">
+                        <pre>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"container container-nether"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;section&gt;</span>
+                            <span class="tag">&lt;h2&gt;</span>Containers Flex Básicos<span class="tag">&lt;/h2&gt;</span>
+                            <span class="tag">&lt;h3&gt;</span>Flex Container con Borde<span class="tag">&lt;/h3&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"d-flex border-ira"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Elemento 1<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Elemento 2<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Elemento 3<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/section&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </pre>
+                    </div>
                 </div>
-            </div>
+            </section>
+        </div>
 
-   
-            <h3 class="sidebar-group">3. Salto de Línea (Wrap)</h3>
-            <div class="demo-block">
-                <p class="text-muted p-3">Controla el desbordamiento permitiendo que los elementos se posicionen en múltiples líneas cuando el espacio es insuficiente.</p>
-                <div class="demo-preview d-flex flex-wrap gap-2 bg-deep-dark">
-                    <div class="p-3 border-ira">Tesoro Sagrado 1</div>
-                    <div class="p-3 border-ira">Tesoro Sagrado 2</div>
-                    <div class="p-3 border-ira">Tesoro Sagrado 3</div>
-                    <div class="p-3 border-ira">Tesoro Sagrado 4</div>
-                    <div class="p-3 border-ira">Tesoro Sagrado 5</div>
+        <div class="container container-nether mb-5">
+            <section>
+                <h2 class="text-ira">Direcciones Flex</h2>
+                
+                <h3 class="sidebar-group px-0 mb-3">Flex Column (Formación Vertical)</h3>
+                <div class="demo-block">
+                    <div class="demo-preview d-flex flex-column gap-2 bg-deep-dark p-3">
+                        <div class="demo-box p-2 border-ira text-lujuria">Guerrero 1</div>
+                        <div class="demo-box p-2 border-ira text-lujuria">Guerrero 2</div>
+                    </div>
+
+                    <input type="checkbox" id="flex-dir-col" class="demo-checkbox" />
+                    <label for="flex-dir-col" class="demo-toggle">Ver Forja de Dirección</label>
+                    
+                    <div class="demo-code">
+                        <pre>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"container container-nether"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;section&gt;</span>
+                            <span class="tag">&lt;h2&gt;</span>Direcciones Flex<span class="tag">&lt;/h2&gt;</span>
+                            <span class="tag">&lt;h3&gt;</span>Flex Column<span class="tag">&lt;/h3&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"flex-column"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Elemento 1<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Elemento 2<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/section&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </pre>
+                    </div>
                 </div>
-    
-    
-                <input type="checkbox" id="flex-wrap" class="demo-checkbox" />
-                <label for="flex-wrap" class="demo-toggle">Ver Forja de Envolvimiento</label>
-                <div class="demo-code">
-                    <pre>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"d-flex flex-wrap gap-2 bg-deep-dark"</span><span class="tag">&gt;</span>
-                        <span class="comment">&lt;!-- Si estos elementos superan el ancho del padre, el sobrante bajará automáticamente --&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-3 border-ira"</span><span class="tag">&gt;</span> Tesoro Sagrado 1 <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-3 border-ira"</span><span class="tag">&gt;</span> Tesoro Sagrado 2 <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-3 border-ira"</span><span class="tag">&gt;</span> Tesoro Sagrado 3 <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-3 border-ira"</span><span class="tag">&gt;</span> Tesoro Sagrado 4 <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-3 border-ira"</span><span class="tag">&gt;</span> Tesoro Sagrado 5 <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;/div&gt;</span>
-                    </pre>
+            </section>
+        </div>
+        
+        <div class="container container-nether mb-5">
+            <section>
+                <h2 class="text-ira">Alineaciones Flex</h2>
+                
+                <h3 class="sidebar-group px-0 mb-3">Flex Between (Distribución de Poder Total)</h3>
+                <div class="demo-block">
+                    <div class="demo-preview d-flex justify-between bg-deep-dark p-3">
+                        <div class="demo-box p-2 border-ira">Flanco Izquierdo</div>
+                        <div class="demo-box p-2 border-ira bg-ira-dark">Refuerzo Central</div>
+                        <div class="demo-box p-2 border-ira">Flanco Derecho</div>
+                    </div>
+
+                    <input type="checkbox" id="flex-align-bet" class="demo-checkbox" />
+                    <label for="flex-align-bet" class="demo-toggle">Ver Forja de Alineación</label>
+                    
+                    <div class="demo-code">
+                        <pre>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"container container-nether"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;section&gt;</span>
+                            <span class="tag">&lt;h2&gt;</span>Alineaciones Flex<span class="tag">&lt;/h2&gt;</span>
+                            <span class="tag">&lt;h3&gt;</span>Flex Between con 3 Guerreros<span class="tag">&lt;/h3&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"d-flex justify-between"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Flanco Izquierdo<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Refuerzo Central<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Flanco Derecho<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/section&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </pre>
+                    </div>
                 </div>
-            </div>
-            <h3 class="sidebar-group">4. Separación (Gaps)</h3>
-            <div class="demo-block">
-                <p class="text-muted p-3">Controla la distancia uniforme entre elementos hijos sin afectar los bordes externos del contenedor.</p>  
-                <div class="demo-preview d-flex gap-3 bg-deep-dark">     
-                    <div class="p-3 bg-ira">Gap-3</div>        
-                    <div class="p-3 bg-ira">Gap-3</div>        
-                    <div class="p-3 bg-ira">Gap-3</div>
-                </div> 
-                <input type="checkbox" id="flex-gap" class="demo-checkbox" />   
-                <label for="flex-gap" class="demo-toggle">Ver Forja de Espaciado</label> 
-                <div class="demo-code">
-                    <pre>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"d-flex gap-3 bg-deep-dark"</span><span class="tag">&gt;</span>
-                        <span class="comment">&lt;!-- Los hijos no necesitan margen derecho ni inferior; el padre gestiona el espacio --&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-3 bg-ira"</span><span class="tag">&gt;</span> Gap-3 <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-3 bg-ira"</span><span class="tag">&gt;</span> Gap-3 <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"p-3 bg-ira"</span><span class="tag">&gt;</span> Gap-3 <span class="tag">&lt;/div&gt;</span>
-                        <span class="tag">&lt;/div&gt;</span>
-                    </pre>
+            </section>
+        </div>
+
+        <div class="container container-nether mb-5">
+            <section>
+                <h2 class="text-ira">Elementos Flex</h2>
+                <h3 class="sidebar-group px-0 mb-3">Propiedades de Crecimiento (Flex Grow)</h3>
+                
+                <div class="demo-block">
+                    <div class="demo-preview d-flex bg-deep-dark p-3 gap-2">
+                        <div class="demo-box flex-grow-1 p-2 bg-ira">Dominio Total (Grow 1)</div>
+                        <div class="demo-box p-2 border-ira">Normal</div>
+                    </div>
+
+                    <input type="checkbox" id="flex-prop" class="demo-checkbox" />
+                    <label for="flex-prop" class="demo-toggle">Ver Forja de Propiedades</label>
+                    
+                    <div class="demo-code">
+                        <pre>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"container container-nether"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;section&gt;</span>
+                            <span class="tag">&lt;h2&gt;</span>Elementos Flex<span class="tag">&lt;/h2&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"flex-container"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box flex-grow-1"</span><span class="tag">&gt;</span>flex-grow-1<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box flex-grow-0"</span><span class="tag">&gt;</span>flex-grow-0<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/section&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </pre>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
+    </section>
     </main>
 </body>
 </html>
