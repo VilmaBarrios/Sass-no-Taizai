@@ -1,0 +1,32 @@
+@use '../clases_utilitarias/paleta' as *;
+
+.folder-structure {
+    background: #111;
+    padding: 25px;
+    border-radius: 10px;
+    font-family: 'Consolas', monospace;
+    border-left: 5px solid $ira-meliodas;
+}
+
+.folder-item { 
+    color: $soberbia-escanor; 
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.file-item { 
+    color: $pereza-king;
+    opacity: 0.9;
+}
+
+.color-sample {
+    width: 50px;
+    height: 25px;
+    margin: auto;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.border-top-ira {
+    border-top: 2px solid $ira-meliodas;
+}
