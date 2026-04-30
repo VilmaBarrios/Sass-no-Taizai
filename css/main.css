@@ -89,7 +89,7 @@
   margin-bottom: 8px;
 }
 
-.m-3, .borde-codicia, .borde-envidia, .container-pecado, .container-ira, .container-codicia, .container-pereza, .container-soberbia, .alert--codicia, .alert--envidia {
+.m-3, .borde-codicia, .borde-envidia, .alert--codicia, .alert--envidia {
   margin: 12px;
 }
 
@@ -1657,11 +1657,10 @@ img {
 
 .container-pecado, .container-soberbia, .container-pereza, .container-codicia, .container-ira {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 12px auto;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 0.3s ease;
 }
 @media (min-width: 768px) {
   .container-pecado, .container-soberbia, .container-pereza, .container-codicia, .container-ira {
@@ -1680,7 +1679,6 @@ img {
 .container-ira {
   background-color: #9E8C00;
   border: 3px solid #E6CC00;
-  background-image: radial-gradient(circle at 10% 10%, rgba(26, 26, 26, 0.4) 0%, transparent 50%);
 }
 .container-ira h2 {
   font-size: 1rem;
@@ -1695,15 +1693,13 @@ img {
   position: absolute;
   right: 20px;
   top: 20px;
-  opacity: 0.3;
+  opacity: 0.2;
   font-size: 2rem;
 }
 
 .container-codicia {
   background-color: #1A1A1A;
   border: 3px double #C62828;
-  background-image: linear-gradient(135deg, rgba(198, 40, 40, 0.1) 25%, transparent 25%);
-  background-size: 30px 30px;
 }
 .container-codicia h2 {
   font-size: 1rem;
@@ -1711,21 +1707,19 @@ img {
   font-family: "Almendra Display", serif;
   text-transform: uppercase;
   font-family: "Barlow Condensed", sans-serif;
-  color: #EF9A9A;
+  color: #FFFFFF;
 }
 .container-codicia::before {
   content: "🦊";
   position: absolute;
   right: 20px;
   top: 20px;
-  filter: grayscale(1) brightness(2);
+  opacity: 0.2;
 }
 
 .container-pereza {
   background-color: #B3E5FC;
   border: 2px solid #4FC3F7;
-  background-image: radial-gradient(circle, #0288D1 1px, transparent 1px);
-  background-size: 20px 20px;
 }
 .container-pereza h2 {
   font-size: 1rem;
@@ -1739,27 +1733,14 @@ img {
   content: "🐻";
   position: absolute;
   right: 20px;
+  top: 20px;
+  opacity: 0.2;
 }
 
 .container-soberbia {
   background-color: #E65100;
   border: 4px ridge #FF8F00;
   text-align: center;
-  background-image: radial-gradient(circle at center, rgba(255, 224, 178, 0.2) 0%, transparent 70%);
-}
-@keyframes heat-wave {
-  0% {
-    box-shadow: 0 0 10px #FF8F00;
-  }
-  50% {
-    box-shadow: 0 0 30px #FF8F00;
-  }
-  100% {
-    box-shadow: 0 0 10px #FF8F00;
-  }
-}
-.container-soberbia {
-  animation: heat-wave 3s infinite;
 }
 .container-soberbia h2 {
   font-size: 1rem;
@@ -1768,12 +1749,11 @@ img {
   text-transform: uppercase;
   font-family: "Cinzel", serif;
   color: #FFFFFF;
-  text-shadow: 2px 2px #1A1A1A;
 }
 .container-soberbia::before {
   content: "🦁";
-  font-size: 2.5rem;
   display: block;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
