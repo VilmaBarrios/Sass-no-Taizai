@@ -1,9 +1,9 @@
-@use "sass:map"; //map.get
+@use "sass:map"; 
 @use "./tipografia" as t;
 @use "./sombras" as s;
 @use "./breackpoints" as b;
 
-// 1. Mixins para los responsivos
+//Mixins para los responsivos
 @mixin responsive-sm {
   @media (min-width: map.get(b.$breakpoints, "sm")) {
     @content;
