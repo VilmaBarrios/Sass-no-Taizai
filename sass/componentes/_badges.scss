@@ -1,0 +1,84 @@
+@use '../clases_utilitarias/paleta' as *;
+@use '../clases_utilitarias/tipografia' as *;
+@use '../clases_utilitarias/redondeo' as *;
+@use '../clases_utilitarias/sombras' as *;
+@use '../clases_utilitarias/bordes' as *; 
+
+// Estilo Base
+.badge-pecado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    cursor: default;
+    border-radius: $xxl; //tipo píldora
+    margin: 10px;        
+}
+
+// Variantes heredando 
+.badge-ira {
+    @extend .badge-pecado;
+    @extend .shadow-ira-sm;
+    background-color: $ira-meliodas;
+    color: $dark-night;
+    font-family: $font-ira;
+    border: 2px solid $ira-oscuro;
+}
+
+.badge-codicia {
+    @extend .badge-pecado;
+    @extend .shadow-codicia-sm;
+    background-color: $codicia-ban;
+    color: $white;
+    font-family: $font-codicia;
+    border: 2px solid $codicia-oscuro;
+}
+
+.badge-pereza {
+    @extend .badge-pecado;
+    @extend .shadow-pereza-sm;
+    background-color: $pereza-king;
+    color: $dark-night;
+    font-family: $font-pereza;
+    border: 2px solid $pereza-oscuro;
+}
+
+.badge-envidia {
+    @extend .badge-pecado;
+    @extend .shadow-envidia-sm;
+    background-color: $envidia-diane;
+    color: $dark-night;
+    font-family: $font-envidia;
+    border: 2px solid $envidia-oscuro;
+}
+
+.badge-soberbia {
+    @extend .badge-pecado;
+    @extend .shadow-soberbia-sm;
+    background-color: $soberbia-escanor;
+    color: $white;
+    font-family: $font-soberbia;
+    border: 2px solid $soberbia-oscuro;
+}
+
+.badge-gula {
+    @extend .badge-pecado;
+    @extend .shadow-gula-sm;
+    background-color: $gula-merlin;
+    color: $white;
+    font-family: $font-gula;
+    border: 2px solid $gula-oscuro;
+}
+
+.badge-lujuria {
+    @extend .badge-pecado;
+    @extend .shadow-lujuria-sm;
+    background-color: $lujuria-claro;
+    color: $lujuria-oscuro;
+    font-family: $font-lujuria;
+    border: 2px dashed $lujuria-gowther; //bordes
+}

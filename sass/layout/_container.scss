@@ -1,0 +1,139 @@
+@use '../clases_utilitarias/paleta' as *;
+@use '../clases_utilitarias/tipografia' as t;
+@use '../clases_utilitarias/redondeo' as *;
+@use '../clases_utilitarias/sombras' as *;
+@use '../clases_utilitarias/bordes' as *; 
+@use '../clases_utilitarias/sombras' as *;
+@use '../clases_utilitarias/mixins' as m;
+
+// ======= ESTILO BASE =======
+.container-pecado {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    @extend .rde-m; // Redondeo medio heredado
+    @extend .p-4;   // Padding base
+    @extend .m-3;   // Margen base
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    // Responsividad usando tus mixins
+    @include m.responsive-md { width: 90%; }
+    @include m.responsive-lg { width: 85%; }
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+// ======= CONTAINER: IRA (Meliodas) =======
+.container-ira {
+    @extend .container-pecado;
+    background-color: $ira-oscuro;
+    border: 3px solid $ira-meliodas;
+    @extend .shadow-ira-lg; // Tu sombra de ira
+    
+    // Gradiente de "Marca del Demonio"
+    background-image: radial-gradient(circle at 10% 10%, rgba($dark-night, 0.4) 0%, transparent 50%);
+    
+    h2 {
+        @include m.estilo-texto("titulo");
+        font-family: t.$font-ira;
+        color: $ira-meliodas;
+    }
+
+    &::before {
+        content: "🐉"; 
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        opacity: 0.3;
+        font-size: 2rem;
+    }
+}
+
+// ======= CONTAINER: CODICIA (Ban) =======
+.container-codicia {
+    @extend .container-pecado;
+    background-color: $dark-night;
+    border: 3px double $codicia-ban; // Borde Ban
+    @extend .shadow-codicia-lg;
+    
+    // Patrón de "Cicatriz/Sangre"
+    background-image: linear-gradient(135deg, rgba($codicia-ban, 0.1) 25%, transparent 25%);
+    background-size: 30px 30px;
+
+    h2 {
+        @include m.estilo-texto("titulo");
+        font-family: t.$font-codicia;
+        color: $codicia-claro;
+    }
+
+    &::before {
+        content: "🦊";
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        filter: grayscale(1) brightness(2);
+    }
+}
+
+// ======= CONTAINER: PEREZA (King) =======
+.container-pereza {
+    @extend .container-pecado;
+    background-color: $pereza-claro;
+    border: 2px solid $pereza-king;
+    @extend .shadow-pereza-lg;
+    @extend .rde-xl; // Más redondeado por ser King (almohada)
+
+    // Patrón de "Chastiefol/Hojas"
+    background-image: radial-gradient(circle, $pereza-oscuro 1px, transparent 1px);
+    background-size: 20px 20px;
+
+    h2 {
+        @include m.estilo-texto("titulo");
+        font-family: t.$font-pereza;
+        color: $pereza-oscuro;
+    }
+
+    &::before {
+        content: "🐻";
+        position: absolute;
+        right: 20px;
+    }
+}
+
+// ======= CONTAINER: SOBERBIA (Escanor) =======
+.container-soberbia {
+    @extend .container-pecado;
+    background-color: $soberbia-oscuro;
+    border: 4px ridge $soberbia-escanor;
+    @extend .shadow-soberbia-lg;
+    text-align: center;
+
+    // Efecto de Brillo Solar (Cruel Sun)
+    background-image: radial-gradient(circle at center, rgba($soberbia-claro, 0.2) 0%, transparent 70%);
+    
+    // Animación de "Calor"
+    @keyframes heat-wave {
+        0% { box-shadow: 0 0 10px $soberbia-escanor; }
+        50% { box-shadow: 0 0 30px $soberbia-escanor; }
+        100% { box-shadow: 0 0 10px $soberbia-escanor; }
+    }
+    animation: heat-wave 3s infinite;
+
+    h2 {
+        @include m.estilo-texto("titulo");
+        font-family: t.$font-soberbia;
+        color: $white;
+        text-shadow: 2px 2px $dark-night;
+    }
+
+    &::before {
+        content: "🦁";
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 10px;
+    }
+}

@@ -14,6 +14,7 @@
 @use '../sass/layout/grid-columns';
 @use '../sass/layout/grid-rows';
 @use '../sass/layout/arquisass';
+@use '../sass/layout/container';
 
 @use '../sass/componentes/botones.scss';
 @use '../sass/componentes/navbar';
@@ -24,3 +25,4 @@
 @use '../sass/componentes/navbar2';
 @use '../sass/componentes/instalacion';
 @use '../sass/componentes/flex';
+@use '../sass/componentes/badges';
