@@ -1,6 +1,6 @@
-@use 'sass:map';
-@use '../clases_utilitarias/breackpoints' as b;
-@use '../clases_utilitarias/mixins' as m;
+@use "sass:map";
+@use "../clases_utilitarias/breackpoints" as b;
+@use "../clases_utilitarias/mixins" as m;
 
 .container {
   width: 100%;
@@ -9,9 +9,15 @@
   padding-right: 15px;
   padding-left: 15px;
 
-  @include m.responsive-md { max-width: map.get(b.$breakpoints, "md"); }
-  @include m.responsive-lg { max-width: map.get(b.$breakpoints, "lg"); }
-  @include m.responsive-xl { max-width: map.get(b.$breakpoints, "xl"); }
+  @include m.responsive-md {
+    max-width: map.get(b.$breakpoints, "md");
+  }
+  @include m.responsive-lg {
+    max-width: map.get(b.$breakpoints, "lg");
+  }
+  @include m.responsive-xl {
+    max-width: map.get(b.$breakpoints, "xl");
+  }
 }
 
 .row {
