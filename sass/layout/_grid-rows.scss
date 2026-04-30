@@ -27,7 +27,7 @@
   margin-left: -15px;
 }
 
-// FIX para cuando el grid está dentro de tu componente demo-preview
+// para cuando grid este dentro de demo preview no me de problemas
 .demo-preview .row {
   width: calc(100% + 30px); // Compensa el padding negativo
   gap: 0; // Anula el gap del preview para que el grid mande

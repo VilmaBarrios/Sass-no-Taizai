@@ -19,7 +19,7 @@
     margin: 10px;        
 }
 
-// Variantes heredando 
+// segun sus pecados cada uno de los badges
 .badge-ira {
     @extend .badge-pecado;
     @extend .shadow-ira-sm;
