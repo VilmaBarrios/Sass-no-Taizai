@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Container</title>
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
       <nav class="navbar">
@@ -53,5 +56,126 @@
         <a href="badges.html" class="sidebar-link">Badges</a>
         <a href="container.html" class="sidebar-link">Container</a>
       </aside>
+
+
+<section class="demo-block">
+  <div class="demo-preview">
+<main class="container-normal py-5">
+    
+    <section class="mb-5">
+        <h2 class="text-ira fs-2 fw-bold mb-4 text-center">EL ARTE DE LA CONTENCIÓN: CONTAINERS</h2>
+        <p class="text-light fs-5 mb-5 lh-lg">   
+            Los **Contenedores** son los campos de batalla donde se organiza el poder de tu interfaz. <br>En **Sass-No-Taizai**, dispones de dos estructuras fundamentales: el contenedor fluido que abarca todo el horizonte y el contenedor normal que mantiene la formación de tus guerreros centrada y protegida.
+        </p>
+
+        <h3 class="sidebar-group px-0 mb-4 text-center">Tipos de Formación</h3>
+        <div class="d-flex flex-column gap-4 ps-4 mb-5">
+            <div>
+                <p class="text-gula fw-bold mb-1">1. El Campo de Batalla Fijo (.container-normal)</p>      
+                <p class="text-gray-400 small gap-3 ps-4 mb-2">
+                    Establece anchos máximos según el dispositivo. Es ideal para mantener la lectura clara y centrada, ajustando su tamaño mediante los **mixins de responsividad**.
+                </p>     
+            </div>
+            <div>
+                <p class="text-lujuria fw-bold mb-1">2. El Horizonte Infinito (.container-fluid)</p>
+                <p class="text-gray-400 small gap-3 ps-4 mb-2">
+                    Ocupa el 100% del ancho disponible en todo momento. Perfecto para fondos de biomas o secciones que requieren expandir su aura por toda la pantalla.
+                </p>
+            </div>  
+            <div>
+                <p class="text-codicia fw-bold mb-1">3. La Herencia de los Pecados (.container-pecado)</p>     
+                <p class="text-gray-400 small gap-3 ps-4 mb-2">       
+                    Clase base que otorga a los contenedores el **redondeo medio**, el **padding** y la **transición de movimiento** característica de nuestra orden.
+                </p>   
+            </div> 
+        </div>
+    </section>
+
+    <hr class="border-secondary my-5">
+
+    <h2 class="text-soberbia fs-2 fw-bold mb-5 text-center">FORJAS PERSONALIZADAS</h2>
+
+    <div class="row g-4">
+        <div class="col-12 col-md-6">
+            <div class="container-ira">
+                <h2 class="text-center text-ira">Ira de Meliodas</h2>
+                <p class="text-light text-shadow-ira">Contenedor con borde sólido y sombras profundas. Al pasar el cursor, el contenedor se eleva desafiando la gravedad.</p>
+                <span class="badge-pill-ira">Capitán</span>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="container-codicia">
+                <h2 class="text-center text-codicia">Codicia de Ban</h2>
+                <p class="text-light text-shadow-codicia">Forjado con un borde doble y fondo oscuro como el purgatorio. Inmortal ante cualquier error de diseño.</p>
+                <span class="badge-pill-codicia">Inmortal</span>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="container-pereza">
+                <h2 class="text-center text-pereza">Pereza de King</h2>
+                <p class=" text-light text-shadow-pereza">Utiliza el redondeo extra (almohada) para simular comodidad. Es suave pero resistente como el Árbol Sagrado.</p>
+                <span>Rey Hada</span>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="container-soberbia">
+                <h2 class="text-center text-soberbia">Soberbia de Escanor</h2>
+                <p class="text-light text-shadow-soberbia">Un contenedor que brilla en el centro. Con bordes tipo "ridge" que demuestran quién es el que decide en esta interfaz.</p>
+                <span class="badge-pill-soberbia">The One</span>
+            </div>
+        </div>
+    </div>
+</main>
+  </div>
+  <input type="checkbox" id="toggle-alerts" class="demo-checkbox" />
+   <label for="toggle-alerts" class="demo-toggle"> Ver código HTML</label>
+
+   <div class="demo-code">
+  <pre>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"row g-4"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"container-ira"</span><span class="tag">&gt;</span>
+          <span class="tag">&lt;h2</span> <span class="attr">class</span>=<span class="val">"text-center text-ira"</span><span class="tag">&gt;</span>Ira de Meliodas<span class="tag">&lt;/h2&gt;</span>
+          <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"text-light text-shadow-ira"</span><span class="tag">&gt;</span>Contenedor con borde sólido y sombras profundas. Al pasar el cursor, el contenedor se eleva desafiando la gravedad.<span class="tag">&lt;/p&gt;</span>
+          <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="val">"badge-pill-ira"</span><span class="tag">&gt;</span>Capitán<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+
+      <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"container-codicia"</span><span class="tag">&gt;</span>
+          <span class="tag">&lt;h2</span> <span class="attr">class</span>=<span class="val">"text-center text-codicia"</span><span class="tag">&gt;</span>Codicia de Ban<span class="tag">&lt;/h2&gt;</span>
+          <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"text-light text-shadow-codicia"</span><span class="tag">&gt;</span>Forjado con un borde doble y fondo oscuro como el purgatorio. Inmortal ante cualquier error de diseño.<span class="tag">&lt;/p&gt;</span>
+          <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="val">"badge-pill-codicia"</span><span class="tag">&gt;</span>Inmortal<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+
+      <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"container-pereza"</span><span class="tag">&gt;</span>
+          <span class="tag">&lt;h2</span> <span class="attr">class</span>=<span class="val">"text-center text-pereza"</span><span class="tag">&gt;</span>Pereza de King<span class="tag">&lt;/h2&gt;</span>
+          <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"text-light text-shadow-pereza"</span><span class="tag">&gt;</span>Utiliza el redondeo extra (almohada) para simular comodidad. Es suave pero resistente como el Árbol Sagrado.<span class="tag">&lt;/p&gt;</span>
+          <span class="tag">&lt;span&gt;</span>Rey Hada<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+
+      <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"container-soberbia"</span><span class="tag">&gt;</span>
+          <span class="tag">&lt;h2</span> <span class="attr">class</span>=<span class="val">"text-center text-soberbia"</span><span class="tag">&gt;</span>Soberbia de Escanor<span class="tag">&lt;/h2&gt;</span>
+          <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="val">"text-light text-shadow-soberbia"</span><span class="tag">&gt;</span>Un contenedor que brilla en el centro. Con bordes tipo "ridge" que demuestran quién es el que decide en esta interfaz.<span class="tag">&lt;/p&gt;</span>
+          <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="val">"badge-pill-soberbia"</span><span class="tag">&gt;</span>The One<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  </pre>
+</div>
+</section>
+
+
+
+
+
+
 </body>
 </html>

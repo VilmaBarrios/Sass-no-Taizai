@@ -1,25 +1,23 @@
 @use '../clases_utilitarias/paleta' as *;
-@use '../clases_utilitarias/tipografia' as t;
 @use '../clases_utilitarias/redondeo' as *;
 @use '../clases_utilitarias/sombras' as *;
 @use '../clases_utilitarias/bordes' as *; 
 @use '../clases_utilitarias/sombras' as *;
 @use '../clases_utilitarias/mixins' as m;
+@use '../clases_utilitarias/tipografia' as t;
 
 
 // Estilo base para todos los pecados
 .container-pecado {
     width: 100%;
-    margin: 12px auto; // m-3 aproximado
+    margin: 12px auto; 
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease;
     
-    // Herencias de tus archivos
+    
     @extend .rde-m; 
     @extend .p-4;   
-    
-    // Responsividad con tus mixins
     @include m.responsive-md { width: 90%; }
     @include m.responsive-lg { width: 85%; }
 
@@ -42,7 +40,7 @@
     }
 
     &::before {
-        content: "🐉"; 
+        content: none;
         position: absolute;
         right: 20px;
         top: 20px;
@@ -65,6 +63,7 @@
     }
 
     &::before {
+        content: none;
         position: absolute;
         right: 20px;
         top: 20px;
@@ -75,7 +74,7 @@
 // PEREZA - King
 .container-pereza {
     @extend .container-pecado;
-    @extend .rde-xl; // Redondeo más grande (almohada)
+    @extend .rde-xl; // El redondeoo mas grande  para simular la almohada de king
     background-color: $pereza-claro;
     border: 2px solid $pereza-king;
     @extend .shadow-pereza-lg;
@@ -87,6 +86,7 @@
     }
 
     &::before {
+        content: none;
         position: absolute;
         right: 20px;
         top: 20px;
@@ -109,8 +109,29 @@
     }
 
     &::before {
+        content: none;
         display: block;
         font-size: 2rem;
         margin-bottom: 10px;
     }
+}
+
+.container-normal {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include m.responsive-sm { max-width: 540px; }
+    @include m.responsive-md { max-width: 720px; }
+    @include m.responsive-lg { max-width: 960px; }
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }

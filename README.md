@@ -36,7 +36,7 @@ Cada componente ha sido diseñado para reflejar la esencia de los pecados: desde
 ### Paleta de Colores de los Pecados
 Nuestra paleta oficial se basa en la energía espiritual de cada integrante de los Siete Pecados Capitales:
 
-| Pecado | Color HEX | Significado | Clase Base |
+| Pecado | Color    | Significado | Clase Base |
 | :--- | :--- | :--- | :--- |
 | **Ira** | `#E6CC00` | Meliodas - Marca del Demonio | `.bg-ira` |
 | **Codicia** | `#C62828` | Ban - Sangre Inmortal | `.bg-codicia` |
