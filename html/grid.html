@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grids</title>
-     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
    <nav class="navbar">
@@ -54,8 +54,6 @@
         </aside>
     
 <div class="container">
-  
-
   <section class="demo-block">
     <div class="demo-preview">
       <section class="container-fluid py-5">
@@ -104,13 +102,17 @@
         </div> 
     </div>
 </section>
+
+ 
+<div class="container-codicia">
+   <h1 class="px-0 mb-4 text-center text-shadow-codicia ">Sistema GRID Imagen y Checkbox</h1> 
       <div class="row">
         
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-6  col-lg-6">
           <img src="../img/ban2.png" alt="Ban" style="border: 1px solid #333; border-radius: 8px; width: 100%;">
         </div>
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-md-6 col-lg-6">
           <div class="demo-box" style="height: 100%; min-height: 120px; flex-direction: row !important;">
             <input type="checkbox" id="pecado">
             <label for="pecado" style="color: white; margin-left: 10px; cursor: pointer;">
@@ -119,20 +121,142 @@
           </div>
         </div>
 
-      </div> </div>
-    <div class="demo-toggle">Ver Código <span class="icon-play">▶</span></div>
-  </section>
+      </div> 
 
-  <p style="color: #f1c40f; margin: 2rem 0 1rem;">REFERENCIAS DE COLUMNAS LG</p>
+<input type="checkbox" id="toggle-grid-ban" class="demo-checkbox" />
+<label for="toggle-grid-ban" class="demo-toggle"> Ver código HTML</label>
+<div class="demo-code">
+  <pre>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"row"</span><span class="tag">&gt;</span>
+      
+      <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6 col-lg-6"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="val">"../img/ban2.png"</span> <span class="attr">alt</span>=<span class="val">"Ban"</span> <span class="attr">style</span>=<span class="val">"border: 1px solid #333; border-radius: 8px; width: 100%;"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+
+      <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12 col-md-6 col-lg-6"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"demo-box"</span> <span class="attr">style</span>=<span class="val">"height: 100%; min-height: 120px; flex-direction: row !important;"</span><span class="tag">&gt;</span>
+          <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="val">"checkbox"</span> <span class="attr">id</span>=<span class="val">"pecado"</span><span class="tag">&gt;</span>
+          <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="val">"pecado"</span> <span class="attr">style</span>=<span class="val">"color: white; margin-left: 10px; cursor: pointer;"</span><span class="tag">&gt;</span>
+            Aceptar Pecado de la Codicia
+          <span class="tag">&lt;/label&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+
+    <span class="tag">&lt;/div&gt;</span>
+  </pre>
+</div>
+      
+    </div>
+   
+    </div>
+    
   
+
+<br><br><br>
+  
+  <div class="container-pereza">
+  <h1 class="px-0 mb-4 text-center text-shadow-codicia ">Sistema GRID de las 12 columnas</h1> 
   <div class="row">
-    <div class="col-lg-12"><div class="demo-box">.col-lg-12</div></div>
-    <div class="col-lg-6"><div class="demo-box">.col-lg-6</div></div>
-    <div class="col-lg-6"><div class="demo-box">.col-lg-6</div></div>
-    <div class="col-lg-4"><div class="demo-box">.col-lg-4</div></div>
-    <div class="col-lg-4"><div class="demo-box">.col-lg-4</div></div>
-    <div class="col-lg-4"><div class="demo-box">.col-lg-4</div></div>
+    <div class="col-12 col-md-12 col-lg-12"><div class="demo-box">col 12</div></div>
+    <div class="col-6 col-md-6 col-lg-6"><div class="demo-box" >col 6</div></div>
+    <div class="col-6 col-md-6 col-lg-6"><div class="demo-box" >col 6</div></div>
+    <div class="col-12 col-md-4 col-lg-4"><div class="demo-box">col 4</div></div>
+    <div class="col-12 col-md-4 col-lg-4"><div class="demo-box">col 4</div></div>
+    <div class="col-12 col-md-4 col-lg-4"><div class="demo-box">col 4</div></div>
+    <div class="col-6 col-md-3 col-lg-3"><div class="demo-box" >col 3</div></div>
+    <div class="col-6 col-md-3 col-lg-3"><div class="demo-box" >col 3</div></div>
+    <div class="col-6 col-md-3 col-lg-3"><div class="demo-box" >col 3</div></div>
+    <div class="col-6 col-md-3 col-lg-3"><div class="demo-box" >col 3</div></div>
+    <div class="col-6 col-md-2 col-lg-2"><div class="demo-box" >col 2</div></div>
+    <div class="col-6 col-md-2 col-lg-2"><div class="demo-box" >col 2</div></div>
+    <div class="col-6 col-md-2 col-lg-2"><div class="demo-box" >col 2</div></div>
+    <div class="col-6 col-md-2 col-lg-2"><div class="demo-box" >col 2</div></div>
+    <div class="col-6 col-md-2 col-lg-2"><div class="demo-box" >col 2</div></div>
+    <div class="col-6 col-md-2 col-lg-2"><div class="demo-box" >col 2</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
+    <div class="col-6 col-md-1 col-lg-1"><div class="demo-box" >col 1</div></div>
   </div>
+
+ 
+<input type="checkbox" id="toggle-grid-12" class="demo-checkbox" />
+<label for="toggle-grid-12" class="demo-toggle"> Ver código HTML</label>
+ 
+<div class="demo-code">
+    <pre>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"row"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-12"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"demo-box"</span><span class="tag">&gt;</span>col 12<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-6"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"demo-box"</span><span class="tag">&gt;</span>col 6<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"col-4"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"demo-box"</span><span class="tag">&gt;</span>col 4<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+    </pre>
+  </div>
+
+</div>
+<br><br><br>
+  
+<div class="container-codicia">
+  <h1 class="px-0 mb-4 text-center text-shadow-codicia ">Sistema GRID-AREAS</h1> 
+<div class="britania-grid-area">
+  <header class="area-header demo-box">
+    <h3>Capitán (Header)</h3>
+  </header>
+  
+  <aside class="area-sidebar demo-box">
+    <p>Tesoro Sagrado (Sidebar)</p>
+  </aside>
+  
+  <main class="area-main demo-box">
+    <h2>Campo de Batalla (Contenido Principal)</h2>
+  </main>
+  
+  <footer class="area-footer demo-box">
+    <p>Duo Dinamita al Ataque (Footer)</p>
+  </footer>
+</div>
+
+<input type="checkbox" id="toggle-grid-area" class="demo-checkbox" />
+<label for="toggle-grid-area" class="demo-toggle"> Ver código HTML</label>
+
+<div class="demo-code">
+  <pre>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"britania-grid-area"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;header</span> <span class="attr">class</span>=<span class="val">"area-header demo-box"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h3&gt;</span>Capitán (Header)<span class="tag">&lt;/h3&gt;</span>
+      <span class="tag">&lt;/header&gt;</span>
+      
+      <span class="tag">&lt;aside</span> <span class="attr">class</span>=<span class="val">"area-sidebar demo-box"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;p&gt;</span>Tesoro Sagrado (Sidebar)<span class="tag">&lt;/p&gt;</span>
+      <span class="tag">&lt;/aside&gt;</span>
+      
+      <span class="tag">&lt;main</span> <span class="attr">class</span>=<span class="val">"area-main demo-box"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>Campo de Batalla (Contenido Principal)<span class="tag">&lt;/h2&gt;</span>
+      <span class="tag">&lt;/main&gt;</span>
+      
+      <span class="tag">&lt;footer</span> <span class="attr">class</span>=<span class="val">"area-footer demo-box"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;p&gt;</span>Duo Dinamita al Ataque (Footer)<span class="tag">&lt;/p&gt;</span>
+      <span class="tag">&lt;/footer&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  </pre>
+</div>
+
+</div>
+</section>
 </div>
 </body>
 </html>

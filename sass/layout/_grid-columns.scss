@@ -1,5 +1,6 @@
 @use 'sass:math';
 @use '../clases_utilitarias/mixins' as m;
+@use '../clases_utilitarias/padding_margenes' as p;
 
 // Configuración base de columnas
 [class*="col-"] {
@@ -38,3 +39,83 @@
     }
   }
 }
+
+
+// Clases para ancho de columnas 
+$grid-column: 12;
+@for $i from 1 through $grid-column {
+  .col-span-#{$i} {
+    grid-column: span $i;
+    
+    // Responsive breakpoints
+    @include m.responsive-md {
+      @if $i > 2 {
+        grid-column: span 2;
+      }
+    }
+    
+    @include m.responsive-sm {
+      grid-column: span 1;
+    }
+  }
+}
+
+
+// Alineación de columnas
+.cols-center {
+  justify-content: center;
+}
+
+
+.cols-stretch {
+  justify-content: stretch;
+}
+
+.cols-space-between {
+  justify-content: space-between;
+}
+
+.cols-space-around {
+  justify-content: space-around;
+}
+
+.cols-space-evenly {
+  justify-content: space-evenly;
+}
+
+// Espaciado entre columnas
+@for $i from 0 through 8 {
+  .cols-gap-#{$i} {
+    column-gap: $i * p.$pixel-size;
+  }
+}
+
+
+
+.britania-grid-area {
+  display: grid;
+  gap: 1rem;
+  // Definimos las áreas
+  grid-template-areas: 
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 250px 1fr; // El sidebar tiene ancho fijo
+  grid-template-rows: auto 1fr auto;
+  min-height: 500px;
+
+  // Responsive: En móviles todo es una sola columna
+  @include m.responsive-md {
+    grid-template-areas: 
+     "header header"
+    "sidebar main"
+    "footer footer";
+    grid-template-columns: 1fr;
+  }
+}
+
+// Asignamos las áreas a los hijos
+.area-header  { grid-area: header; }
+.area-sidebar { grid-area: sidebar; }
+.area-main    { grid-area: main; }
+.area-footer  { grid-area: footer; }
