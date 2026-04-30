@@ -1,17 +1,25 @@
+//un desplazamiento sutil hacia arriba
 .move-up {
   transform: translateY(-10px);
-} // arriba
+} 
+//un desplazamiento sutil hacia abajo
 .move-down {
   transform: translateY(10px);
-} // down
+} 
+//un desplazamiento sutil hacia la izquierda
 .move-left {
   transform: translateX(-10px);
-} //izquierda
+} 
+
+//un desplazamiento sutil hacia la derecha
 .move-right {
   transform: translateX(10px);
-} //derecha
+} 
+
+//convertimos el contenedor en un Flexbox y centra su contenido en ambos eje
+//Horizontal y vertical
 .move-center {
   display: flex;
   justify-content: center;
   align-items: center;
-} //centrada
+} 

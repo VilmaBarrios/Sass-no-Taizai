@@ -3,12 +3,14 @@
 @use "../clases_utilitarias/tipografia" as t;
 @use "../clases_utilitarias/mixins" as m;
 
+// el checkbox que controla el sidebar móvil siempre invisible
 .sidebar-checkbox {
   display: none !important;
 }
 
+// el botón de hamburguesa para móviles
 .sidebar-mobile-toggle {
-  display: none; // Oculto en PC
+  display: none; // oculto en versiones de escritorio
 
   @media (max-width: 767px) {
     display: flex;
@@ -16,54 +18,53 @@
     justify-content: space-around;
     width: 25px;
     height: 18px;
-    position: absolute; // Para que no empuje el contenido
+    position: absolute; // se posiciona sobre el contenido sin desplazarlo
     top: 20px;
     right: 20px;
-    z-index: 100;
+    z-index: 100; // por encima de todo el contenido
     cursor: pointer;
 
+    // las tres rayitas del botón
     span {
       display: block;
       width: 100%;
       height: 2px;
-      background-color: p.$ira-meliodas;
+      background-color: p.$ira-meliodas; // color temático de meliodas
       transition: all 0.3s ease;
     }
   }
 }
-
-/* ==========================================================================
-   LAYOUT Y SIDEBAR
-   ========================================================================== */
-
+  // layout general de la documentación
 .docs-layout {
-  @include m.docs-container-layout;
+  @include m.docs-container-layout; // mixin para estructura base
   background: #0f0f10;
   position: relative;
-  display: flex; // PC
-  min-height: calc(100vh - 70px);
+  display: flex; // distribución horizontal (sidebar | main) en pc
+  min-height: calc(100vh - 70px);// ajuste restando la altura del navbar
 
   @media (max-width: 767px) {
-    display: block; // En móvil block para que main ocupe el espacio del sidebar
+    display: block; // en móvil se apilan para que el main ocupe el espacio
   }
 }
 
+// barra lateral de navegación
 .docs-sidebar {
-  @include m.sidebar-responsive-behavior(70px);
+  @include m.sidebar-responsive-behavior(70px); // control de altura y posición
   background: #0a0a0b;
   border-bottom: 1px solid #222;
   padding: 1.5rem 0;
+  // transición suave con curva para el efecto de entrada
   transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
 
   @media (max-width: 767px) {
-    position: absolute; // FIX: No deja espacio vacío arriba
+    position: absolute; // se superpone al contenido en móvil
     top: 0;
     left: 0;
     height: 100%;
     min-height: 100vh;
     width: 280px;
     z-index: 50;
-    transform: translateX(-100%); // Escondido
+    transform: translateX(-100%); // inicialmente escondido a la izquierda
     border-right: 1px solid p.$ira-meliodas;
     border-bottom: none;
   }
@@ -71,50 +72,48 @@
   @media (min-width: 768px) {
     border-bottom: none;
     border-right: 1px solid #222;
-    transform: translateX(0) !important;
+    transform: translateX(0) !important;// siempre visible en escritorio
   }
 }
 
-/* Lógica de apertura del Sidebar */
+//lógica de apertura: cuando el checkbox está activo 
 .sidebar-checkbox:checked {
+  // muestra el sidebar desplazándolo a su posición original
   & ~ .docs-sidebar {
     transform: translateX(0);
   }
 
+  // transforma el icono de hamburguesa en una x de cierre
   & ~ .sidebar-mobile-toggle {
     span:nth-child(1) {
       transform: translateY(7px) rotate(45deg);
     }
     span:nth-child(2) {
-      opacity: 0;
+      opacity: 0;; // desvanece la línea central
     }
     span:nth-child(3) {
       transform: translateY(-7px) rotate(-45deg);
     }
   }
 }
-
-/* ==========================================================================
-   CONTENIDO PRINCIPAL (MAIN)
-   ========================================================================== */
+  // contenido principal (main)
 
 .docs-main {
-  flex: 1;
+  flex: 1; // toma todo el espacio restante al lado del sidebar
   width: 100%;
   padding: 2rem;
   background: #0f0f10;
   color: p.$ira-meliodas;
 
   @media (min-width: 768px) {
-    padding: 3rem;
+    padding: 3rem; // más grande en pantallas grandes
   }
 
   @media (max-width: 767px) {
-    padding-top: 60px; // Espacio para el botón del sidebar
+    padding-top: 60px; // espacio superior para no chocar con el botón móvil
   }
 }
-
-//componentes
+  // bloques de demostración (visualizadores de código)
 
 .demo-block {
   background: #161618;
@@ -125,11 +124,13 @@
   width: 100%;
 }
 
+// área donde se renderiza el componente real
 .demo-preview {
   padding: 2.5rem;
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  // fondo decorativo con rejilla de puntos
   background-image: radial-gradient(#222 1px, transparent 1px);
   background-size: 20px 20px;
   justify-content: flex-start;
@@ -142,10 +143,7 @@
   }
 }
 
-.demo-checkbox {
-  display: none;
-}
-
+// botón para mostrar u ocultar el código fuente
 .demo-toggle {
   display: block;
   background: #1a1a1c;
@@ -156,23 +154,26 @@
   border-top: 1px solid #222;
   user-select: none;
   transition: 0.3s;
+  
   &:hover {
     color: p.$ira-meliodas;
     background: #1e1e20;
   }
 }
 
+// contenedor del código fuente (oculto por defecto)
 .demo-code {
   display: none;
   background: #000;
   padding: 1.5rem;
   border-top: 1px solid #222;
-  font-family: "Fira Code", monospace;
+  font-family: "fira code", monospace;
   font-size: 0.85rem;
   color: #d1d5db;
-  overflow-x: auto;
+  overflow-x: auto; // permite scroll lateral si el código es largo
 }
 
+// acción de mostrar código mediante el estado del checkbox
 .demo-checkbox:checked {
   & ~ .demo-code {
     display: block;
@@ -180,10 +181,12 @@
   & ~ .demo-toggle {
     color: p.$ira-meliodas;
     .icon-play {
-      transform: rotate(90deg);
+      transform: rotate(90deg); // rota un icono decorativo si existe
     }
   }
 }
+
+//   elementos de cabecera y sidebar (tipografía)
 
 .hero {
   text-align: center;
@@ -197,12 +200,11 @@
     @media (max-width: 768px) {
       font-size: 2.5rem;
     }
-    span {
-      color: #fff;
-    }
+    span { color: #fff; } // texto secundario en blanco
   }
 }
 
+// títulos de categoría en el sidebar
 .sidebar-group {
   font-family: t.$font-titulo-epico;
   font-size: t.$fs-6;
@@ -214,6 +216,7 @@
   padding: 0 1.5rem;
 }
 
+// enlaces del sidebar
 .sidebar-link {
   display: block;
   width: 100%;
@@ -224,32 +227,24 @@
   font-size: t.$fs-sidebar;
   font-weight: t.$fw-medium;
   transition: 0.3s;
-  border-left: 3px solid transparent;
+  border-left: 3px solid transparent; // preparado para el estado activo
+
   &:hover,
   &.active {
     color: p.$ira-meliodas;
-    padding-left: 5px;
+    padding-left: 20px; // desplazamiento suave al pasar el mouse
   }
 }
+ //  estilos de imagen y banner (efectos místicos)
 
-pre {
-  margin: 0;
-}
-.tag {
-  color: #ff79c6;
-}
-.attr {
-  color: #50fa7b;
-}
-.val {
-  color: #f1fa8c;
-}
 
 .hero-image-container {
   margin: 3rem auto;
   max-width: 850px;
   position: relative;
   z-index: 1;
+
+  // efecto de aura o resplandor detrás de la imagen principal
   &::before {
     content: "";
     position: absolute;
@@ -258,7 +253,7 @@ pre {
     width: 85%;
     height: 85%;
     background: p.$ira-meliodas;
-    filter: blur(80px);
+    filter: blur(80px); // difumina el color para crear el aura
     transform: translate(-50%, -50%);
     z-index: -1;
   }
@@ -274,14 +269,16 @@ pre {
 }
 
 .hero-description {
-  font-family: "Dancing Script", cursive !important;
+  // fuente elegante que imita caligrafía manuscrita
+  font-family: "dancing script", cursive !important;
   color: p.$ira-meliodas !important;
   font-size: 1rem !important;
   line-height: 1.4 !important;
   text-align: center;
   max-width: 750px;
   margin: 1.5rem auto 2.5rem auto;
+
   @media (max-width: 768px) {
-    font-size: 1.4rem !important;
+    font-size: 1.4rem !important;// aumenta para legibilidad en móviles
   }
 }
