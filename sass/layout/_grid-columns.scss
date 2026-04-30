@@ -1,23 +1,25 @@
 @use 'sass:math';
-@use '../clases_utilitarias/breackpoints' as b;
 @use '../clases_utilitarias/mixins' as m;
 
-//COLUMNAS BASE (Móvil Primero)
-// Estas clases se aplican desde el tamaño más pequeño (celular)
+// Configuración base de columnas
+[class*="col-"] {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  position: relative;
+}
+
+// 1. Móvil (col-1 a col-12)
 @for $i from 1 through 12 {
   .col-#{$i} {
     flex: 0 0 auto;
-    width: math.percentage(math.div($i, 12));//division para hacer el porcentaje por si solo y calcular el valor de columna entre las 12 que es la completa
-
-    
-  box-sizing: border-box; // Vital para que las columnas no "engorden"
-
-
+    width: math.percentage(math.div($i, 12));
   }
 }
 
-//COLUMNAS TABLET (md)
-// Se activan solo cuando la pantalla supera tu breakpoint de768px
+// 2. Tablets (col-md-1 a col-md-12)
 @include m.responsive-md {
   @for $i from 1 through 12 {
     .col-md-#{$i} {
@@ -27,8 +29,7 @@
   }
 }
 
-//3. COLUMNAS ESCRITORIO (lg)
-// Se activan en pantallas grandes 992px
+// 3. Escritorio / LG (col-lg-1 a col-lg-12)
 @include m.responsive-lg {
   @for $i from 1 through 12 {
     .col-lg-#{$i} {
@@ -36,23 +37,4 @@
       width: math.percentage(math.div($i, 12));
     }
   }
-}
-
-//=COLUMNAS EXTRA GRANDES (xl)
-// Para pantallas de 1200px en adelante
-@include m.responsive-xl {
-  @for $i from 1 through 12 {
-    .col-xl-#{$i} {
-      flex: 0 0 auto;
-      width: math.percentage(math.div($i, 12));
-    }
-  }
-}
-
-
-
-img {
-  max-width: 100%; // Jamás será más ancho que su columna (.col-6)
-  height: auto;    // Mantiene la proporción para que no se vea estirado
-  display: block;  // Quita espacios vacíos extraños abajo
 }

@@ -3,7 +3,7 @@
 @use "./sombras" as s;
 @use "./breackpoints" as b;
 
-// 1. Mixins para los responsivos
+// Mixins para los responsivos
 //dispositivo pequeños (celular)
 @mixin responsive-sm {
   @media (min-width: map.get(b.$breakpoints, "sm")) {

@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../clases_utilitarias/breackpoints' as b;
 @use '../clases_utilitarias/mixins' as m;
 
@@ -8,35 +9,20 @@
   padding-right: 15px;
   padding-left: 15px;
 
-  // HERENCIA RESPONSIVA DEL MAX-WIDTH
-  // En móvil es 100%, pero en pantallas grandes hereda 
-  
-  @include m.responsive-md {
-    max-width: b.$md; // Hereda los 768px 
-  }
-
-  @include m.responsive-lg {
-    max-width: b.$lg; // Hereda los 992px
-  }
-
-  @include m.responsive-xl {
-    max-width: b.$xl; // Hereda los 1200px
-  }
+  @include m.responsive-md { max-width: map.get(b.$breakpoints, "md"); }
+  @include m.responsive-lg { max-width: map.get(b.$breakpoints, "lg"); }
+  @include m.responsive-xl { max-width: map.get(b.$breakpoints, "xl"); }
 }
-
 
 .row {
   display: flex;
-  flex-wrap: wrap; // Permite que las columnas salten de línea si no caben
-  margin-right: -15px; // Contrarresta el padding de las columnas
+  flex-wrap: wrap;
+  margin-right: -15px;
   margin-left: -15px;
-  
-  // Reset para que las columnas hijas se comporten correctamente
-  & > * {
-    flex-shrink: 0; //No importa lo que pase mantiene el tama;o aunque el espacio sea insuficiente
-    width: 100%;
-    max-width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+}
+
+// FIX para cuando el grid está dentro de tu componente demo-preview
+.demo-preview .row {
+  width: calc(100% + 30px); // Compensa el padding negativo
+  gap: 0; // Anula el gap del preview para que el grid mande
 }

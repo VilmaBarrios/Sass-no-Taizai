@@ -126,6 +126,9 @@
 
 // área donde se renderiza el componente real
 .demo-preview {
+  .row {
+    width: 100%; // Asegura que el grid ocupe todo el ancho del bloque de previsualización
+  }
   padding: 2.5rem;
   display: flex;
   gap: 2rem;
@@ -281,4 +284,18 @@
   @media (max-width: 768px) {
     font-size: 1.4rem !important;// aumenta para legibilidad en móviles
   }
+}
+// Estilos de la Demo grid
+.demo-box {
+  background-color: #AED6F1;
+  color: #2E4053;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #5DADE2;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
