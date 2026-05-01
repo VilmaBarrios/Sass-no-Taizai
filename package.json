@@ -1,0 +1,32 @@
+{
+
+  "files": [
+  "css/main.css",
+  "README.md"
+],
+  "name": "mady-bibi-sass-no-taizai",
+  "version": "1.0.1",
+  "description": "Framework CSS inspirado en los Siete Pecados Capitales y el Reino de Britania.",
+  "main": "css/main.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VilmaBarrios/Sass-no-Taizai.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "framework",
+    "nanatsu-no-taizai",
+    "grid",
+    "anime"
+  ],
+  "author": "Mady y Bibi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VilmaBarrios/Sass-no-Taizai/issues"
+  },
+  "homepage": "https://github.com/VilmaBarrios/Sass-no-Taizai#readme"
+}
