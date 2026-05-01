@@ -1,0 +1,138 @@
+@use "sass:color";
+@use "../clases_utilitarias/paleta" as *;
+@use "../clases_utilitarias/bordes" as *;
+@use "../clases_utilitarias/breackpoints" as *;
+@use "../clases_utilitarias/sombras" as *;
+@use "../clases_utilitarias/tipografia" as *;
+
+.navbar {
+  display: flex;// activa flexbox para alinear elementos internos
+  align-items: center;// centra verticalmente el logo y los enlaces
+  justify-content: space-between;  // separa el logo de las acciones a los extremos
+  padding: 0 1.5rem;// espacio interno a los lados de la barra
+  height: 70px;// altura fija para mantener consistencia
+  background: rgba($dark-night, 0.9); // fondo oscuro con ligera transparencia
+  border-bottom: 2px solid #343a40; // línea divisoria inferior oscura
+  position: sticky;// la barra se queda pegada al hacer scroll
+  top: 0;// posición inicial de pegado
+  z-index: 3000;// prioridad de capa muy alta sobre otros elementos
+  backdrop-filter: blur(12px);// efecto de desenfoque de cristal (glassmorphism)
+
+  // el checkbox
+  .navbar-check {
+    display: none !important;// se oculta de la vista, solo sirve por su estado checked
+  }
+
+  // marca o logo del sitio
+  &-brand {
+    font-family: $font-titulo-agresivo; // tipografía con impacto visual
+    font-size: 1.6rem;// tamaño destacado para el nombre
+    font-weight: 700;// grosor de fuente máximo
+    color: $ira-meliodas;// color dorado distintivo 
+    text-decoration: none;// elimina el subrayado por defecto
+    letter-spacing: 1px;// separación ligera entre letras
+    transition: all 0.3s ease;// suaviza el cambio de color en hover
+
+    &:hover {
+      color: color.adjust($ira-meliodas, $lightness: 10%); // aclara el color un 10% al pasar el mouse
+    }
+  }
+
+  //menú de enlaces (navbar-nav)
+  &-nav {
+    display: flex;// alinea los enlaces horizontalmente en escritorio
+    align-items: center;// centra los enlaces respecto a la barra
+    gap: 1.5rem;// espacio entre cada link de navegación
+    list-style: none;// quita los puntos de la lista ul
+
+    a {
+      color: #94a3b8;// color gris azulado para enlaces inactivos
+      font-family: $font-noble;    // fuente elegante para la lectura
+      font-size: 0.875rem;// tamaño de fuente pequeño y legible
+      font-weight: 600;// grosor de fuente medio
+      text-transform: uppercase;   // convierte los textos a mayúsculas
+      text-decoration: none;// quita el subrayado
+      transition: all 0.3s ease;   // animación suave para estados
+
+      &:hover,
+      &.active {
+        color: $ira-meliodas;// resalta el link activo con el color de la ira
+      }
+    }
+
+    // diseño del menú para dispositivos móviles
+    @media (max-width: 767px) {
+      display: none;// oculto por defecto hasta que se active el checkbox
+      position: absolute;// se posiciona fuera del flujo normal
+      top: 70px;// aparece justo debajo de la barra
+      left: 0;// se alinea al borde izquierdo
+      width: 100%;// ocupa todo el ancho de la pantalla móvil
+      background: rgba($dark-night, 0.98); // fondo casi opaco para leer mejor
+      flex-direction: column;// apila los enlaces verticalmente
+      padding: 2rem;// espacio interno del menú móvil
+      gap: 1.25rem;// espacio vertical entre links apilados
+      border-bottom: 2px solid $ira-meliodas; // borde inferior temático
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); // sombra para dar profundidad
+    }
+  }
+
+  // contenedor de botones o acciones extra a la derecha
+  &-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  //el botón de hamburguesa (navbar-toggler)
+  &-toggler {
+    display: none;// oculto en pantallas grandes (pc)
+    flex-direction: column;// apila las 3 rayitas
+    justify-content: space-around; // separa las rayitas equitativamente
+    width: 25px;// ancho del icono
+    height: 18px;// altura total del grupo de rayas
+    background: none;// sin fondo de botón
+    border: none;// sin bordes
+    cursor: pointer;// puntero de clic
+    padding: 0;
+
+    @media (max-width: 767px) {
+      display: flex;// se muestra solo en resoluciones móviles
+    }
+
+    span {
+      display: block;// cada raya es un bloque
+      width: 100%;// ocupa todo el ancho del contenedor
+      height: 2px;// grosor de la raya
+      background: $ira-meliodas;// color de las rayas
+      transition: all 0.3s ease;// permite la animación hacia la "x"
+      border-radius: 5px;// puntas redondeadas para las rayas
+    }
+  }
+
+  // lógica de activación por checkbox
+  // cuando el input invisible está seleccionado
+  .navbar-check:checked {
+    
+    // muestra el menú móvil usando el selector de hermano
+    ~ .navbar-nav {
+      @media (max-width: 767px) {
+        display: flex !important;  // fuerza la aparición del menú
+        animation: slideIn 0.3s ease forwards; // ejecuta animación de entrada
+      }
+    }
+
+    // transforma el icono de hamburguesa en una "x"
+    ~ .navbar-actions .navbar-toggler {
+      span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg); // baja y rota la primera raya
+      }
+      span:nth-child(2) {
+        opacity: 0;// desaparece la raya central
+        transform: translateX(-10px); // la mueve a la izquierda mientras desvanece
+      }
+      span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg); // sube y rota la tercera raya
+      }
+    }
+  }
+}

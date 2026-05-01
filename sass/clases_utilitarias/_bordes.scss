@@ -1,0 +1,91 @@
+@use './padding_margenes' as *;
+@use './tipografia' as *;
+@use './paleta' as *;
+@use './redondeo' as *;
+@use './sombras' as *;
+
+
+// IRA - Meliodas
+.borde-ira {
+    border: 4px solid $ira-meliodas;
+    @extend .p-4;              //padding heredados por medio del for de padding y margenes
+    @extend .m-2;             //margen heredados tambien de un for de padding y margenes
+    @extend .rde-s;          // Requisito 'rounded': usamos escala pequeña
+    @extend .shadow-ira-lg; // Requisito 'shadow-lg' con tema del anime
+    font-family: $font-ira;
+    color: $white;
+    background-color: $ira-oscuro;
+}
+
+// CODICIA - Ban
+.borde-codicia {
+    border: 5px double $codicia-ban;
+    @extend .p-3;                   //padding heredados por medio del for de padding y margenes
+    @extend .m-3;                  //margen heredados tambien de un for de padding y margenes
+    @extend .rde-m;               // Requisito 'rounded': escala media
+    @extend .shadow-codicia-lg;  // Requisito 'shadow-lg' con tema del anime
+    font-family: $font-codicia;
+    color: $white;
+    background-color: $dark-night;
+}
+
+// PEREZA - King
+.borde-pereza {
+    border: 3px solid $pereza-king;
+    @extend .p-5;                 //padding heredados por medio del for de padding y margenes
+    @extend .m-2;                //margen heredados tambien de un for de padding y margenes
+    @extend .rde-xl;            // Requisito 'rounded': escala grande
+    @extend .shadow-pereza-sm; // Requisito 'shadow-sm' con tema del anime
+    font-family: $font-pereza;
+    color: $dark-night;
+    background-color: $pereza-claro;
+}
+
+// ENVIDIA - Diane
+.borde-envidia {
+    border: 5px solid $envidia-oscuro;
+    @extend .p-4;                  //padding heredados por medio del for de padding y margenes           
+    @extend .m-3;                 //margen heredados tambien de un for de padding y margenes
+    @extend .rde-l;              // Requisito 'rounded'
+    @extend .shadow-envidia-lg; // Requisito 'shadow-lg' con tema del anime
+    font-family: $font-envidia;
+    color: $dark-night;
+    background-color: $envidia-claro;
+}
+
+// SOBERBIA - Escanor
+.borde-soberbia {
+    border: 4px ridge $soberbia-escanor;
+    @extend .p-5;                     //padding heredados por medio del for de padding y margenes
+    @extend .m-4;                    //margen heredados tambien de un for de padding y margenes
+    @extend .rde-m;                 // Requisito 'rounded'
+    @extend .shadow-soberbia-lg;   // Requisito 'shadow-lg' con tema del anime
+    @extend .text-center;
+    font-family: $font-soberbia;
+    color: $white;
+    background-color: $soberbia-oscuro;
+}
+
+// GULA - Merlin
+.borde-gula {
+    border: 2px groove $gula-merlin;
+    @extend .p-3;                 //padding heredados por medio del for de padding y margenes
+    @extend .m-2;                //margen heredados tambien de un for de padding y margenes
+    @extend .rde-circle;        // Requisito 'rounded': forma circular
+    @extend .shadow-gula-lg;   // Requisito 'shadow-lg' con tema del anime
+    font-family: $font-gula;
+    color: $white;
+    background-color: $dark-night;
+}
+
+// LUJURIA - Gowther
+.borde-lujuria {
+    border: 2px dashed $lujuria-gowther;
+    @extend .p-3;                  //padding heredados por medio del for de padding y margenes
+    @extend .m-2;                 //margen heredados tambien de un for de padding y margenes
+    @extend .rde-m;              // Requisito 'rounded'
+    @extend .shadow-lujuria-sm; // Requisito 'shadow-sm' con tema del anime
+    font-family: $font-lujuria;
+    color: $lujuria-oscuro;
+    background-color: $lujuria-claro;
+}

@@ -1,0 +1,105 @@
+//fuentes de google para poder darle el toque de anime
+$font-titulo-epico: "MedievalSharp", cursive;
+$font-titulo-agresivo: "Pirata One", cursive;
+$font-noble: "Cinzel", serif;
+$font-base: "Almendra Display", serif;
+$font-body: "Courier New", Courier, monospace;
+
+.font-medieval {
+  font-family: $font-titulo-epico;
+}
+.font-pirata {
+  font-family: $font-titulo-agresivo;
+}
+.font-noble {
+  font-family: $font-noble;
+}
+.font-base {
+  font-family: $font-base;
+}
+
+// FUENTES TEMÁTICAS SEGUN NUESTRO ANIME DE LOS SIETE PECADOS CAPITALES
+$font-ira: "Rock Salt", cursive; //  Meliodas.
+$font-codicia: "Barlow Condensed", sans-serif; // Ban.
+$font-pereza: "Quicksand", sans-serif; //  King.
+$font-envidia: "UnifrakturMaguntia", serif; // Diane.
+$font-soberbia: "Cinzel", serif; // Escanor.
+$font-gula: "Abril Fatface", display; // Merlin.
+$font-lujuria: "Great Vibes", cursive; // Gowther.
+
+//Variables de Tamaño y Peso
+$fs-1: 2.5rem; // títulos principales.
+$fs-2: 2rem; // títulos secundarios.
+$fs-3: 1.75rem; // titulos terciarios o mas
+$fs-4: 1.5rem; // titulos terciarios o mas
+$fs-5: 1.25rem; // titulos terciarios o mas
+$fs-6: 1rem; // titulos terciarios o mas
+$fs-7: 0.875rem; // titulos terciarios o mas
+
+// Pesos tipográficos
+$fw-light: 300;
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+//mapa para poder utilizar mas facil con un nombre
+
+$sin-fonts: (
+  "ira": $font-ira,
+  "codicia": $font-codicia,
+  "pereza": $font-pereza,
+  "envidia": $font-envidia,
+  "soberbia": $font-soberbia,
+  "gula": $font-gula,
+  "lujuria": $font-lujuria,
+);
+
+//Tamaño, Peso y Alineación
+
+// Clases de Tamaño
+.fs-1 {
+  font-size: $fs-1 !important; // se aplicara si o si
+} // Aplica 2.5rem
+.fs-2 {
+  font-size: $fs-2 !important;
+} // Aplica 2.0rem
+.fs-3 {
+  font-size: $fs-3 !important;
+} //Aplica 1.75rem
+.fs-4 {
+  font-size: $fs-4 !important;
+} //Aplica 1.5rem
+.fs-5 {
+  font-size: $fs-5 !important;
+} //Aplica 1.25rem
+.fs-6 {
+  font-size: $fs-6 !important;
+} //Aplica 1rem
+.fs-7 {
+  font-size: $fs-7 !important;
+} //Aplica  0.875rem
+
+// Clases de Grosor
+.fw-light {
+  font-weight: $fw-light !important;
+} // texto  fino.
+.fw-bold {
+  font-weight: $fw-bold !important;
+} // texto negrita.
+
+// Clases de Alineación
+.text-center {
+  text-align: center !important;
+} // Centra el texto horizontalmente
+.text-right {
+  text-align: right !important;
+} // Alinea el texto a la derecha
+.text-left {
+  text-align: left !important;
+} // Alinea el texto a la izquierda
+
+// Variable específica para el Sidebar
+$fs-sidebar: 1.15rem;
+
+// Altura de línea
+$lh-base: 1.6;

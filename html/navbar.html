@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand">Sass No Taizai</a>
+    <input type="checkbox" id="menu-toggler" class="navbar-check">
+    <ul class="navbar-nav">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="grid.html">Britania Grid</a></li>
+      <li><a href="botones.html">Tesoros Sagrados</a></li>
+      <li><a href="ArquiSass.html">Arquitectura SASS</a></li>
+      <li><a href="autoras.html">Autoras</a></li>
+    </ul>
+    
+    <div class="navbar-actions">
+      <label for="menu-toggler" class="navbar-toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+</nav>
+
+    <div class="docs-layout">
+      <input type="checkbox" id="sidebar-master" class="sidebar-checkbox">
+      <label for="sidebar-master" class="sidebar-mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      
+      <aside class="docs-sidebar">
+        <p class="sidebar-group">Inicio</p>
+        <a href="introduccion.html" class="sidebar-link">Introducción</a>
+        <a href="instalacion.html" class="sidebar-link ">Instalación</a>
+
+        <p class="sidebar-group">Layout</p>
+        <a href="grid.html" class="sidebar-link">Sistema de las 12 columnas</a>
+
+        <p class="sidebar-group">Componentes</p>
+        <a href="botones.html" class="sidebar-link">Botones (Variantes)</a>
+        <a href="cards.html" class="sidebar-link">Card (Posters)</a>
+        <a href="tablas.html" class="sidebar-link">Tablas</a>
+        <a href="formularios.html" class="sidebar-link">Formularios</a>
+        <a href="navbar.html" class="sidebar-link">Navbar</a>
+        <a href="alertas.html" class="sidebar-link">Alertas</a>
+        <a href="flexbox.html" class="sidebar-link">FlexBox</a>
+        <a href="badges.html" class="sidebar-link">Badges</a>
+        <a href="container.html" class="sidebar-link">Container</a>
+      </aside>
+      
+      <main class="docs-main">
+        <section id="navbar-section" class="section mt-5">
+          <section class="section">
+            <h2 class="text-codicia fs-2 fw-bold mb-4 text-center">LA BRÚJULA DEL REINO: NAVBAR</h2>
+            <p class="text-light fs-5 mb-5 lh-lg">      
+              La Navbar es el <strong>Punto de Control</strong> supremo. Es una franja horizontal que reside en la cima de tu creación,     
+              permitiendo a los usuarios viajar instantáneamente entre secciones. Una buena brújula no solo muestra el camino,     
+              sino que mantiene la identidad del Reino (tu marca) siempre visible durante la travesía.  
+            </p>  
+            <h3 class="sidebar-group px-0 mb-4 text-center">¿Para qué funciona?</h3> 
+            <ul class="d-flex flex-column gap-3 ps-4 mb-5">       
+              <li>      
+                <strong class="text-pereza">Guía de Viaje:</strong>       
+                <span class="text-gray-400">Proporcionar enlaces directos a las Tierras Sagradas (páginas) más importantes.</span>   
+              </li>     
+              <li>      
+                <strong class="text-soberbia">Emblema Real:</strong>       
+                <span class="text-gray-400">Exhibir el logotipo o nombre del proyecto con orgullo en la parte superior.</span>    
+              </li>          
+              <li>     
+                <strong class="text-envidia">Sentido de Pertenencia:</strong>       
+                <span class="text-gray-400">Indicar al usuario en qué sección se encuentra actualmente mediante estados activos.</span>    
+              </li>      
+            </ul> 
+            <h3 class="sidebar-group px-0 mb-4 text-center">Requisitos de la Forja</h3>
+            <div class="d-flex flex-column gap-4 ps-4 mb-5">   
+              <div>    
+                <p class="text-gula fw-bold mb-1">1. El Horizonte (.navbar)</p>     
+                <p class="text-gray-400 small gap-3 ps-4 mb-2">Es el contenedor que extiende la barra de extremo a extremo, estableciendo el fondo y la altura necesaria.</p>   
+              </div> 
+              <div>
+                <p class="text-lujuria fw-bold mb-1">2. Vínculos de Sangre (.nav-link)</p>
+                <p class="text-gray-400 small gap-3 ps-4 mb-2">Clase que se aplica a los elementos de navegación para darles el espaciado correcto y el efecto visual al pasar el cursor.</p>    
+              </div>
+              <div>
+                <p class="text-ira fw-bold mb-1">3. Adaptabilidad Táctica (Responsive)</p>      
+                <p class="text-gray-400 small gap-3 ps-4 mb-2">        
+                  La Navbar debe poder contraerse en dispositivos móviles, ocultando los enlaces tras un menú de hamburguesa para no saturar la vista.      
+                </p>
+              </div>  
+            </div>
+          </section>          
+          <h3 class="fs-5 mt-4 mb-3 text-white">1. Estandarte de la Ira (Base)</h3>
+          <div class="container-pereza">
+            <div class="demo-preview">    
+              <nav class="navbar-custom">     
+                <a href="#" class="navbar-custom-brand">Liones UI</a>     
+                <ul class="navbar-custom-nav">         
+                  <li><a href="#">Inicio</a></li>       
+                  <li><a href="#">Tabernas</a></li>        
+                </ul>        
+                <div class="navbar-custom-toggler"><span></span><span></span><span></span></div>       
+              </nav>    
+            </div>     
+            <input type="checkbox" id="nav-base" class="demo-checkbox" />     
+            <label for="nav-base" class="demo-toggle">Ver código HTML</label>    
+            <div class="demo-code">    
+              <pre>
+                <span class="comment">&lt;!-- PROCESO DE CREACIÓN: NAVBAR BASE --&gt;</span>
+                <span class="comment">&lt;!-- 1. Definir el contenedor principal con la clase navbar-custom --&gt;</span>
+                <span class="tag">&lt;nav</span> <span class="attr">class</span>=<span class="val">"navbar-custom"</span><span class="tag">&gt;</span>
+                  
+                <span class="comment">&lt;!-- 2. Branding: El enlace principal que actúa como Logo --&gt;</span>
+                <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span> <span class="attr">class</span>=<span class="val">"navbar-custom-brand"</span><span class="tag">&gt;</span>
+                Liones UI
+                <span class="tag">&lt;/a&gt;</span>
+
+                <span class="comment">&lt;!-- 3. Lista de Navegación: Ul con ítems alineados --&gt;</span>
+                <span class="tag">&lt;ul</span> <span class="attr">class</span>=<span class="val">"navbar-custom-nav"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span><span class="tag">&gt;</span>Inicio<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span><span class="tag">&gt;</span>Tabernas<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="tag">&lt;/ul&gt;</span>
+
+                <span class="comment">&lt;!-- 4. Toggler: Botón hamburguesa (invisible en pantallas grandes) --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="val">"navbar-custom-toggler"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;span&gt;&lt;/span&gt;</span>
+                <span class="tag">&lt;span&gt;&lt;/span&gt;</span>
+                <span class="tag">&lt;span&gt;&lt;/span&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;/nav&gt;</span>
+              </pre>
+            </div>    
+          </div>    
+          <h3 class="fs-5 mt-5 mb-3 text-white">2. Estandarte de Batalla (Con Botón)</h3>    
+          <div class="container-pereza">    
+            <div class="demo-preview">   
+              <nav class="navbar-custom">   
+                <a href="#" class="navbar-custom-brand">Liones UI</a>    
+                <ul class="navbar-custom-nav">  
+                  <li><a href="#">Personajes</a></li>   
+                  <li><button class="btn btn-ira btn-sm">Unirse a la Orden</button></li>   
+                </ul>    
+              </nav>    
+            </div>    
+            <input type="checkbox" id="nav-action" class="demo-checkbox" />    
+            <label for="nav-action" class="demo-toggle">Ver código HTML</label>    
+            <div class="demo-code">    
+              <pre>
+                <span class="comment">&lt;!-- PROCESO DE CREACIÓN: NAVBAR CON ACCIÓN --&gt;</span>
+                <span class="comment">&lt;!-- Basada en la estructura base, pero inyectando botones --&gt;</span>
+                <span class="tag">&lt;nav</span> <span class="attr">class</span>=<span class="val">"navbar-custom"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;a</span> <span class="attr">class</span>=<span class="val">"navbar-custom-brand"</span><span class="tag">&gt;</span>Liones UI<span class="tag">&lt;/a&gt;</span>
+                <span class="tag">&lt;ul</span> <span class="attr">class</span>=<span class="val">"navbar-custom-nav"</span><span class="tag">&gt;</span>
+                <span class="comment">&lt;!-- Enlace simple --&gt;</span>
+                <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span><span class="tag">&gt;</span>Personajes<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="comment">&lt;!-- Integración de Botón de Liones UI --&gt;</span>
+                <span class="comment">&lt;!-- Importante: Se usa btn-sm para no exceder el padding del nav --&gt;</span>
+                <span class="tag">&lt;li&gt;</span>
+                <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="val">"btn btn-ira btn-sm"</span><span class="tag">&gt;</span>
+                Unirse a la Orden
+                <span class="tag">&lt;/button&gt;</span>
+                <span class="tag">&lt;/li&gt;</span>
+                <span class="tag">&lt;/ul&gt;</span>
+                <span class="tag">&lt;/nav&gt;</span>                
+              </pre>      
+            </div>   
+          </div>    
+          <h3 class="fs-5 mt-5 mb-3 text-white">3. Estandarte de la Codicia</h3>    
+          <div class="container-pereza">   
+            <div class="demo-preview">   
+              <nav class="navbar-custom nav-codicia">  
+                <a href="#" class="navbar-custom-brand">Ban's Treasure</a>  
+                <ul class="navbar-custom-nav">    
+                  <li><a href="#">Robar</a></li>    
+                  <li><a href="#">Inmortalidad</a></li>    
+                </ul>    
+              </nav>    
+            </div>   
+            <input type="checkbox" id="nav-pecado" class="demo-checkbox" />    
+            <label for="nav-pecado" class="demo-toggle">Ver código HTML</label>   
+            <div class="demo-code">   
+              <pre>
+                <span class="comment">&lt;!-- PROCESO DE CREACIÓN: NAVBAR TEMÁTICA --&gt;</span>
+                <span class="comment">&lt;!-- 1. Se parte de la estructura base 'navbar-custom' --&gt;</span>
+                <span class="comment">&lt;!-- 2. Se añade el modificador 'nav-codicia' para sobrescribir estilos --&gt;</span>
+                <span class="tag">&lt;nav</span> <span class="attr">class</span>=<span class="val">"navbar-custom nav-codicia"</span><span class="tag">&gt;</span>
+                  
+                <span class="comment">&lt;!-- Al heredar de 'nav-codicia', este brand ahora es azul --&gt;</span>
+                <span class="tag">&lt;a</span> <span class="attr">class</span>=<span class="val">"navbar-custom-brand"</span><span class="tag">&gt;</span>Ban's Treasure<span class="tag">&lt;/a&gt;</span>
+
+                <span class="tag">&lt;ul</span> <span class="attr">class</span>=<span class="val">"navbar-custom-nav"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span><span class="tag">&gt;</span>Robar<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="tag">&lt;/ul&gt;</span>
+                  
+                <span class="tag">&lt;/nav&gt;</span>
+              </pre>
+            </div>    
+          </div> 
+          <h3 class="fs-5 mt-5 mb-3 text-white">4. Estandarte Centrado (Estructura Vertical)</h3>  
+          <div class="container-pereza">     
+            <div class="demo-preview">      
+              <nav class="navbar-custom nav-center">      
+                <a href="#" class="navbar-custom-brand">BRITANIA NEWS</a>       
+                <ul class="navbar-custom-nav">       
+                  <li><a href="#">Reinos</a></li>        
+                  <li><a href="#">Clanes</a></li>
+                  <li><a href="#">Caballeros Sagrados</a></li>         
+                </ul>       
+              </nav>      
+            </div>      
+            <input type="checkbox" id="nav-centered" class="demo-checkbox" />      
+            <label for="nav-centered" class="demo-toggle">Ver código HTML</label>    
+            <div class="demo-code">      
+        <pre>
+          <span class="comment">&lt;!-- PROCESO DE CREACIÓN: NAVBAR CENTRADA --&gt;</span>
+          <span class="comment">&lt;!-- Este layout cambia la orientación del Flexbox --&gt;</span>
+          <span class="tag">&lt;nav</span> <span class="attr">class</span>=<span class="val">"navbar-custom nav-center"</span><span class="tag">&gt;</span>
+            
+          <span class="comment">&lt;!-- El modificador 'nav-center' fuerza 'flex-direction: column' --&gt;</span>
+          <span class="tag">&lt;a</span> <span class="attr">class</span>=<span class="val">"navbar-custom-brand"</span><span class="tag">&gt;</span>BRITANIA NEWS<span class="tag">&lt;/a&gt;</span>
+          <span class="comment">&lt;!-- El menú se alinea debajo del logo con 'justify-content: center' --&gt;</span>
+          <span class="tag">&lt;ul</span> <span class="attr">class</span>=<span class="val">"navbar-custom-nav"</span><span class="tag">&gt;</span>
+          <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span><span class="tag">&gt;</span>Reinos<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="val">"#"</span><span class="tag">&gt;</span>Clanes<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="tag">&lt;/ul&gt;</span>
+          <span class="tag">&lt;/nav&gt;</span>
+        </pre>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

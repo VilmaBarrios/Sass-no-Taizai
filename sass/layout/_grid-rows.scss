@@ -1,0 +1,34 @@
+@use "sass:map";
+@use "../clases_utilitarias/breackpoints" as b;
+@use "../clases_utilitarias/mixins" as m;
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @include m.responsive-md {
+    max-width: map.get(b.$breakpoints, "md");
+  }
+  @include m.responsive-lg {
+    max-width: map.get(b.$breakpoints, "lg");
+  }
+  @include m.responsive-xl {
+    max-width: map.get(b.$breakpoints, "xl");
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+// para cuando grid este dentro de demo preview no me de problemas
+.demo-preview .row {
+  width: calc(100% + 30px); // Compensa el padding negativo
+  gap: 0; // Anula el gap del preview para que el grid mande
+}

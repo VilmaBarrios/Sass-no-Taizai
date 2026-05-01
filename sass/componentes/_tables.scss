@@ -1,0 +1,118 @@
+@use "../clases_utilitarias/paleta" as p;
+@use "../clases_utilitarias/tipografia" as t;
+
+// contenedor para habilitar el desplazamiento horizontal en dispositivos pequeños
+.table-responsive {
+  width: 100%;; // ocupa el ancho total del contenedor
+  overflow-x: auto;; // genera scroll horizontal si la tabla es muy ancha
+  margin-bottom: 1rem;; // separación inferior
+}
+
+.table {
+  width: 100%;; // la tabla se expande al total del ancho disponible
+  border-collapse: collapse;; // elimina el espacio entre los bordes de las celdas
+  background-color: #161618;; // fondo oscuro base de la tabla
+  color: #e2e8f0;; // color de texto claro para legibilidad
+  font-family: t.$font-base;; // fuente principal del framework
+  font-size: 0.95rem;; // tamaño de fuente ligeramente reducido
+  border-radius: 8px;; // redondeo de las esquinas de la tabla
+  overflow: hidden;; // asegura que el contenido respete el redondeo de las esquinas
+
+  // cabecera de la tabla
+  thead {
+    background-color: #1a1a1c;; // fondo diferenciado para la cabecera
+    color: p.$ira-meliodas;; // los títulos destacan con el color de meliodas
+    text-align: left;; // alineación del texto a la izquierda
+    font-weight: bold;; // texto en negrita para resaltar títulos
+    border-bottom: 2px solid #2d2d30;; // línea divisoria marcada bajo el encabezado
+  }
+
+  // estilo general para celdas de encabezado y cuerpo
+  th,
+  td {
+    padding: 1rem;; // espaciado interno generoso para evitar saturación visual
+    border-bottom: 1px solid #2d2d30;; // separadores horizontales entre filas
+  }
+
+  // cuerpo de la tabla y efectos de interacción
+  tbody tr {
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;; // suaviza la transición de colores al interactuar
+
+    // estilo de filas alternas cebreados
+    &:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.03);; // fondo sutilmente distinto para filas pares
+    }
+
+    // efecto hover general inspirado en la codicia de ban
+    &:hover {
+      background-color: rgba(p.$codicia-ban, 0.08);; // fondo con el tono de ban al pasar el mouse
+      color: #fff;; // el texto resalta en blanco puro
+    }
+    
+    &.table-ira {
+      color: p.$ira-meliodas;; // texto con el color de la ira
+      &:hover {
+        background-color: rgba(p.$ira-meliodas, 0.1);; // resplandor amarillo en hover
+        color: #fff;;
+      }
+    }
+
+    &.table-envidia {
+      color: p.$envidia-diane;; // texto con el color de la envidia
+      &:hover {
+        background-color: rgba(p.$envidia-diane, 0.1);; // resplandor naranja en hover
+        color: #fff;;
+      }
+    }
+
+    &.table-codicia {
+      color: p.$codicia-ban;; // texto con el color de la codicia
+      &:hover {
+        background-color: rgba(p.$codicia-ban, 0.1);; // resplandor rojo en hover
+        color: #fff;;
+      }
+    }
+
+    &.table-pereza {
+      color: p.$pereza-king;; // texto con el color de la pereza
+      &:hover {
+        background-color: rgba(p.$pereza-king, 0.1);; // resplandor verde en hover
+        color: #fff;;
+      }
+    }
+
+    &.table-lujuria {
+      color: p.$lujuria-gowther;; // texto con el color de la lujuria
+      &:hover {
+        background-color: rgba(p.$lujuria-gowther, 0.1);; // resplandor rosado en hover
+        color: #fff;;
+      }
+    }
+
+    &.table-gula {
+      color: p.$gula-merlin;; // texto con el color de la gula
+      &:hover {
+        background-color: rgba(p.$gula-merlin, 0.1);; // resplandor violeta en hover
+        color: #fff;;
+      }
+    }
+
+    &.table-soberbia {
+      color: p.$soberbia-escanor;; // texto con el color de la soberbia
+      &:hover {
+        background-color: rgba(p.$soberbia-escanor, 0.1);; // resplandor dorado en hover
+        color: #fff;;
+      }
+    }
+  }
+
+  // variante con bordes completos en todas las celdas
+  &.table-bordered {
+    th,
+    td {
+      border: 1px solid #2d2d30;; // aplica bordes verticales y horizontales
+    }
+  }
+}

@@ -1,0 +1,137 @@
+@use '../clases_utilitarias/paleta' as *;
+@use '../clases_utilitarias/redondeo' as *;
+@use '../clases_utilitarias/sombras' as *;
+@use '../clases_utilitarias/bordes' as *; 
+@use '../clases_utilitarias/sombras' as *;
+@use '../clases_utilitarias/mixins' as m;
+@use '../clases_utilitarias/tipografia' as t;
+
+
+// Estilo base para todos los pecados
+.container-pecado {
+    width: 100%;
+    margin: 12px auto; 
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    
+    
+    @extend .rde-m; 
+    @extend .p-4;   
+    @include m.responsive-md { width: 90%; }
+    @include m.responsive-lg { width: 85%; }
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+// IRA - Meliodas
+.container-ira {
+    @extend .container-pecado;
+    background-color: $ira-oscuro;
+    border: 3px solid $ira-meliodas;
+    @extend .shadow-ira-lg; 
+    
+    h2 {
+        @include m.estilo-texto("titulo");
+        font-family: t.$font-ira;
+        color: $ira-meliodas;
+    }
+
+    &::before {
+        content: none;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        opacity: 0.2;
+        font-size: 2rem;
+    }
+}
+
+// CODICIA - Ban
+.container-codicia {
+    @extend .container-pecado;
+    background-color: $dark-night;
+    border: 3px double $codicia-ban; 
+    @extend .shadow-codicia-lg;
+    
+    h2 {
+        @include m.estilo-texto("titulo");
+        font-family: t.$font-codicia;
+        color: $white;
+    }
+
+    &::before {
+        content: none;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        opacity: 0.2;
+    }
+}
+
+// PEREZA - King
+.container-pereza {
+    @extend .container-pecado;
+    @extend .rde-xl; // El redondeoo mas grande  para simular la almohada de king
+    background-color: $pereza-claro;
+    border: 2px solid $pereza-king;
+    @extend .shadow-pereza-lg;
+
+    h2 {
+        @include m.estilo-texto("titulo");
+        font-family: t.$font-pereza;
+        color: $pereza-oscuro;
+    }
+
+    &::before {
+        content: none;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        opacity: 0.2;
+    }
+}
+
+// SOBERBIA - Escanor
+.container-soberbia {
+    @extend .container-pecado;
+    background-color: $soberbia-oscuro;
+    border: 4px ridge $soberbia-escanor;
+    @extend .shadow-soberbia-lg;
+    text-align: center;
+
+    h2 {
+        @include m.estilo-texto("titulo");
+        font-family: t.$font-soberbia;
+        color: $white;
+    }
+
+    &::before {
+        content: none;
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+}
+
+.container-normal {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include m.responsive-sm { max-width: 540px; }
+    @include m.responsive-md { max-width: 720px; }
+    @include m.responsive-lg { max-width: 960px; }
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}

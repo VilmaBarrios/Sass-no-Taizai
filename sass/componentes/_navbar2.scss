@@ -1,0 +1,72 @@
+@use "../clases_utilitarias/paleta" as p;
+@use "../clases_utilitarias/tipografia" as t;
+
+.navbar-custom {
+  width: 100%;// ocupa todo el ancho disponible del contenedor padre
+  height: 70px;// altura fija para alinear con el estándar del framework
+  background-color: #111113;// fondo oscuro sólido para resaltar sobre el fondo principal
+  border: 1px solid #2d2d30;// borde fino para dar definición al componente
+  border-radius: 8px;// esquinas suavizadas estilo tarjetas
+  display: flex;// activa flexbox para la distribución interna
+  align-items: center;// centra todos los elementos verticalmente
+  justify-content: space-between;  // separa el logo del menú de navegación
+  padding: 0 1.5rem;// espacio interno a los lados
+  font-family: t.$font-base;// aplicamos la tipografía base definida en clases_utilitarias
+
+  // sección del logo o marca
+  .navbar-custom-brand {
+    font-size: 1.25rem;// tamaño de fuente para destacar el nombre
+    font-weight: bold;// grosor de fuente para mayor jerarquía
+    color: p.$ira-meliodas;// color característico del pecado de la ira
+    text-decoration: none;// quita el subrayado del enlace
+    display: flex;// permite alinear iconos o elementos internos
+    align-items: center;// centra el contenido del logo
+    gap: 0.5rem;// espacio entre icono y texto del logo
+  }
+
+  // lista de enlaces de navegación
+  .navbar-custom-nav {
+    display: flex;// alinea los links de forma horizontal
+    list-style: none;// elimina los puntos de lista por defecto
+    gap: 1.5rem;// separación entre cada opción del menú
+    margin: 0;// resetea márgenes externos
+    padding: 0;// resetea espacios internos de la lista
+
+    a {
+      color: #94a3b8;// color gris azulado suave
+      text-decoration: none;// quita el subrayado
+      font-size: 0.9rem;// tamaño de fuente ligeramente menor al base
+      transition: color 0.2s;// transición rápida para el cambio de color
+
+      // estado al pasar el cursor
+      &:hover {
+        color: #fff;// el texto brilla en blanco puro
+      }
+    }
+
+    // ocultamiento responsivo
+    @media (max-width: 768px) {
+      display: none;// el menú desaparece en tabletas y móviles
+    }
+  }
+
+  // botón de menú móvil 
+  .navbar-custom-toggler {
+    display: none;// oculto por defecto en pantallas de escritorio
+    flex-direction: column;// apila las líneas del icono verticalmente
+    gap: 4px;// separación entre las rayitas del icono
+    cursor: pointer;// indica que es un elemento interactivo
+
+    span {
+      display: block;// cada línea es un bloque independiente
+      width: 20px;// ancho de las rayitas
+      height: 2px;// grosor de las rayitas
+      background-color: #fff;// color blanco para las rayitas
+    }
+
+    // visualización responsiva
+    @media (max-width: 768px) {
+      display: flex;// aparece únicamente en dispositivos móviles
+    }
+  }
+}

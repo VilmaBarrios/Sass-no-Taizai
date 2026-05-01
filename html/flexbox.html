@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="../index.html" class="navbar-brand">Sass No Taizai</a>
+    <input type="checkbox" id="menu-toggler" class="navbar-check">
+    <ul class="navbar-nav">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="grid.html">Britania Grid</a></li>
+      <li><a href="botones.html">Tesoros Sagrados</a></li>
+      <li><a href="ArquiSass.html">Arquitectura SASS</a></li>
+      <li><a href="autoras.html">Autoras</a></li>
+    </ul>
+    
+    <div class="navbar-actions">
+      <label for="menu-toggler" class="navbar-toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+</nav>
+
+    <div class="docs-layout">
+      <input type="checkbox" id="sidebar-master" class="sidebar-checkbox">
+      <label for="sidebar-master" class="sidebar-mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      
+      <aside class="docs-sidebar">
+        <p class="sidebar-group">Inicio</p>
+        <a href="introduccion.html" class="sidebar-link">Introducción</a>
+        <a href="instalacion.html" class="sidebar-link ">Instalación</a>
+
+        <p class="sidebar-group">Layout</p>
+        <a href="grid.html" class="sidebar-link">Sistema de las 12 columnas</a>
+
+        <p class="sidebar-group">Componentes</p>
+        <a href="botones.html" class="sidebar-link">Botones (Variantes)</a>
+        <a href="cards.html" class="sidebar-link">Card (Posters)</a>
+        <a href="tablas.html" class="sidebar-link">Tablas</a>
+        <a href="formularios.html" class="sidebar-link">Formularios</a>
+        <a href="navbar.html" class="sidebar-link">Navbar</a>
+        <a href="alertas.html" class="sidebar-link">Alertas</a>
+        <a href="flexbox.html" class="sidebar-link">FlexBox</a>
+        <a href="badges.html" class="sidebar-link">Badges</a>
+        <a href="container.html" class="sidebar-link">Container</a>
+      </aside>
+      
+      <main class="docs-main">
+        <section id="flexbox" class="section mt-5">
+           <section class="section">
+            <h2 class="text-ira fs-2 fw-bold mb-4 text-center">ARTE DEL CONTROL ESPACIAL: FLEXBOX</h2>
+            <p class="text-light fs-5 mb-5 lh-lg">   
+                Flexbox es el <strong>Comandante de Batalla</strong> de tu diseño. Es un sistema de distribución de elementos que permite   
+                que los componentes se ajusten, crezcan o se alineen de forma inteligente. Olvida los márgenes manuales y las posiciones    
+                caóticas; con Flexbox, tú dictas las leyes de la física en tu interfaz.  
+            </p>  
+            <h3 class="sidebar-group px-0 mb-4 text-center">¿Para qué funciona?</h3> 
+            <ul class="d-flex flex-column gap-3 ps-4 mb-5"> 
+                <li>    
+                    <strong class="text-envidia">Alineación Perfecta:</strong>     
+                    <span class="text-gray-400">Centrar elementos vertical u horizontalmente con un solo comando.</span>   
+                </li>     
+                <li>    
+                    <strong class="text-soberbia">Distribución de Poder:</strong>     
+                    <span class="text-gray-400">Repartir el espacio sobrante entre los guerreros de forma equitativa.</span>   
+                </li>
+                <li>
+                    <strong class="text-pereza">Orden Flexible:</strong>     
+                    <span class="text-gray-400">Cambiar la dirección de la formación (filas o columnas) según la necesidad del Reino.</span>    
+                </li>      
+            </ul>
+            <h3 class="sidebar-group px-0 mb-4 text-center">Requisitos de la Forja</h3>
+            <div class="d-flex flex-column gap-4 ps-4 mb-5">
+                <div>
+                    <p class="text-gula fw-bold mb-1">1. El Contenedor Maestro (.d-flex)</p>      
+                    <p class="text-gray-400 small gap-3 ps-4 mb-2">Es el requisito absoluto. Al aplicar esta clase, el contenedor activa su aura flexible y todos sus hijos directos se convierten en aliados del sistema.</p>    
+                </div>
+                <div>
+                    <p class="text-lujuria fw-bold mb-1">2. Ejes de Dirección (.flex-row / .flex-column)</p>
+                    <p class="text-gray-400 small gap-3 ps-4 mb-2">Debes definir hacia dónde marchan tus elementos: en una línea horizontal hacia el horizonte o en una formación vertical de arriba a abajo.</p>
+                </div>  
+                <div>
+                    <p class="text-codicia fw-bold mb-1">3. Ley de Justificación (.justify-content)</p>     
+                    <p class="text-gray-400 small gap-3 ps-4 mb-2">       
+                        Determina cómo se utiliza el espacio vacío: ¿se queda al inicio, se va al final o se reparte entre cada uno de los guerreros?     
+                    </p>   
+                </div> 
+            </div>
+        </section>
+
+        <div class="container container-nether mb-5">
+            <section>
+                <h2 class="text-ira">Containers Flex Básicos</h2>
+                <h3 class="sidebar-group px-0 mb-4">Flex Container con Borde</h3>
+                
+                <div class="container-soberbia">
+                    <div class="demo-preview d-flex p-3 bg-deep-dark gap-2">
+                        <div class="demo-box p-2 border-ira">Elemento 1</div>
+                        <div class="demo-box p-2 border-ira">Elemento 2</div>
+                        <div class="demo-box p-2 border-ira">Elemento 3</div>
+                    </div>
+
+                    <input type="checkbox" id="flex-base" class="demo-checkbox" />
+                    <label for="flex-base" class="demo-toggle">Ver código HTML</label>       
+                    <div class="demo-code">
+                        <pre>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"container container-nether"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;section&gt;</span>
+                            <span class="tag">&lt;h2&gt;</span>Containers Flex Básicos<span class="tag">&lt;/h2&gt;</span>
+                            <span class="tag">&lt;h3&gt;</span>Flex Container con Borde<span class="tag">&lt;/h3&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"d-flex border-ira"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Elemento 1<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Elemento 2<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Elemento 3<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/section&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="container container-nether mb-5">
+            <section>
+                <h2 class="text-ira">Direcciones Flex</h2>
+                
+                <h3 class="sidebar-group px-0 mb-3">Flex Column (Formación Vertical)</h3>
+                <div class="container-soberbia">
+                    <div class="demo-preview d-flex flex-column gap-2 bg-deep-dark p-3">
+                        <div class="demo-box p-2 border-ira text-lujuria">Guerrero 1</div>
+                        <div class="demo-box p-2 border-ira text-lujuria">Guerrero 2</div>
+                    </div>
+
+                    <input type="checkbox" id="flex-dir-col" class="demo-checkbox" />
+                    <label for="flex-dir-col" class="demo-toggle">Ver código HTML</label>
+                    
+                    <div class="demo-code">
+                        <pre>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"container container-nether"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;section&gt;</span>
+                            <span class="tag">&lt;h2&gt;</span>Direcciones Flex<span class="tag">&lt;/h2&gt;</span>
+                            <span class="tag">&lt;h3&gt;</span>Flex Column<span class="tag">&lt;/h3&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"flex-column"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Elemento 1<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Elemento 2<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/section&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="container container-nether mb-5">
+            <section>
+                <h2 class="text-ira">Alineaciones Flex</h2>
+                
+                <h3 class="sidebar-group px-0 mb-3">Flex Between (Distribución de Poder Total)</h3>
+                <div class="container-soberbia">
+                    <div class="demo-preview d-flex justify-between bg-deep-dark p-3">
+                        <div class="demo-box p-2 border-ira">Flanco Izquierdo</div>
+                        <div class="demo-box p-2 border-ira bg-ira-dark">Refuerzo Central</div>
+                        <div class="demo-box p-2 border-ira">Flanco Derecho</div>
+                    </div>
+
+                    <input type="checkbox" id="flex-align-bet" class="demo-checkbox" />
+                    <label for="flex-align-bet" class="demo-toggle">Ver código HTML</label>
+                    
+                    <div class="demo-code">
+                        <pre>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"container container-nether"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;section&gt;</span>
+                            <span class="tag">&lt;h2&gt;</span>Alineaciones Flex<span class="tag">&lt;/h2&gt;</span>
+                            <span class="tag">&lt;h3&gt;</span>Flex Between con 3 Guerreros<span class="tag">&lt;/h3&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"d-flex justify-between"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Flanco Izquierdo<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Refuerzo Central<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box"</span><span class="tag">&gt;</span>Flanco Derecho<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/section&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="container container-nether mb-5">
+            <section>
+                <h2 class="text-ira">Elementos Flex</h2>
+                <h3 class="sidebar-group px-0 mb-3">Propiedades de Crecimiento (Flex Grow)</h3>
+                
+                <div class="container-soberbia">
+                    <div class="demo-preview d-flex bg-deep-dark p-3 gap-2">
+                        <div class="demo-box flex-grow-1 p-2 bg-ira">Dominio Total (Grow 1)</div>
+                        <div class="demo-box p-2 border-ira">Normal</div>
+                    </div>
+
+                    <input type="checkbox" id="flex-prop" class="demo-checkbox" />
+                    <label for="flex-prop" class="demo-toggle">Ver codigo HTML</label>
+                    
+                    <div class="demo-code">
+                        <pre>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"container container-nether"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;section&gt;</span>
+                            <span class="tag">&lt;h2&gt;</span>Elementos Flex<span class="tag">&lt;/h2&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"flex-container"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box flex-grow-1"</span><span class="tag">&gt;</span>flex-grow-1<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"demo-box flex-grow-0"</span><span class="tag">&gt;</span>flex-grow-0<span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                            <span class="tag">&lt;/section&gt;</span>
+                            <span class="tag">&lt;/div&gt;</span>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    </main>
+</body>
+</html>

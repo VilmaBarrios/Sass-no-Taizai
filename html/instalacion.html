@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalación</title>
+    <link rel="stylesheet" href="../css/main.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="navbar-brand">sass no taizai</a>
+        <input type="checkbox" id="menu-toggler" class="navbar-check">
+        <ul class="navbar-nav">
+            <li><a href="../index.html">inicio</a></li>
+            <li><a href="grid.html">britania grid</a></li>
+            <li><a href="botones.html">tesoros sagrados</a></li>
+            <li><a href="arquisass.html">arquitectura sass</a></li>
+            <li><a href="autoras.html">Autoras</a></li>
+        </ul>
+        <div class="navbar-actions">
+            <label for="menu-toggler" class="navbar-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+    </nav>
+
+    <div class="docs-layout">
+        <input type="checkbox" id="sidebar-master" class="sidebar-checkbox">
+        <label for="sidebar-master" class="sidebar-mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <aside class="docs-sidebar">
+            <p class="sidebar-group">inicio</p>
+            <a href="introduccion.html" class="sidebar-link">introducción</a>
+            <a href="instalacion.html" class="sidebar-link active">instalación</a>
+
+            <p class="sidebar-group">layout</p>
+            <a href="grid.html" class="sidebar-link">sistema de las 12 columnas</a>
+
+            <p class="sidebar-group">componentes</p>
+            <a href="botones.html" class="sidebar-link">botones (variantes)</a>
+            <a href="cards.html" class="sidebar-link">card (posters)</a>
+            <a href="tablas.html" class="sidebar-link">tablas</a>
+            <a href="formularios.html" class="sidebar-link">formularios</a>
+            <a href="navbar.html" class="sidebar-link">navbar</a>
+            <a href="alertas.html" class="sidebar-link">alertas</a>
+            <a href="flexbox.html" class="sidebar-link">flexbox</a>
+            <a href="badges.html" class="sidebar-link">Badges</a>
+            <a href="container.html" class="sidebar-link">Container</a>
+        </aside>
+        
+        <main class="docs-main">
+            <section id="instalacion" class="section-instalacion">
+                <div class="ritual-container">
+                    
+                    <header class="ritual-header">
+                        <h2 class="title-epic">grimorio de <span>instalación</span></h2>
+                        <div class="divider-ira"></div>
+                        <p class="hero-description">forja las bases de tu proyecto con el poder de los siete pecados.</p>
+                    </header>
+
+                    <div class="steps-grid">
+                        <div class="ritual-step-card">
+                            <span class="ritual-badge">paso i</span>
+                            <div class="ritual-card-inner">
+                                <h3>clonación del reino</h3>
+                                <p>invoca los archivos fuente desde el repositorio sagrado.</p>
+                                <div class="ritual-terminal">
+                                    <code>https://github.com/VilmaBarrios/Sass-no-Taizai.git</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ritual-step-card">
+                            <span class="ritual-badge">paso ii</span>
+                            <div class="ritual-card-inner">
+                                <h3>pacto de alquimia</h3>
+                                <p>instala el motor sass para transmutar tus estilos.</p>
+                                <div class="ritual-terminal">
+                                    <code>npm install sass --save-dev</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ritual-step-card">
+                            <span class="ritual-badge">paso iii</span>
+                            <div class="ritual-card-inner">
+                                <h3>vínculo sagrado</h3>
+                                <p>enlaza el css forjado en la corona (head) de tu html.</p>
+                                <div class="ritual-terminal">
+                                    <code>&lt;link rel="stylesheet" href="../css/main.css"&gt;</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class="ritual-footer">
+                        <p class="hero-description">¡el ritual ha concluido. el poder es tuyo!</p>
+                    </footer>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

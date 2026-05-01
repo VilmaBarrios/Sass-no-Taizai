@@ -1,0 +1,126 @@
+@use "../clases_utilitarias/paleta" as p;
+@use "../clases_utilitarias/tipografia" as t;
+//Contenedor de presentación
+.demo-preview-column {
+  display: flex;
+  flex-direction: column;// alinea los elementos uno debajo de otro
+  gap: 1.5rem;// genera espacio entre los grupos del formulario
+  max-width: 550px;// el ancho máximo para mantener la legibilidad
+  width: 100%;
+  align-items: stretch; //obliga a los inputs a ocupar todo el ancho
+
+  padding: 2.5rem;
+  // efecto de fondo, un patrón de puntos usando gradiente radial
+  background-image: radial-gradient(#222 1px, transparent 1px);
+  background-size: 20px 20px;     // tamaño de la cuadrícula de puntos
+}
+
+// agrupador para múltiples checkboxes o radios
+.form-check-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; // espaciado generoso entre opciones
+  margin-top: 0.5rem;
+}
+// grupo que contiene la etiqueta y el input
+.form-group {
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;// la etiqueta ocupa su propia línea
+    margin-bottom: 0.5rem;// separación del input
+    color: #e2e8f0;//gris muy claro
+    font-family: t.$font-codicia; //tipografía temática de Ban
+    font-size: 0.9rem;
+  }
+}
+
+// estilo base para campos de texto (input, textarea, select)
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #161618;// fondo casi negro
+  border: 1px solid #2d2d30;// borde oscuro sutil
+  border-radius: 6px;// esquinas suavizadas
+  color: #fff; // texto blanco
+  transition: all 0.2s; // transición suave para todos los estados
+
+  //estado cuando el usuario hace clic para escribir
+  &:focus {
+    outline: none; // quita el borde azul por defecto del navegador
+    border-color: p.$ira-meliodas; //el borde cambia al amarillo de Meliodas
+    // creamos un resplandor alrededor del input usando el color de la Ira
+    box-shadow: 0 0 0 3px rgba(p.$ira-meliodas, 0.15);
+  }
+
+  //estado de validación positiva
+  &.is-valid {
+    border-color: #10b981 !important; // borde verde esmeralda
+  }
+  // estado de validación negativa (error)
+  &.is-invalid {
+    border-color: #ef4444 !important; //borde rojo sangre
+  }
+}
+
+//mensaje de error que aparece debajo del input
+.invalid-feedback {
+  color: #ef4444;// color rojo a juego con el borde
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+  display: block;
+}
+
+//estilos compartidos para Radio y Checkbox
+.form-radio,
+.form-check {
+  display: flex;
+  align-items: center; // centra verticalmente el círculo/cuadro con el texto
+  gap: 0.6rem;
+  cursor: pointer; // cambia el cursor
+  color: #94a3b8; // Gris azulado para el texto
+
+  input {
+    cursor: pointer;
+  }
+}
+
+//componentes SWITCH 
+.form-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+
+  input {
+    appearance: none;// resetea el diseño por defecto del sistema
+    width: 2.4rem;
+    height: 1.2rem;
+    background: #2d2d30;// fondo de la pista del switch
+    border-radius: 1rem;//forma de píldora
+    position: relative;
+    transition: 0.3s;
+
+    //la perilla, el círculo blanco que se mueve
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0.9rem;
+      height: 0.9rem;
+      background: #94a3b8;
+      border-radius: 50%;
+      top: 0.15rem; // centrado vertical dentro de la pista
+      left: 0.15rem; // posición inicial (desactivado)
+      transition: 0.3s; // animación del movimiento
+    }
+
+    // estado cuando el switch está activado
+    &:checked {
+      background: rgba(p.$ira-meliodas, 0.4); //la pista se ilumina parcialmente
+      &::before {
+        left: 1.35rem;            // se desplaza la perilla a la derecha
+        background: p.$ira-meliodas; // la perilla brilla con el color de la Ira
+      }
+    }
+  }
+}

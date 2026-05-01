@@ -1,0 +1,334 @@
+@use "sass:color";
+@use "../clases_utilitarias/paleta" as p;
+@use "../clases_utilitarias/tipografia" as t;
+@use "../clases_utilitarias/mixins" as m;
+
+
+// el checkbox que controla el sidebar móvil siempre invisible
+.sidebar-checkbox {
+  display: none !important;
+}
+
+// el botón de hamburguesa para móviles
+.sidebar-mobile-toggle {
+  display: none; // oculto en versiones de escritorio
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 18px;
+    position: absolute; // se posiciona sobre el contenido sin desplazarlo
+    top: 20px;
+    right: 20px;
+    z-index: 100; // por encima de todo el contenido
+    cursor: pointer;
+
+    // las tres rayitas del botón
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: p.$ira-meliodas; // color temático de meliodas
+      transition: all 0.3s ease;
+    }
+  }
+}
+  // layout general de la documentación
+.docs-layout {
+  @include m.docs-container-layout; // mixin para estructura base
+  background: #0f0f10;
+  position: relative;
+  display: flex; // distribución horizontal (sidebar | main) en pc
+  min-height: calc(100vh - 70px);// ajuste restando la altura del navbar
+
+  @media (max-width: 767px) {
+    display: block; // en móvil se apilan para que el main ocupe el espacio
+  }
+}
+
+// barra lateral de navegación
+.docs-sidebar {
+  @include m.sidebar-responsive-behavior(70px); // control de altura y posición
+  background: #0a0a0b;
+  border-bottom: 1px solid #222;
+  padding: 1.5rem 0;
+  // transición suave con curva para el efecto de entrada
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+
+  @media (max-width: 767px) {
+    position: absolute; // se superpone al contenido en móvil
+    top: 0;
+    left: 0;
+    height: 100%;
+    min-height: 100vh;
+    width: 280px;
+    z-index: 50;
+    transform: translateX(-100%); // inicialmente escondido a la izquierda
+    border-right: 1px solid p.$ira-meliodas;
+    border-bottom: none;
+  }
+
+  @media (min-width: 768px) {
+    border-bottom: none;
+    border-right: 1px solid #222;
+    transform: translateX(0) !important;// siempre visible en escritorio
+  }
+}
+
+//lógica de apertura: cuando el checkbox está activo 
+.sidebar-checkbox:checked {
+  // muestra el sidebar desplazándolo a su posición original
+  & ~ .docs-sidebar {
+    transform: translateX(0);
+  }
+
+  // transforma el icono de hamburguesa en una x de cierre
+  & ~ .sidebar-mobile-toggle {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;; // desvanece la línea central
+    }
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+  // contenido principal (main)
+
+.docs-main {
+  flex: 1; // toma todo el espacio restante al lado del sidebar
+  width: 100%;
+  padding: 2rem;
+  background: #0f0f10;
+  color: p.$ira-meliodas;
+
+  @media (min-width: 768px) {
+    padding: 3rem; // más grande en pantallas grandes
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 60px; // espacio superior para no chocar con el botón móvil
+  }
+}
+  // bloques de demostración (visualizadores de código)
+
+.demo-block {
+  background: #161618;
+  border: 1px solid #222;
+  border-radius: 8px;
+  margin: 2rem 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+// área donde se renderiza el componente real
+.demo-preview {
+  .row {
+    width: 100%; // Asegura que el grid ocupe todo el ancho del bloque de previsualización
+  }
+  padding: 2.5rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  // fondo decorativo con rejilla de puntos
+  background-image: radial-gradient(#222 1px, transparent 1px);
+  background-size: 20px 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+}
+
+// botón para mostrar u ocultar el código fuente
+.demo-toggle {
+  display: block;
+  background: #1a1a1c;
+  color: #94a3b8;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-top: 1px solid #222;
+  user-select: none;
+  transition: 0.3s;
+  
+  &:hover {
+    color: p.$ira-meliodas;
+    background: #1e1e20;
+  }
+}
+
+// contenedor del código fuente (oculto por defecto)
+.demo-code {
+  display: none;
+  background: #000;
+  padding: 1.5rem;
+  border-top: 1px solid #222;
+  font-family: "fira code", monospace;
+  font-size: 0.85rem;
+  color: #d1d5db;
+  overflow-x: auto; // permite scroll lateral si el código es largo
+}
+
+// acción de mostrar código mediante el estado del checkbox
+.demo-checkbox:checked {
+  & ~ .demo-code {
+    display: block;
+  }
+  & ~ .demo-toggle {
+    color: p.$ira-meliodas;
+    .icon-play {
+      transform: rotate(90deg); // rota un icono decorativo si existe
+    }
+  }
+}
+
+//   elementos de cabecera y sidebar (tipografía)
+
+.hero {
+  text-align: center;
+  padding: 4rem 0;
+  border-bottom: 1px solid #222;
+  h1 {
+    font-family: t.$font-titulo-epico;
+    font-size: 4rem;
+    color: p.$ira-meliodas;
+    margin-bottom: 1rem;
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+    span { color: #fff; } // texto secundario en blanco
+  }
+}
+
+// títulos de categoría en el sidebar
+.sidebar-group {
+  font-family: t.$font-titulo-epico;
+  font-size: t.$fs-6;
+  font-weight: t.$fw-bold;
+  color: p.$ira-meliodas;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 1.5rem 0 0.5rem;
+  padding: 0 1.5rem;
+}
+
+// enlaces del sidebar
+.sidebar-link {
+  display: block;
+  width: 100%;
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  font-family: t.$font-base;
+  font-size: t.$fs-sidebar;
+  font-weight: t.$fw-medium;
+  transition: 0.3s;
+  border-left: 3px solid transparent; // preparado para el estado activo
+
+  &:hover,
+  &.active {
+    color: p.$ira-meliodas;
+    padding-left: 20px; // desplazamiento suave al pasar el mouse
+  }
+}
+ //  estilos de imagen y banner (efectos místicos)
+
+
+.hero-image-container {
+  margin: 3rem auto;
+  max-width: 850px;
+  position: relative;
+  z-index: 1;
+
+  // efecto de aura o resplandor detrás de la imagen principal
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 85%;
+    height: 85%;
+    background: p.$ira-meliodas;
+    filter: blur(80px); // difumina el color para crear el aura
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+}
+
+.hero-banner {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid p.$ira-meliodas;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  display: block;
+}
+
+.hero-description {
+  // fuente elegante que imita caligrafía manuscrita
+  font-family: "dancing script", cursive !important;
+  color: p.$ira-meliodas !important;
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+  text-align: center;
+  max-width: 750px;
+  margin: 1.5rem auto 2.5rem auto;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem !important;// aumenta para legibilidad en móviles
+  }
+}
+// Estilos de la Demo grid
+.demo-box {
+  background-color: #AED6F1;
+  color: #2E4053;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  border: 1px dashed p.$ira-meliodas;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.demo-box:hover {
+  background: p.$codicia-ban;
+  transform: scale(1.02);
+  box-shadow:  4px 4px 0 p.$codicia-ban, 8px 8px 0 p.$codicia-oscuro;;
+}
+
+//DEMO SOLO PARA GRID AREA
+.britania-grid-area .demo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: rgba(p.$ira-meliodas, 0.1);
+  border: 2px solid p.$ira-meliodas;
+}
+
+.britania-grid-area .demo-box::after {
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  opacity: 0.5;
+}
+
+.demo-code pre {
+    max-height: 400px;
+    overflow-y: auto;
+    background: #1e1e1e;
+    padding: 15px;
+}

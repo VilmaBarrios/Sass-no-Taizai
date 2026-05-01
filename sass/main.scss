@@ -1,0 +1,28 @@
+@use '../sass/clases_utilitarias/bordes';
+@use '../sass/clases_utilitarias/breackpoints';
+@use '../sass/clases_utilitarias/paleta';
+@use '../sass/clases_utilitarias/sombras';
+@use '../sass/clases_utilitarias/tipografia';
+@use '../sass/clases_utilitarias/mixins';
+@use '../sass/clases_utilitarias/movimientos';
+@use '../sass/clases_utilitarias/redondeo';
+@use '../sass/clases_utilitarias/padding_margenes';
+
+@use '../sass/layout/docs';
+@use '../sass/layout/reset';
+@use '../sass/layout/portada';
+@use '../sass/layout/grid-columns';
+@use '../sass/layout/grid-rows';
+@use '../sass/layout/arquisass';
+@use '../sass/layout/container';
+
+@use '../sass/componentes/botones.scss';
+@use '../sass/componentes/navbar';
+@use '../sass/componentes/cards';
+@use '../sass/componentes/forms';
+@use '../sass/componentes/tables';
+@use '../sass/componentes/alertas.scss';
+@use '../sass/componentes/navbar2';
+@use '../sass/componentes/instalacion';
+@use '../sass/componentes/flex';
+@use '../sass/componentes/badges';

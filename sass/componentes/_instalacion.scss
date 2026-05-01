@@ -1,0 +1,137 @@
+@use "../clases_utilitarias/paleta" as p;
+
+.section-instalacion {
+    padding: 60px 20px; // espaciado vertical y horizontal de la sección
+    display: flex;// activa flexbox para centrado
+    justify-content: center;  // centra el contenedor del ritual horizontalmente
+
+    //CONTENEDOR PRINCIPAL
+    .ritual-container {
+        // fondo degradado oscuro profundo
+        background: linear-gradient(180deg, rgba(15, 15, 15, 0.9) 0%, rgba(5, 5, 5, 0.95) 100%);
+        // borde fino con el color de la Ira de Meliodas al 30% de opacidad
+        border: 2px solid rgba(p.$ira-meliodas, 0.3);
+        border-radius: 30px;  //bordes muy redondeados 
+        padding: 50px;// espaciado interno 
+        max-width: 900px; // límite de ancho para lectura óptima
+        // doble sombra, una profunda para elevar el plano y un resplandor dorado (Ira)
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(p.$ira-meliodas, 0.1);
+        position: relative;   // necesario para posicionar el pseudo-elemento ::before
+        overflow: hidden; // corta cualquier resplandor que se salga de los bordes
+
+        // efecto deiluminacion
+        &::before {
+            content: ''; // elemento decorativo vacío
+            position: absolute;
+            top: -100px; // sobresale por arriba
+            right: -100px;// sobresale por la derecha
+            width: 300px;
+            height: 300px;
+            // luz radial suave que emana de la esquina superior derecha
+            background: radial-gradient(circle, rgba(p.$ira-meliodas, 0.15) 0%, transparent 70%);
+            pointer-events: none; // permite hacer clic a través del brillo
+        }
+    }
+
+    //ENCABEZADO 
+    .ritual-header {
+        text-align: center;
+        margin-bottom: 50px;  // espacio antes de los pasos
+
+        .title-epic {
+            font-family: 'Cinzel', serif !important; // fuente de estilo romano/épico
+            font-size: 3.5rem !important; // tamaño gigante para impacto
+            color: #fff;
+            margin-bottom: 10px;
+            // resplandor de texto (Glow) con el color de la Ira
+            text-shadow: 0 0 15px rgba(p.$ira-meliodas, 0.5);
+
+            // resalta palabras clave con el color de Meliodas
+            span { color: p.$ira-meliodas; }
+        }
+
+        // línea divisoria decorativa bajo el título
+        .divider-ira {
+            height: 3px;
+            width: 100px;
+            background: p.$ira-meliodas;
+            margin: 20px auto;
+            border-radius: 2px;
+            box-shadow: 0 0 10px p.$ira-meliodas; //la línea emite luz propia
+        }
+    }
+
+    // grilla
+    .steps-grid {
+        display: flex;
+        flex-direction: column; // pasos ordenados verticalmente
+        gap: 40px;// espacio entre tarjetas de pasos
+    }
+
+    // TARJETA 
+    .ritual-step-card {
+        position: relative;// base para el badge posicionado absolutamente
+        padding-top: 15px;// espacio para que el badge no se encime
+
+        // etiqueta flotante (Paso 01, 02...)
+        .ritual-badge {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            background: p.$ira-meliodas; //fondo amarillo/dorado
+            color: white;
+            padding: 5px 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            border-radius: 5px;
+            z-index: 2;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.5); // sombra para despegarlo de la tarjeta
+        }
+
+        // cuerpo interno de la tarjeta de paso
+        .ritual-card-inner {
+            background: rgba(255, 255, 255, 0.02); // fondo 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            transition: 0.3s; // suaviza la animación del hover
+
+            h3 {
+                font-family: 'Cinzel', serif;
+                color: #fff;
+                font-size: 1.6rem;
+                margin-bottom: 10px;
+            }
+
+            p {
+                // Fuente manuscrita
+                font-family: 'Dancing Script', cursive !important;
+                font-size: 1.5rem !important;
+                color: #aaa !important; // Gris suave
+                margin-bottom: 15px;
+            }
+        }
+
+        // efecto al pasar el mouse por la tarjeta
+        &:hover .ritual-card-inner {
+            background: rgba(p.$ira-meliodas, 0.05); // se ilumina ligeramente
+            border-color: rgba(p.$ira-meliodas, 0.4); // el borde brilla más
+            transform: translateY(-5px);// la tarjeta levita
+        }
+    }
+
+    //BLOQUE DE CODIGO
+    .ritual-terminal {
+        background: #000; // fondo negro sólido tipo terminal
+        padding: 15px 20px;
+        border-radius: 10px;
+        border: 1px solid #222;
+        overflow-x: auto; // Permite scroll horizontal en móviles
+
+        code {
+            font-family: 'Courier New', monospace;
+            color: #00ffaa;// Color verde neón (estilo "Matrix" o magia verde)
+            font-size: 1.1rem;
+        }
+    }
+}

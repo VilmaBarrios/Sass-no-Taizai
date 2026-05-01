@@ -1,0 +1,53 @@
+@use "../clases_utilitarias/paleta" as p;
+
+// reset universal
+*,
+*::before,
+*::after {
+  margin: 0; // elimina márgenes externos residuales
+  padding: 0; // elimina espacios internos residuales
+  box-sizing: border-box; // hace que el ancho incluya padding y bordes sin crecer
+}
+
+// configuración de la base raíz
+html {
+  scroll-behavior: smooth; // añade transición suave al navegar entre anclas
+  font-size: 16px; // define la medida base para los rem
+}
+
+body {
+  min-height: 100vh; // asegura que el fondo cubra al menos toda la pantalla
+  width: 100%; // ocupa el ancho total disponible
+  background-color: #0f0f10; // color oscuro base para el modo nocturno
+  color: #fff; // texto blanco por defecto para alto contraste
+  line-height: 1.5; // separación entre líneas para mejorar la lectura
+  overflow-x: hidden; // previene el desplazamiento lateral accidental
+}
+
+// reset de elementos de enlace
+a {
+  text-decoration: none; // quita el subrayado clásico de los links
+  color: inherit; // evita que los links se pongan azules por defecto
+}
+
+// reset de listas
+ul,
+ol {
+  list-style: none; // elimina las viñetas y números de las listas
+}
+
+// reset de formularios y controles
+button,
+input,
+select,
+textarea {
+  font: inherit; // obliga a estos elementos a usar la fuente definida
+  border: none; // quita bordes grises de sistema
+  outline: none; // quita el borde de enfoque por defecto
+}
+
+// reset de imágenes
+img {
+  max-width: 100%; // evita que las imágenes se desborden de su contenedor
+  display: block; // elimina el espacio vacío en la base de la imagen
+}

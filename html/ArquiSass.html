@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura SASS</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body >
+    <nav class="navbar">
+  <a href="../index.html" class="navbar-brand">Sass No Taizai</a>
+  <input type="checkbox" id="menu-toggler" class="navbar-check">
+  <ul class="navbar-nav">
+     <li><a href="../index.html">Inicio</a></li>
+    <li><a href="grid.html">Britania Grid</a></li>
+    <li><a href="botones.html">Tesoros Sagrados</a></li>
+    <li><a href="ArquiSass.html">Arquitectura SASS</a></li>
+    <li><a href="autoras.html">Autoras</a></li>
+    </ul>
+  <div class="navbar-actions">
+    <label for="menu-toggler" class="navbar-toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+</nav>
+    <div class="docs-layout">
+        <input type="checkbox" id="sidebar-master" class="sidebar-checkbox">
+        <label for="sidebar-master" class="sidebar-mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <aside class="docs-sidebar">
+            <p class="sidebar-group">Inicio</p>
+            <a href="introduccion.html" class="sidebar-link">Introducción</a>
+            <a href="instalacion.html" class="sidebar-link ">Instalación</a>
+
+            <p class="sidebar-group">Layout</p>
+            <a href="grid.html" class="sidebar-link">Sistema de las 12 columnas</a>
+
+            <p class="sidebar-group">Componentes</p>
+            <a href="botones.html" class="sidebar-link">Botones (Variantes)</a>
+            <a href="cards.html" class="sidebar-link">Card (Posters)</a>
+            <a href="tablas.html" class="sidebar-link">Tablas</a>
+            <a href="formularios.html" class="sidebar-link">Formularios</a>
+            <a href="navbar.html" class="sidebar-link">Navbar</a>
+            <a href="alertas.html" class="sidebar-link">Alertas</a>
+            <a href="flexbox.html" class="sidebar-link">FlexBox</a>
+            <a href="badges.html" class="sidebar-link">Badges</a>
+            <a href="container.html" class="sidebar-link">Container</a>
+        </aside>
+
+    <main class="docs-main"> 
+        <section id="inicio" class="hero-welcome text-center py-5">
+            <h1 class="text-shadow-soberbia display-3">ARQUITECTURA SASS</h1>
+            <p class="fs-4 text-ira">El orden de los Caballeros Sagrados del Código</p>
+        </section>
+
+        <div class="container pb-5">
+            <div class="row g-5">
+                <div class="col-md-5">
+                    <h2 class="text-ira mb-4">Estructura de Directorios</h2>
+                    <div class="folder-structure shadow-ira-sm">
+                        <div class="folder-item">scss/</div>
+                        <div class="ms-3">
+
+                            <div class="folder-item mt-2">clases_utilitarios/</div>
+                            <div class="ms-3 file-item">_borde.scss</div>
+                            <div class="ms-3 file-item">_breakpoints.scss</div>
+                            <div class="ms-3 file-item">_mixins.scss</div>
+                            <div class="ms-3 file-item">_movimientos.scss</div>
+                            <div class="ms-3 file-item">_padding_margenes.scss</div>
+                            <div class="ms-3 file-item">_paleta.scss</div>
+                            <div class="ms-3 file-item">_redondeo.scss</div>
+                            <div class="ms-3 file-item">_sombras.scss</div>
+                            <div class="ms-3 file-item">_tipografia.scss</div>
+                            
+                            <div class="folder-item mt-2">componentes/</div>
+                            <div class="ms-3 file-item">_alertas.scss</div>
+                            <div class="ms-3 file-item">_botones.scss</div>
+                            <div class="ms-3 file-item">_cards.scss</div>
+                            <div class="ms-3 file-item">_flex.scss</div>
+                            <div class="ms-3 file-item">_forms.scss</div>
+                            <div class="ms-3 file-item">_instalacion.scss</div>
+                            <div class="ms-3 file-item">_navbar.scss</div>
+                            <div class="ms-3 file-item">_navbar2.scss</div>
+                            <div class="ms-3 file-item">_tables.scss</div>
+                            
+                            <div class="folder-item mt-2">layout/</div>
+                            <div class="ms-3 file-item">_arquisass.scss</div>
+                            <div class="ms-3 file-item">_docs.scss</div>
+                            <div class="ms-3 file-item">_grid-columns.scss</div>
+                            <div class="ms-3 file-item">_grid-rows.scss</div>
+                            <div class="ms-3 file-item">_portada.scss</div>
+                            <div class="ms-3 file-item">_reset.scss</div>
+                            
+                            <div class="file-item mt-2 text-soberbia">main.scss (El Corazón)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <h2 class="text-soberbia mb-4">Implementación de Componentes</h2>
+                    
+                    <div class="card bg-dark border-ira p-4 mb-4 shadow-ira-sm">
+                        <h3>Botones del Framework</h3>
+                        <p class="text-muted small">Generados desde <code>componentes/_botones.scss</code></p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <button class="btn btn-ira">Meliodas</button>
+                            <button class="btn btn-codicia">Ban</button>
+                            <button class="btn btn-soberbia">Escanor</button>
+                            <button class="btn btn-pereza">King</button>
+                        </div>
+                    </div>
+            <section class="mt-5 pt-5">
+                <h2 class="text-center mb-4">Variables Sagradas (<code>_paleta.scss</code>)</h2>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover border-ira text-center align-middle">
+                        <thead>
+                            <tr>
+                                <th>Variable SASS</th>
+                                <th>Pecado</th>
+                                <th>Color Hex</th>
+                                <th>Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>$ira-meliodas</code></td><td>Ira</td><td>#E6CC00</td><td><div class="color-sample" style="background:#E6CC00"></div></td></tr>
+                            <tr><td><code>$codicia-ban</code></td><td>Codicia</td><td>#C62828</td><td><div class="color-sample" style="background:#C62828"></div></td></tr>
+                            <tr><td><code>$pereza-king</code></td><td>Pereza</td><td>#4FC3F7</td><td><div class="color-sample" style="background:#4FC3F7"></div></td></tr>
+                            <tr><td><code>$envidia-diane</code></td><td>Envidia</td><td>#81C784</td><td><div class="color-sample" style="background:#81C784"></div></td></tr>
+                            <tr><td><code>$soberbia-escanor</code></td><td>Soberbia</td><td>#FF8F00</td><td><div class="color-sample" style="background:#FF8F00"></div></td></tr>
+                            <tr><td><code>$gula-merlin</code></td><td>Gula</td><td>#9575CD</td><td><div class="color-sample" style="background:#9575CD"></div></td></tr>
+                            <tr><td><code>$lujuria-gowther</code></td><td>Lujuria</td><td>#F06292</td><td><div class="color-sample" style="background:#F06292"></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

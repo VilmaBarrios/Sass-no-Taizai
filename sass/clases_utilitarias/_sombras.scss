@@ -1,0 +1,105 @@
+@use './paleta' as *;
+@use './tipografia' as *;
+
+
+//sombras para contenedores y mas 
+
+// IRA - Meliodas
+.shadow-ira-sm {
+    box-shadow: 4px 4px 0 $ira-claro;
+}
+
+.shadow-ira-lg {
+    box-shadow: 4px 4px 0 $ira-meliodas, 8px 8px 0 $ira-oscuro;
+}
+
+// CODICIA - Ban
+.shadow-codicia-sm {
+    box-shadow: 4px 4px 0 $codicia-claro;
+}
+
+.shadow-codicia-lg {
+    box-shadow: 4px 4px 0 $codicia-ban, 8px 8px 0 $codicia-oscuro;
+}
+
+// PEREZA - King
+.shadow-pereza-sm {
+    box-shadow: 4px 4px 0 $pereza-claro;
+}
+
+.shadow-pereza-lg {
+    box-shadow: 4px 4px 0 $pereza-king, 8px 8px 0 $pereza-oscuro;
+}
+
+// ENVIDIA - Diane
+.shadow-envidia-sm {
+    box-shadow: 4px 4px 0 $envidia-claro;
+}
+
+.shadow-envidia-lg {
+    box-shadow: 4px 4px 0 $envidia-diane, 8px 8px 0 $envidia-oscuro;
+}
+
+// SOBERBIA - Escanor
+.shadow-soberbia-sm {
+    box-shadow: 4px 4px 0 $soberbia-claro;
+}
+
+.shadow-soberbia-lg {
+    box-shadow: 4px 4px 0 $soberbia-escanor, 8px 8px 0 $soberbia-oscuro;
+}
+
+// GULA - Merlin
+.shadow-gula-sm {
+    box-shadow: 4px 4px 0 $gula-claro;
+}
+
+.shadow-gula-lg {
+    box-shadow: 4px 4px 0 $gula-merlin, 8px 8px 0 $gula-oscuro;
+}
+
+// LUJURIA - Gowther
+.shadow-lujuria-sm {
+    box-shadow: 4px 4px 0 $lujuria-claro;
+}
+
+.shadow-lujuria-lg {
+    box-shadow: 4px 4px 0 $lujuria-gowther, 8px 8px 0 $lujuria-oscuro;
+}
+
+//textos con sombras heredando fuentes y colores a la vez 
+
+.text-shadow-ira {
+    font-family: $font-ira;
+    text-shadow: 2px 2px 0 $ira-oscuro, 4px 4px 0 $dark-night;
+}
+
+.text-shadow-codicia {
+    font-family: $font-codicia;
+    text-shadow: 2px 2px 0 $codicia-oscuro, 4px 4px 0 $dark-night;
+}
+
+.text-shadow-pereza {
+    font-family: $font-pereza;
+    text-shadow: 2px 2px 0 $pereza-oscuro, 4px 4px 0 $gray-400;
+}
+
+.text-shadow-envidia {
+    font-family: $font-envidia;
+    text-shadow: 2px 2px 0 $envidia-oscuro, 4px 4px 0 $dark-night;
+}
+
+.text-shadow-soberbia {
+    font-family: $font-soberbia;
+    text-shadow: 2px 2px 0 $soberbia-oscuro, 4px 4px 0 $dark-night;
+}
+
+.text-shadow-gula {
+    font-family: $font-gula;
+    text-shadow: 2px 2px 0 $gula-oscuro, 4px 4px 0 $dark-night;
+}
+
+.text-shadow-lujuria {
+    font-family: $font-lujuria;
+    text-shadow: 2px 2px 0 $lujuria-oscuro, 4px 4px 0 $gray-400;
+}

@@ -1,0 +1,196 @@
+@use "sass:map"; //modulo para manipularr mapas de datos
+@use "sass:color";//modulo de las funciones de color
+@use "../clases_utilitarias/paleta" as *;
+@use "../clases_utilitarias/tipografia" as *;
+@use "../clases_utilitarias/bordes" as *;
+@use "../clases_utilitarias/sombras" as *;
+@use "../clases_utilitarias/redondeo" as *;
+@use "../clases_utilitarias/movimientos" as *;
+
+// mapa de datos que vincula el nombre del pecado con su color oficial
+$pecados-map: (
+  "ira": $ira-meliodas,
+  "envidia": $envidia-diane,
+  "codicia": $codicia-ban,
+  "pereza": $pereza-king,
+  "lujuria": $lujuria-gowther,
+  "gula": $gula-merlin,
+  "soberbia": $soberbia-escanor,
+);
+
+.btn {
+  @extend .move-center; // Hereda display: flex, justify e items center de movimientos
+  display: inline-flex; // Sobrescribe para que no sea block por defecto
+  gap: 0.5rem; // espaciado entre icono y texto
+  font-family: $font-titulo-epico; // fuente principal para lo visual
+  font-weight: 700; //texto en negrita
+  @extend .rde-s; // Hereda el border-radius de redondeo
+  cursor: pointer;//cambia el cursor a mano
+  transition: 0.3s ease; //transicion suave para todos los estados
+  text-decoration: none;//quita el subrayado 
+  white-space: nowrap;//evita q el texto salte a otra linea
+  line-height: 1; //altura de linea minima para el centrado perfecto
+  text-transform: uppercase; //convierte el texto a mayuscula
+  letter-spacing: 1px; //espacio entre letras
+  border: 2px solid transparent; // Cambiado a 2px para que el outline no salte
+  @extend .shadow-ira-sm; //hreda sombra
+
+  //estado al pasar el mouse
+  &:hover {
+    @extend .move-up; // Hereda movimientos
+    @extend .shadow-codicia-sm; //cambia al estilo de sombra de ban
+  }
+
+  //cambia de estado al hacer click
+  &:active {
+    transform: translateY(0);//el boton baja a su posicion original
+  }
+
+  // Tamaños
+  //boton pequeño
+  &-sm {
+    padding: 0.4rem 0.9rem;
+    font-size: 12px;
+  }
+  //boton mediano
+  &-md {
+    padding: 0.6rem 1.4rem;
+    font-size: 14px;
+  }
+  //boton grande
+  &-lg {
+    padding: 0.8rem 2rem;
+    font-size: 16px;
+  }
+  //tamano de poder maximo
+  &-xl {
+    padding: 1.2rem 2.5rem;
+    font-size: 20px;
+  } // Tamaño épico añadido
+//variante de ancho completo
+  &-block {
+    display: flex;
+    width: 100%;
+  }
+//estado deshabilitado
+  &:disabled {
+    opacity: 0.5;//se volvera transparente
+    cursor: not-allowed;
+    transform: none;
+    filter: grayscale(1); //se vuelve gris
+    box-shadow: none;//quita la sombra
+  }
+
+  // GENERADOR AUTOMÁTICO DE PECADOS (SOLID & OUTLINE)
+  //recorre el mapa de pecados para crear clases especificas
+  @each $nombre, $color in $pecados-map {
+    // Determinamos el color del texto antes para evitar el error del if()
+    $text-color: $dark-night;
+    //si el pecadi tiene un color oscuro, ponemos el texto blanco
+    @if $nombre == "gula" or $nombre == "lujuria" or $nombre == "codicia" {
+      $text-color: $white;
+    }
+
+    // Botones Sólidos
+    &-#{$nombre} {
+      background-color: $color; //color de fondo del pecado
+      color: $text-color;//color de texto
+      //aplica fuente tematica del personaje
+      font-family: map.get(
+        $sin-fonts,
+        $nombre
+      ); // Hereda la fuente específica del pecado
+
+      &:hover {
+        background-color: color.adjust($color, $lightness: -5%); //oscurece el fondo un 5%
+
+        // Aplicamos herencia de las sombras en base al tema  del anime
+        @if $nombre == "ira" {
+          @extend .shadow-ira-sm;
+        } @else if $nombre == "codicia" {
+          @extend .shadow-codicia-sm;
+        } @else if $nombre == "pereza" {
+          @extend .shadow-pereza-sm;
+        } @else if $nombre == "envidia" {
+          @extend .shadow-envidia-sm;
+        } @else if $nombre == "soberbia" {
+          @extend .shadow-soberbia-sm;
+        } @else if $nombre == "gula" {
+          @extend .shadow-gula-sm;
+        } @else if $nombre == "lujuria" {
+          @extend .shadow-lujuria-sm;
+        }
+      }
+    }
+
+    // Botones Outline
+    &-outline-#{$nombre} {
+      background: transparent; // sin fondo
+      border-color: $color;//borde del color del pecado
+      color: $color; //texto de color del pecado
+      font-family: map.get(
+        $sin-fonts,
+        $nombre
+      ); // Hereda la fuente específica del pecado
+
+      &:hover {
+        background: $color;//el fondo se llena al pasar el mouse
+        color: $text-color; //el texto cambia para ser legible
+        box-shadow: 0 0 15px rgba($color, 0.4); //brillo exterior neon
+      }
+    }
+  }
+}
+
+//LÓGICA DE LA DOCUMENTACIÓN (DEMO BLOCKS)
+//estilo de boton del ver codigo
+.demo-checkbox {
+  //esconde el elemento del checkbox de la vista
+  display: none !important;
+}
+
+//boton de control
+.demo-toggle {
+  display: block;//asegura que el elemento se comporte como un bloque
+  background: #1a1a1c;
+  color: #94a3b8;
+  padding: 0.8rem 1.5rem; //espaciado interno
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-top: 1px solid #222;
+  user-select: none;//evitamos q el usuario pueda seleccionar el boton al hacer clics rapidos
+  transition: 0.3s;
+
+  //estado al pasar el mouse por encima
+  &:hover {
+    color: $ira-meliodas;
+    background: #1e1e20;
+  }
+}
+
+//contenedor del bloque de codigo
+.demo-code {
+  display: none; //escondido por defecto
+  background: #000;
+  padding: 1.5rem;
+  border-top: 1px solid #222;
+  font-family: "Fira Code", monospace; //fuente monoespaciada del codigo
+  font-size: 0.85rem;
+  color: #d1d5db;
+  overflow-x: auto; //scroll horizontal si el codigo es largo
+}
+
+//interaccion de documentacion
+// Mostrar código cuando el checkbox esté activo
+.demo-checkbox:checked {
+  & ~ .demo-code {
+    display: block;
+    // Animación de entrada opcional
+    animation: fadeIn 0.3s ease;
+  }
+//resalta el boton toggle cuando esta abierto
+  & ~ .demo-toggle {
+    color: $ira-meliodas;
+    background: #1e1e20;
+  }
+}

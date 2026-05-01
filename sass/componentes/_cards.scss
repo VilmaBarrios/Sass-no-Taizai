@@ -1,0 +1,124 @@
+@use "sass:map";
+@use "../clases_utilitarias/paleta" as p;
+@use "../clases_utilitarias/tipografia" as t;
+@use "../clases_utilitarias/bordes" as b;
+@use "../clases_utilitarias/redondeo" as r;
+@use "../clases_utilitarias/movimientos" as m;
+@use "../clases_utilitarias/padding_margenes" as pm;
+
+.card {
+  background: #161618;
+  border: 1px solid #222;
+  @extend .rde-s; // Hereda border-radius: 10px
+  overflow: hidden; //par img no sobrepase los bordes
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+
+  &:hover {
+    @extend .move-up; // Hereda transform: translateY(-10px) de mocimientos
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  &-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #222;
+    display: block;
+  }
+
+  &-header {
+    @extend .px-5; // Hereda padding horizontal (20px)
+    @extend .py-3; // Hereda padding vertical (12px)
+    border-bottom: 1px solid #222;
+    font-family: t.$font-base;
+    @extend .fw-bold; // Hereda font-weight: 700
+    @extend .fs-7; // Hereda font-size: 0.875rem
+  }
+
+  &-body {
+    @extend .p-5; // Hereda padding: 20px
+    flex-grow: 1;
+    color: #94a3b8;
+    @extend .fs-7; // Hereda font-size: 0.875rem
+    line-height: t.$lh-base; // Hereda variable 1.6
+
+    h5 {
+      color: #fff;
+      @extend .fs-5; // Hereda font-size: 1.25rem
+      @extend .mb-2; // Hereda margin-bottom: 8px
+      font-family: t.$font-lujuria;
+    }
+  }
+
+  &-footer {
+    @extend .px-5; // Hereda padding horizontal: 20px
+    @extend .py-4; // Hereda padding vertical: 16px
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #222;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  $pecados-map: (
+    "ira": p.$ira-meliodas,
+    "codicia": p.$codicia-ban,
+    "pereza": p.$pereza-king,
+    "envidia": p.$envidia-diane,
+    "soberbia": p.$soberbia-escanor,
+    "gula": p.$gula-merlin,
+    "lujuria": p.$lujuria-gowther,
+  );
+
+  //bucle q reccore cada par de nombres y colo dentro del mapa '$pecados'
+  @each $name, $color in $pecados-map {
+    //crea una clase unica por pecado
+    &.card-#{$name} { 
+      border-top: 3px solid $color; //aplica un borde solido de 3 pixeles
+
+      //estilo para todos los h5 q tengamos
+      h5 {
+        font-family: map.get(t.$sin-fonts, $name); //busca y aplicala tipografia del personaje
+      }
+      //estilo para la cabecera de las tarjetas
+      .card-header {
+        background: rgba($color, 0.08);
+        color: $color;
+        font-family: map.get(t.$sin-fonts, $name);
+      }
+
+      &:hover {
+        // Heredamos sombras
+        @if $name == "ira" {
+          @extend .shadow-ira-lg;
+          border-color: p.$ira-meliodas;
+        } @else if $name == "codicia" {
+          @extend .shadow-codicia-lg;
+        } @else if $name == "pereza" {
+          @extend .shadow-pereza-lg;
+        } @else if $name == "envidia" {
+          @extend .shadow-envidia-lg;
+        } @else if $name == "soberbia" {
+          @extend .shadow-soberbia-lg;
+        } @else if $name == "gula" {
+          @extend .shadow-gula-lg;
+        } @else if $name == "lujuria" {
+          @extend .shadow-lujuria-lg;
+        }
+      }
+    }
+  }
+}
+//tamaños de las cards
+.card-sm {
+  flex: 0 0 180px;
+}
+.card-md {
+  flex: 0 0 260px;
+}
+.card-lg {
+  flex: 0 0 300px;
+}
